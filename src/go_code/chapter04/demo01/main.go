@@ -22,4 +22,11 @@ func main() {
 	fmt.Println("10%-3=", 10 % -3)
 	fmt.Println("-10%-3=", -10 % -3)
 
+	// ++和--的使用
+	var i int = 10
+	i++
+	fmt.Println("i=", i)
+	i--
+	fmt.Println("i=", i)
+
 }
