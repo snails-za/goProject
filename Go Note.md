@@ -793,6 +793,151 @@
 
 ## 2. 逻辑运算符
 
-* `&&`  与
-* `||`  或
-* `!`   非
+* `&&` 与
+* `||` 或
+* `!` 非
+
+注意事项和细节说明
+
+* && 也叫短路与：如果第一个条件为false，则第二个条件不会判断，最终结果为false
+
+* || 也叫短路或，如果第一个条件为true， 则第二个条件不会判断，最终结果为true
+
+    package main
+
+    import "fmt"
+
+    func test() bool {
+        fmt. Println("test...")
+        return true
+
+    }
+
+    func main() {
+
+        var i int = 10
+        if i < 9 && test() {
+            fmt. Print("ok")
+        }
+        if i > 9 || test() {
+            fmt. Println("hello")
+        }
+
+    }
+
+## 3. 赋值运算符
+
+* `=` --------> `简单的赋值运算` ------> `c=a+b`
+* `+=` --------> `相加后在赋值` ------> `c+=b`
+* `-=` --------> `相减后再赋值` ------> `c-=b`
+* `*=` --------> `相乘后在赋值` ------> `c*=b`
+* `/=` --------> `相除后再赋值` ------> `c/=b`
+* `<<=` --------> `左移后赋值` ------> `c%=b`
+* `>>=` --------> `右移后赋值` ------> `c%=b`
+* `&=` --------> `换位与后赋值` ------> `c%=b`
+* `^=` --------> `换位异或后赋值` ------> `c%=b`
+* `|=` --------> `换位或后赋值` ------> `c%=b`
+案例演示
+
+    package main
+
+    import "fmt"
+
+    func main() {
+
+        // 赋值运算符的使用演示
+        // var i int
+        // i = 10 // 基本赋值
+
+        // 有两个变量， a和b， 要求将其进行交换，最终打印结果
+        // a = 9, b = 2 ====> a = 2  b = 9
+        a := 9
+        b := 2
+        fmt.Printf("交换前的情况是 a = %v, b = %v \n", a, b)
+        // 定义一个临时变量
+        t := a
+        a = b 
+        b = t
+        fmt.Printf("交换后的情况是 a = %v, b = %v \n", a, b)
+
+        a += 17
+        fmt. Println("a=", a)
+
+    }
+
+## 4. 三元运算符
+
+    package main
+
+    import "fmt"
+
+    func main() {
+
+        // 三元运算符
+        var n int
+        var i int = 10
+        var j int = 10
+
+        // 传统的三元运算
+        // n = i > j ? i : j
+        if i > j {
+            n = i
+        } else {
+            n = j
+        }
+        fmt. Println("n=", n)
+
+    }
+
+特别说明：Golang不支持三元运算符
+
+# 键盘输入语句
+
+## (1)fmt. Scanln函数
+
+    package main
+
+    import "fmt"
+
+    func main() {
+
+        // 要求：可以从控制台接收用户信息 
+        // 方式1  fmt. Scanln
+        // 先声明需要的变量
+        var name string
+        var age byte
+        var sal float32
+        var isPass bool
+        fmt. Println("请输入姓名 ")
+        fmt. Scanln(&name)
+        fmt. Println("请输入年龄 ")
+        fmt. Scanln(&age)
+        fmt. Println("请输入薪资 ")
+        fmt. Scanln(&sal)
+        fmt. Println("请输入是否通过考试")
+        fmt. Scanln(&isPass)
+
+        fmt. Printf("名字是 %v \n年龄是 %v \n薪水是 %v \n是否通过考试 %v \n", name, age, sal, isPass)
+
+    }
+
+## (2)Scanf函数
+
+    package main
+
+    import "fmt"
+
+    func main() {
+
+        // 方式2  fmt.Scanf
+        fmt.Println("请输入你的姓名，年龄，薪水，是否通过考试，使用空格隔开")
+        fmt.Scanf("%s %d %f %t", &name, &age, &sal, &isPass)
+        fmt.Printf("名字是 %v \n年龄是 %v \n薪水是 %v \n是否通过考试 %v \n", name, age, sal, isPass)
+
+    }
+
+# 分支控制
+## (1)单分支
+## (2)多分支
+## (3)单分支
+
