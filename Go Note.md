@@ -818,9 +818,12 @@
         var i int = 10
         if i < 9 && test() {
             fmt. Print("ok")
+
         }
+
         if i > 9 || test() {
             fmt. Println("hello")
+
         }
 
     }
@@ -884,7 +887,9 @@
             n = i
         } else {
             n = j
+
         }
+
         fmt. Println("n=", n)
 
     }
@@ -937,7 +942,154 @@
     }
 
 # 分支控制
-## (1)单分支
-## (2)多分支
-## (3)单分支
 
+## 1.if分支
+
+### (1)单分支
+
+    跳过
+
+### (2)多分支
+
+    跳过
+
+### (3)单分支
+
+    跳过
+
+## 2.switch分支结构
+
+### (1)基本介绍
+
+* Go 编程语言中 switch 语句的语法如下：
+
+    switch var1 {
+        case val1:
+            ...
+        case val2:
+            ...
+        default:
+            ...
+
+    }
+
+* 变量 var1 可以是任何类型，而 val1 和 val2 则可以是同类型的任意值。类型不被局限于常量或整数，但必须是相同的类型；或者最终结果为相同类型的表达式。
+* switch 语句用于基于不同条件执行不同动作，每一个 case 分支都是唯一的，从上至下逐一测试，直到匹配为止。
+* switch 语句执行的过程从上至下，直到找到匹配项，匹配项后面也不需要再加 break。
+* switch 默认情况下 case 最后自带 break 语句，匹配成功后就不会执行其他 case，如果我们需要执行后面的 case，可以使用 fallthrough 。
+* switch 可以同时测试多个可能符合条件的值，使用逗号分割它们，例如：case val1, val2, val3。
+
+    switch{
+        case 1, 2, 3, 4:
+        default:
+
+    }
+
+### (2)快速入门案例
+
+代码：
+
+    package main
+
+    import "fmt"
+
+    func main() {
+
+    /* 定义局部变量 */
+    var grade string = "B"
+    var marks int = 90
+
+    switch marks {
+
+        case 90: grade = "A"
+        case 80: grade = "B"
+        case 50,60,70 : grade = "C"
+        default: grade = "D"  
+
+    }
+
+    switch {
+
+        case grade == "A" :
+            fmt.Printf("优秀!\n" )    
+        case grade == "B", grade == "C" :
+            fmt.Printf("良好\n" )      
+        case grade == "D" :
+            fmt.Printf("及格\n" )      
+        case grade == "F":
+            fmt.Printf("不及格\n" )
+        default:
+            fmt.Printf("差\n" );
+
+    }
+
+    fmt. Printf("你的等级是 %s\n", grade ); 
+
+    }
+
+以上代码执行结果为：
+
+    优秀!
+    你的等级是 A
+
+### (3)细节讨论
+
+    package main
+
+    import "fmt"
+
+    func main() {
+
+        var a byte
+        fmt. Println("请输入字符：")
+        fmt. Scanf("%c", &a)
+        switch a {
+            case 'a':
+                fmt. Println("周一")
+            case 'b':
+                fmt. Println("周二")
+            case 'c':
+                fmt. Println("周三")
+            case 'd', 'e':
+                fmt. Println("周四")
+            default:
+                fmt. Println("有误")
+
+        }
+
+        switch age := 10; {
+            case age == 10:
+                fmt.Println("age == 10")
+            case age == 20:
+                fmt.Println("age == 20")
+            case age == 30:
+                fmt.Println("age == 30")
+            default:
+                fmt.Println("没有匹配到")
+
+        }
+
+        switch {
+            case false:
+                    fmt. Println("1、case 条件语句为 false")
+                    fallthrough
+            case true:
+                    fmt. Println("2、case 条件语句为 true")
+                    fallthrough
+            case false:
+                    fmt. Println("3、case 条件语句为 false")
+                    fallthrough
+            case true:
+                    fmt. Println("4、case 条件语句为 true")
+            case false:
+                    fmt. Println("5、case 条件语句为 false")
+                    fallthrough
+            default:
+                    fmt. Println("6、默认 case")
+
+        }
+
+    }
+
+* switch后也可以不带表达式，类似if -- else分支来使用
+* switch后也可以直接声明定义一个变量分号结束， 【不推荐】
