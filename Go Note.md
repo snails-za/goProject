@@ -1797,36 +1797,36 @@ Go 语言中数组可以存储同一类型的数据，但在结构体中我们�
 
 * 使用数组的方式来解决养鸡场问题
 
-    package main
+        package main
 
-    import "fmt"
+        import "fmt"
 
-    func main() {
+        func main() {
 
-        /*
-        一个养鸡场有6只鸡，他们的体重分别是3kg，5kg，1kg，3.4kg，2kg，50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组 
-        */
+            /*
+            一个养鸡场有6只鸡，他们的体重分别是3kg，5kg，1kg，3.4kg，2kg，50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组 
+            */
 
-        // 使用数组方式来解决
-        // 1. 定义一个数组
-        var hens [6]float64
-        // 给数组的每个元素赋值
-        hens[0] = 3.0
-        hens[1] = 5.0
-        hens[2] = 1.0
-        hens[3] = 3.4
-        hens[4] = 2.0
-        hens[5] = 50.0
+            // 使用数组方式来解决
+            // 1. 定义一个数组
+            var hens [6]float64
+            // 给数组的每个元素赋值
+            hens[0] = 3.0
+            hens[1] = 5.0
+            hens[2] = 1.0
+            hens[3] = 3.4
+            hens[4] = 2.0
+            hens[5] = 50.0
 
-        // 遍历数组求出总体重
-        totalweight2 := 0.0
-        for i := 0; i < len(hens); i++ {
-            totalweight2 += hens[i]
+            // 遍历数组求出总体重
+            totalweight2 := 0.0
+            for i := 0; i < len(hens); i++ {
+                totalweight2 += hens[i]
+
+            }
+
+            avgweight2 := totalweight / 6
+            fmt. Printf("totalweight2=%.2f \n", totalweight2)
+            fmt. Printf("totalweight2=%v avgweight2=%v \n", totalweight2, avgweight2)
 
         }
-
-        avgweight2 := totalweight / 6
-        fmt. Printf("totalweight2=%.2f \n", totalweight2)
-        fmt. Printf("totalweight2=%v avgweight2=%v \n", totalweight2, avgweight2)
-
-    }
