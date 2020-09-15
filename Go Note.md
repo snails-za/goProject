@@ -1751,4 +1751,81 @@ Go 语言中数组可以存储同一类型的数据，但在结构体中我们�
 
     }
 
-    利用指针改变结构体对应的值:
+## 5. 数组和切片
+
+### (1)为什么需要数组
+
+* 看一个问题
+
+一个养鸡场有6只鸡，他们的体重分别是3kg, 5kg, 1kg, 3.4kg, 2kg, 50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组
+
+* 使用传统方法解决
+
+    package main
+
+    import "fmt"
+
+    func main() {
+
+        /*
+        一个养鸡场有6只鸡，他们的体重分别是3kg，5kg，1kg，3.4kg，2kg，50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组 
+        */
+
+        // 思路分析：定义留个变量，分别表示六只鸡的体重，然后求出和，然后求出平均值。
+        hen1 := 3.0
+        hen2 := 5.0
+        hen3 := 1.0
+        hen4 := 3.4
+        hen5 := 2.0
+        hen6 := 50.0
+
+        totalweight := hen1 + hen2 + hen3 + hen4 + hen5 + hen6  // invalid operation: hen1 + hen2 + hen3 + hen4 (mismatched types int and float64)go
+        avgweight := totalweight / 6
+
+        fmt. Printf("totalweight=%.2f \n", totalweight)
+        fmt. Printf("totalweight=%v avgweight=%v", totalweight, avgweight)
+
+    }
+
+代码说明：
+1)使用传统的方法不利于数据的管理和维护
+2)传统的方法不够灵活，因此我们引出需要学习的心的数量类型=》数组
+
+* 数组介绍
+
+数组可以存放多个同意类型数据。数组也是一种数据类型，在Go中，数组是值类型
+
+* 使用数组的方式来解决养鸡场问题
+
+    package main
+
+    import "fmt"
+
+    func main() {
+
+        /*
+        一个养鸡场有6只鸡，他们的体重分别是3kg，5kg，1kg，3.4kg，2kg，50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组 
+        */
+        // 使用数组方式来解决
+        // 1.定义一个数组
+        var hens [6]float64
+        // 给数组的每个元素赋值
+        hens[0] = 3.0
+        hens[1] = 5.0
+        hens[2] = 1.0
+        hens[3] = 3.4
+        hens[4] = 2.0
+        hens[5] = 50.0
+
+        // 遍历数组求出总体重
+        totalweight2 := 0.0
+        for i := 0; i < len(hens); i++ {
+            totalweight2 += hens[i]
+
+        }
+
+        avgweight2 := totalweight / 6
+        fmt. Printf("totalweight2=%.2f \n", totalweight2)
+        fmt. Printf("totalweight2=%v avgweight2=%v \n", totalweight2, avgweight2)
+
+    }
