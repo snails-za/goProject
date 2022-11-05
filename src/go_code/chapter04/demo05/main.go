@@ -17,7 +17,11 @@ func main() {
 	a = b 
 	b = t
 	fmt.Printf("交换后的情况是 a = %v, b = %v \n", a, b)
-
+	
+	// 不适用中间变量
+	a, b = b, a
+	fmt.Printf("交换后的情况是 a = %v, b = %v \n", a, b)
+	
 	a += 17
 	fmt.Println("a=", a)
 }
