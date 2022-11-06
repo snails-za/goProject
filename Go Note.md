@@ -1119,6 +1119,36 @@ func main()  {
 }
 ```
 
+## 4.while和do...while
+### （1）基本介绍
+```
+Go语言没有while和do...while，可以通过for循环实现相同效果。
+```
+### （2）快速入门案例
+```
+/*
+ * @Author: wangju wangjuchn@outlook.com
+ * @Date: 2022-11-06 16:07:54
+ * @LastEditors: wangju wangjuchn@outlook.com
+ * @LastEditTime: 2022-11-06 16:09:02
+ * @FilePath: /go_code/chapter05/whiledemo/main.go
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+package main
+
+import "fmt"
+func main()  {
+	i := 1
+	for {
+		if i > 10 {
+			break
+		}
+		fmt.Println(i)
+		i++
+	}
+}
+```
+
 # Go语言函数
 
 函数是基本的代码块，用于执行一个任务。
