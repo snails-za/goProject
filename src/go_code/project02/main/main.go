@@ -6,4 +6,5 @@ import (
 )
 func main() {
 	fmt.Println(model.Heroname)
+	model.DbConnect()
 }
