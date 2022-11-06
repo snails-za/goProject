@@ -1094,6 +1094,31 @@
 * switch后也可以不带表达式，类似if -- else分支来使用
 * switch后也可以直接声明定义一个变量分号结束， 【不推荐】
 
+## 3.for 循环控制
+### （1）基本介绍
+```
+听其名知其意
+```
+### （2）快速入门案例
+```
+/*
+ * @Author: wangju wangjuchn@outlook.com
+ * @Date: 2022-11-06 15:54:27
+ * @LastEditors: wangju wangjuchn@outlook.com
+ * @LastEditTime: 2022-11-06 15:55:56
+ * @FilePath: /go_code/chapter05/fordemo/main.go
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+package main
+
+import "fmt"
+func main()  {
+	for i:=0; i < 10; i++ {
+		fmt.Println(i)
+	}
+}
+```
+
 # Go语言函数
 
 函数是基本的代码块，用于执行一个任务。
