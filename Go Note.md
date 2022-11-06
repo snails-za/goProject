@@ -1473,6 +1473,30 @@ Go 语言中同时有函数和方法。一个方法就是一个包含了接受�
 
     圆的面积 =  314
 
+### (4)init函数
+- 基本介绍
+
+每一个源文件都可以包含一个init函数，该函数会在main函数之前运行
+```
+package main
+
+import "fmt"
+var a = test()
+func test() int {
+	fmt.Println("全局变量定义！。。。")
+	return 90
+}
+func main()  {
+	fmt.Println("main()...")
+}
+func init()  {
+	fmt.Println("init()...")
+}
+```
+- 注意事项
+
+全局变量定义代码会在init之前运行
+
 # Go 语言结构体
 
 Go 语言中数组可以存储同一类型的数据，但在结构体中我们可以为不同项定义不同的数据类型。
