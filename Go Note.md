@@ -1497,6 +1497,32 @@ func init()  {
 
 全局变量定义代码会在init之前运行
 
+### (5)匿名函数
+- 介绍
+
+Go支持匿名函数，就是没有名字的函数，如果我们某个函数只是希望使用一次，可以考虑使用匿名函数，匿名函数也可以实现多次调用。
+
+- 使用
+```
+package main
+
+import (
+	"fmt"
+)
+func main()  {
+	res := func (n1, n2 int) int {
+		return n1 + n2
+	}(10, 11)
+	fmt.Println(res)
+
+	f := func (a, b int) int {
+		return a - b
+	}
+	fmt.Println(f(10, 5))
+}
+```
+
+
 # Go 语言结构体
 
 Go 语言中数组可以存储同一类型的数据，但在结构体中我们可以为不同项定义不同的数据类型。
