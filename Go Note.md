@@ -1100,54 +1100,53 @@
 听其名知其意
 ```
 ### （2）快速入门案例
-```
-/*
- * @Author: wangju wangjuchn@outlook.com
- * @Date: 2022-11-06 15:54:27
- * @LastEditors: wangju wangjuchn@outlook.com
- * @LastEditTime: 2022-11-06 15:55:56
- * @FilePath: /go_code/chapter05/fordemo/main.go
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
-package main
 
-import "fmt"
-func main()  {
-	for i:=0; i < 10; i++ {
-		fmt.Println(i)
-	}
-}
-```
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-06 15:54:27
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-06 15:55:56
+    * @FilePath: /go_code/chapter05/fordemo/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import "fmt"
+    func main()  {
+        for i:=0; i < 10; i++ {
+            fmt.Println(i)
+        }
+    }
 
 ## 4.while和do...while
 ### （1）基本介绍
-```
-Go语言没有while和do...while，可以通过for循环实现相同效果。
-```
-### （2）快速入门案例
-```
-/*
- * @Author: wangju wangjuchn@outlook.com
- * @Date: 2022-11-06 16:07:54
- * @LastEditors: wangju wangjuchn@outlook.com
- * @LastEditTime: 2022-11-06 16:09:02
- * @FilePath: /go_code/chapter05/whiledemo/main.go
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
-package main
 
-import "fmt"
-func main()  {
-	i := 1
-	for {
-		if i > 10 {
-			break
-		}
-		fmt.Println(i)
-		i++
-	}
-}
-```
+    Go语言没有while和do...while，可以通过for循环实现相同效果。
+
+### （2）快速入门案例
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-06 16:07:54
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-06 16:09:02
+    * @FilePath: /go_code/chapter05/whiledemo/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import "fmt"
+    func main()  {
+        i := 1
+        for {
+            if i > 10 {
+                break
+            }
+            fmt.Println(i)
+            i++
+        }
+    }
 
 # Go语言函数
 
@@ -1477,22 +1476,22 @@ Go 语言中同时有函数和方法。一个方法就是一个包含了接受�
 - 基本介绍
 
 每一个源文件都可以包含一个init函数，该函数会在main函数之前运行
-```
-package main
 
-import "fmt"
-var a = test()
-func test() int {
-	fmt.Println("全局变量定义！。。。")
-	return 90
-}
-func main()  {
-	fmt.Println("main()...")
-}
-func init()  {
-	fmt.Println("init()...")
-}
-```
+    package main
+
+    import "fmt"
+    var a = test()
+    func test() int {
+        fmt.Println("全局变量定义！。。。")
+        return 90
+    }
+    func main()  {
+        fmt.Println("main()...")
+    }
+    func init()  {
+        fmt.Println("init()...")
+    }
+
 - 注意事项
 
 全局变量定义代码会在init之前运行
@@ -1503,24 +1502,23 @@ func init()  {
 Go支持匿名函数，就是没有名字的函数，如果我们某个函数只是希望使用一次，可以考虑使用匿名函数，匿名函数也可以实现多次调用。
 
 - 使用
-```
-package main
 
-import (
-	"fmt"
-)
-func main()  {
-	res := func (n1, n2 int) int {
-		return n1 + n2
-	}(10, 11)
-	fmt.Println(res)
+    package main
 
-	f := func (a, b int) int {
-		return a - b
-	}
-	fmt.Println(f(10, 5))
-}
-```
+    import (
+        "fmt"
+    )
+    func main()  {
+        res := func (n1, n2 int) int {
+            return n1 + n2
+        }(10, 11)
+        fmt.Println(res)
+
+        f := func (a, b int) int {
+            return a - b
+        }
+        fmt.Println(f(10, 5))
+    }
 
 ### (6)defer
 
@@ -1530,93 +1528,89 @@ func main()  {
 
 - 快速入门
 
-```
-package main
+    package main
 
-import "fmt"
-func sum(num1, num2 int) int {
-	// 当函数执行到defer时候，暂时不执行，会单独建立一块defer栈
-	// 当函数执行完毕之后，再从defer栈中按照先入后出的顺序出栈并执行
-	defer fmt.Println("ok1 num1 = ", num1)
-	defer fmt.Println("ok2 num2 = ", num2)
-	res := num1 + num2
-	return res
-}
-func main()  {
-	res := sum(10, 20)
-	fmt.Println("res = ", res)
-}
-```
+    import "fmt"
+    func sum(num1, num2 int) int {
+        // 当函数执行到defer时候，暂时不执行，会单独建立一块defer栈
+        // 当函数执行完毕之后，再从defer栈中按照先入后出的顺序出栈并执行
+        defer fmt.Println("ok1 num1 = ", num1)
+        defer fmt.Println("ok2 num2 = ", num2)
+        res := num1 + num2
+        return res
+    }
+    func main()  {
+        res := sum(10, 20)
+        fmt.Println("res = ", res)
+    }
 
 ### (7)字符串内置函数
-```
-ackage main
 
-import (
-	"fmt"
-	"strconv"
-	"strings"
-) 
-func main()  {
-	// 统计字符串长度，按照字节len(str)
-	// golang的统一编码为utf8，ascii的字符占用一个字节，一个汉字占用3个字节
-	str := "hello北京"
-	fmt.Println("str len=", len(str))
+    package main
 
-	// 字符串遍历，同时处理中文问题 r := []rune(str)
-	r := []rune(str)
-	for i:=0; i < len(r); i++ {
-		fmt.Printf("字符：%c\n", r[i])
-	}
+    import (
+        "fmt"
+        "strconv"
+        "strings"
+    ) 
+    func main()  {
+        // 统计字符串长度，按照字节len(str)
+        // golang的统一编码为utf8，ascii的字符占用一个字节，一个汉字占用3个字节
+        str := "hello北京"
+        fmt.Println("str len=", len(str))
 
-	// 字符串转整数
-	n, err := strconv.Atoi("12a3")
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(n)
-	}
+        // 字符串遍历，同时处理中文问题 r := []rune(str)
+        r := []rune(str)
+        for i:=0; i < len(r); i++ {
+            fmt.Printf("字符：%c\n", r[i])
+        }
 
-	// 整数转字符串
-	str = strconv.Itoa(123)
-	fmt.Println("str: ", str)
+        // 字符串转整数
+        n, err := strconv.Atoi("12a3")
+        if err != nil {
+            fmt.Println(err)
+        } else {
+            fmt.Println(n)
+        }
 
-	// 字符串转字节
-	bytes := []byte("hello bytes")
-	fmt.Printf("bytes: %v\n", bytes)
+        // 整数转字符串
+        str = strconv.Itoa(123)
+        fmt.Println("str: ", str)
 
-	// byte 转字符串
-	str = string([]byte{97, 98, 99})
-	fmt.Printf("str: %v\n", str)
+        // 字符串转字节
+        bytes := []byte("hello bytes")
+        fmt.Printf("bytes: %v\n", bytes)
 
-	// 10进制转2，8，16进制
-	str = strconv.FormatInt(123, 2)
-	fmt.Printf("123对应的2进制是：%v\n", str)
-	str = strconv.FormatInt(123, 16)
-	fmt.Printf("123对应的16进制是：%v\n", str)
+        // byte 转字符串
+        str = string([]byte{97, 98, 99})
+        fmt.Printf("str: %v\n", str)
 
-	// strings 包
-	fmt.Println(strings.Contains("seafood", "foods"))
-	fmt.Println(strings.Count("cheese", "e"))
-	fmt.Println(strings.Index("chicken", "ken"))
-	fmt.Println(strings.LastIndex("go gopher", "go"))
-	fmt.Println(strings.EqualFold("Go", "go"))
-	fmt.Println("Go" == "go")
-	fmt.Println(strings.HasPrefix("chicken", "chi"))
-	fmt.Println(strings.HasSuffix("chicken.txt", ".txt"))
-	fmt.Println(strings.Replace("oink oink oink", "k", "ky", 2))
-	fmt.Println("ba" + strings.Repeat("na", 2))
-	fmt.Println(strings.Trim(" !!! Achtung! Achtung! !!! ", "! "))
-	fmt.Println(strings.TrimSpace(" \t\n a lone gopher \n\t\r\n"))
-	fmt.Println(strings.TrimLeft(" n a lone gopher", " "))
-	fmt.Println(strings.TrimRight(" a lone gopher", " "))
-	fmt.Println(strings.ToLower("Gopher"))
-	fmt.Println(strings.ToUpper("Gopher"))
-	fmt.Printf("%q\n", strings.Split("a,b,c", ","))
+        // 10进制转2，8，16进制
+        str = strconv.FormatInt(123, 2)
+        fmt.Printf("123对应的2进制是：%v\n", str)
+        str = strconv.FormatInt(123, 16)
+        fmt.Printf("123对应的16进制是：%v\n", str)
 
-}
-```
+        // strings 包
+        fmt.Println(strings.Contains("seafood", "foods"))
+        fmt.Println(strings.Count("cheese", "e"))
+        fmt.Println(strings.Index("chicken", "ken"))
+        fmt.Println(strings.LastIndex("go gopher", "go"))
+        fmt.Println(strings.EqualFold("Go", "go"))
+        fmt.Println("Go" == "go")
+        fmt.Println(strings.HasPrefix("chicken", "chi"))
+        fmt.Println(strings.HasSuffix("chicken.txt", ".txt"))
+        fmt.Println(strings.Replace("oink oink oink", "k", "ky", 2))
+        fmt.Println("ba" + strings.Repeat("na", 2))
+        fmt.Println(strings.Trim(" !!! Achtung! Achtung! !!! ", "! "))
+        fmt.Println(strings.TrimSpace(" \t\n a lone gopher \n\t\r\n"))
+        fmt.Println(strings.TrimLeft(" n a lone gopher", " "))
+        fmt.Println(strings.TrimRight(" a lone gopher", " "))
+        fmt.Println(strings.ToLower("Gopher"))
+        fmt.Println(strings.ToUpper("Gopher"))
+        fmt.Printf("%q\n", strings.Split("a,b,c", ","))
 
+    }
 
 
 # Go 语言结构体
