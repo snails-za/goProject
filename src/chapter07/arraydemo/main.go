@@ -36,7 +36,7 @@ func main() {
 	for i := 0; i < len(hens); i++ {
 		totalweight2 += hens[i]
 	}
-	avgweight2 := totalweight / 6
+	avgweight2 := totalweight2 / float64(len(hens))
 	fmt.Printf("hens[1:]=%v \n", hens[1:])
 	fmt.Printf("totalweight2=%.2f \n", totalweight2)
 	fmt.Printf("totalweight2=%v avgweight2=%v \n", totalweight2, avgweight2)

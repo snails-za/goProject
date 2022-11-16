@@ -1686,27 +1686,29 @@ Go支持匿名函数，就是没有名字的函数，如果我们某个函数只
 
 ### (6)defer
 
-- 介绍
+* 介绍
 
 再函数中，程序员经常需要创建资源（数据库连接，文件句柄、锁等），在函数执行完毕之后，及时的释放资源，Go的设计者提供了defer
 
-- 快速入门
+* 快速入门
 
-    package main
+```
+package main
 
-    import "fmt"
-    func sum(num1, num2 int) int {
-        // 当函数执行到defer时候，暂时不执行，会单独建立一块defer栈
-        // 当函数执行完毕之后，再从defer栈中按照先入后出的顺序出栈并执行
-        defer fmt.Println("ok1 num1 = ", num1)
-        defer fmt.Println("ok2 num2 = ", num2)
-        res := num1 + num2
-        return res
-    }
-    func main()  {
-        res := sum(10, 20)
-        fmt.Println("res = ", res)
-    }
+import "fmt"
+func sum(num1, num2 int) int {
+    // 当函数执行到defer时候，暂时不执行，会单独建立一块defer栈
+    // 当函数执行完毕之后，再从defer栈中按照先入后出的顺序出栈并执行
+    defer fmt.Println("ok1 num1 = ", num1)
+    defer fmt.Println("ok2 num2 = ", num2)
+    res := num1 + num2
+    return res
+}
+func main()  {
+    res := sum(10, 20)
+    fmt.Println("res = ", res)
+}
+```
 
 ### (7)字符串内置函数
 
