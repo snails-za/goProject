@@ -887,6 +887,225 @@
         fmt.Println(&slice[0])
     }
 
+# Map
+
+## 快速入门
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-20 16:56:29
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-20 17:12:50
+    * @FilePath: /src/chapter09/mapdemo01/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import "fmt"
+    func main()  {
+        // map的声明和注意事项
+        var a map[string]string
+        a = make(map[string]string, 10)
+        a["no1"] = "bob"
+        a["no2"] = "bob2"
+        a["no3"] = "bob4"
+        a["no2"] = "bob3"
+        fmt.Println(a)
+    }
+
+## 快速上手
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-20 17:21:21
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-20 17:26:41
+    * @FilePath: /src/chapter09/mapuse/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import "fmt"
+    func main() {
+        // 方式一
+        var a map[string]string
+        a = make(map[string]string, 10)
+        a["no1"] = "bob"
+        a["no2"] = "bob2"
+        a["no3"] = "bob4"
+        a["no2"] = "bob3"
+        fmt.Println(a)
+
+        // 方式二
+        cities := make(map[string]string)
+        cities["no1"] = "beijing"
+        cities["no2"] = "shanghai"
+        fmt.Println(cities)
+
+        // 方式三
+        heros := map[string]string {
+            "no1": "11",
+            "no2": "22",
+        }
+        fmt.Println(heros)
+    }
+
+## 增删改查
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-20 17:30:06
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-20 17:33:12
+    * @FilePath: /src/chapter09/mapcrud/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import "fmt"
+    func main()  {
+        cities := make(map[string]string)
+        // 新增
+        cities["no1"] = "beijing"
+        cities["no2"] = "shjanghai"
+        // 修改
+        cities["no2"] = "shanghai"
+        // 删除
+        delete(cities, "no1")
+        // key不存在，不会报错
+        delete(cities, "no4")
+        fmt.Println(cities)
+        // 查询
+        val, ok := cities["no1"]
+        fmt.Println(val, ok)
+    }
+
+## for-range
+
+    *
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-20 17:38:24
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-20 17:40:11
+    * @FilePath: /src/chapter09/forrange/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import "fmt"
+    func main() {
+        cities := make(map[string]string)
+        cities["no1"] = "shanghai"
+        cities["no2"] = "beijing"
+        fmt.Println(cities)
+        fo/r k, v := range cities {
+            fmt.Println(k, v)
+        }
+    }
+
+## map切片
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-20 19:26:54
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-20 19:37:35
+    * @FilePath: /src/chapter09/mapslice/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import "fmt"
+    func main()  {
+        // monsters用于存放所有妖怪的信息：name和age
+        monsters := make([]map[string]string, 2)
+        if monsters[0] == nil{
+            monsters[0] = make(map[string]string, 2)
+            monsters[0]["name"] = "牛魔王"
+            monsters[0]["age"] = "20"
+        }
+        fmt.Println(monsters)
+        monsters = append(monsters, map[string]string{"name": "玉兔", "age": "300",})
+        monsters = append(monsters, map[string]string{"name": "玉兔2", "age": "300",})
+        monsters = append(monsters, map[string]string{"name": "玉兔3", "age": "300",})
+        fmt.Println(monsters)
+    }
+
+## map排序
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-20 19:47:37
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-20 19:54:07
+    * @FilePath: /src/chapter09/mapsort/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import (
+        "fmt"
+        "sort"
+    )
+    func main()  {
+        map1 := make(map[int]int, 10)
+        map1[10] = 100
+        map1[1] = 13
+        map1[4] = 56
+        map1[8] = 90
+
+        fmt.Println(map1)
+
+        var keys []int
+        for k, _ := range map1 {
+            keys = append(keys, k)
+        }
+        sort.Ints(keys)
+        fmt.Println(keys)
+
+        for _, v := range keys {
+            fmt.Println(map1[v])
+        }
+    }
+
+## map使用
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-20 22:07:05
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-20 22:15:36
+    * @FilePath: /src/chapter09/mapstruct/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import "fmt"
+
+    type Stu struct {
+        Name string
+        Age int
+        Address string
+
+    }
+    func main()  {
+        students := make(map[string]Stu)
+        stu1 := Stu{"tom", 20, "shanghai"}
+        stu2 := Stu{"jack", 40, "shanghai"}
+        students["no1"] = stu1
+        students["no2"] = stu2
+        fmt.Println(students)
+        
+        for k, v := range students {
+            fmt.Println("==============")
+            fmt.Println("学号：", k)
+            fmt.Println("姓名：", v.Name)
+            fmt.Println("年龄：", v.Age)
+            fmt.Println("地址：", v.Address)
+            fmt.Println("==============")
+        }
+    }
+
 # 异常处理
 
 ## 1.基本介绍
