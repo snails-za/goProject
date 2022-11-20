@@ -1,3 +1,11 @@
+/*
+ * @Author: wangju wangjuchn@outlook.com
+ * @Date: 2022-11-18 21:44:37
+ * @LastEditors: wangju wangjuchn@outlook.com
+ * @LastEditTime: 2022-11-20 11:29:52
+ * @FilePath: /src/chapter07/arraydemo/main.go
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 package main
 
 import "fmt"
@@ -41,4 +49,16 @@ func main() {
 	fmt.Printf("totalweight2=%.2f \n", totalweight2)
 	fmt.Printf("totalweight2=%v avgweight2=%v \n", totalweight2, avgweight2)
 
+	// 数组的初始化
+	var arr1 [3]int = [3]int{1,2,3}
+	fmt.Println(arr1)
+
+	var arr2 = [3]int{1,2,3}
+	fmt.Println(arr2)
+
+	var arr3 = [...]int{1,2,3}
+	fmt.Println(arr3)
+
+	var arr4 = [...]int{1:1,0:2,2:3}
+	fmt.Println(arr4)
 }
