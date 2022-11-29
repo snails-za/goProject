@@ -1260,6 +1260,221 @@
         L.Run()
     }
 
+# goroutine
+
+## 基本介绍
+
+在调用一个方法的时候，在前面加一个go就是goroutine，他会让方法异步执行
+## 快速入门
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-26 23:03:08
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-27 21:50:05
+    * @FilePath: /src/chapter11/demo01/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import (
+        "fmt"
+        "sync"
+    )
+    func main()  {
+        // goroutine
+        // 在调用一个方法的时候，在前面加一个go就是goroutine，他会让方法异步执行
+        var wg sync.WaitGroup
+        wg.Add(1)
+        go Run(&wg)
+        wg.Wait()
+    }
+    func Run(wg *sync.WaitGroup)  {
+        defer wg.Done()
+        fmt.Println("running!")
+    }
+
+# channel
+
+## 基本介绍
+goroutine之间通讯的桥梁
+
+## 快速入门
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-27 22:00:57
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-27 22:41:01
+    * @FilePath: /src/chapter12/demo02/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import (
+        "fmt"
+        _ "sync"
+    )
+
+    func main() {
+        c1 := make(chan int, 10)
+        go func() {
+            for i := 0; i < 10; i++ {
+                c1 <- i
+                fmt.Println("aaaaa")
+            }
+        }()
+        for i := 0; i < 10; i++ {
+            fmt.Println(<-c1)
+        }
+
+        fmt.Println("==============")
+
+        c2 := make(chan int)
+        go func() {
+            for i := 0; i < 10; i++ {
+                c2 <- i
+                fmt.Println("bbbb")
+            }
+        }()
+        for i := 0; i < 10; i++ {
+            fmt.Println(<-c2)
+        }
+
+        fmt.Println("==============")
+
+        c3 := make(chan int, 5)
+        go func() {
+            for i := 0; i < 10; i++ {
+                c3 <- i
+                fmt.Println("ccc")
+            }
+        }()
+        for i := 0; i < 10; i++ {
+            fmt.Println(<-c3)
+        }
+    }
+
+## 只读只写
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-29 23:03:01
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-29 23:08:07
+    * @FilePath: /src/chapter12/demo03/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import "fmt"
+
+    func main() {
+        c1 := make(chan int, 5)
+        var readc <-chan int = c1
+        var writec chan<- int = c1
+        writec <- 1
+        fmt.Println(<-readc)
+    }
+
+## close
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-29 23:42:42
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-29 23:46:30
+    * @FilePath: /src/chapter12/demo04/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import "fmt"
+
+    func main() {
+        c1 := make(chan int, 5)
+        c1 <- 1
+        c1 <- 2
+        c1 <- 3
+        c1 <- 4
+        c1 <- 5
+        // 使用for-range必须使用close关闭管道
+        close(c1)
+        for v := range c1 {
+            fmt.Println(v)
+        }
+    }
+
+## select
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-29 23:48:30
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-29 23:54:24
+    * @FilePath: /src/chapter12/demo05/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import "fmt"
+
+    func main() {
+        // select 执行没有顺序
+        ch1 := make(chan int, 1)
+        ch2 := make(chan int, 1)
+        ch3 := make(chan int, 1)
+
+        ch1 <- 1
+        ch2 <- 2
+        ch3 <- 3
+        select {
+        case <-ch1:
+            fmt.Println("ch1")
+        case <-ch2:
+            fmt.Println("ch2")
+        case <-ch3:
+            fmt.Println("ch3")
+        default:
+            fmt.Println("都不满足！")
+        }
+
+    }
+
+## 使用
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-11-29 23:59:49
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-11-30 00:03:20
+    * @FilePath: /src/chapter12/demo06/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import "fmt"
+
+    func main() {
+        ch := make(chan int)
+        var writec chan<- int = ch
+        var readc <-chan int = ch
+
+        go SetData(writec)
+        ReadData(readc)
+
+    }
+    func SetData(writec chan<- int) {
+        for i := 0; i < 10; i++ {
+            writec <- i
+        }
+    }
+    func ReadData(readc <-chan int) {
+        for i := 0; i < 10; i++ {
+            fmt.Println(<-readc)
+        }
+    }
+
 # 异常处理
 
 ## 1.基本介绍
