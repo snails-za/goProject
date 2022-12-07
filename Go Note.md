@@ -1679,6 +1679,232 @@ goroutine之间通讯的桥梁
         m.Call([]reflect.Value{reflect.ValueOf("666")})
     }
 
+# sync使用
+
+## 互斥锁【sync.Mutex{}】
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-12-01 23:29:42
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-12-03 00:08:38
+    * @FilePath: /src/chapter14/demo01/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import (
+        "fmt"
+        "sync"
+        "time"
+    )
+
+    func SyncClass() {
+        l := &sync.Mutex{}
+        go lockFunc(l)
+        go lockFunc(l)
+        go lockFunc(l)
+        go lockFunc(l)
+        time.Sleep(5 * time.Second)
+    }
+    func lockFunc(lock *sync.Mutex) {
+        lock.Lock()
+        fmt.Println("666")
+        time.Sleep(1 * time.Second)
+        lock.Unlock()
+    }
+    func main() {
+        // sync.Mutex{} 互斥锁
+        // Lock() 和 Unlock()
+        SyncClass()
+    }
+
+## 读取互斥锁【sync.RWMutex{}】
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-12-01 23:29:42
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-12-03 00:51:50
+    * @FilePath: /src/chapter14/demo01/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import (
+        "fmt"
+        "sync"
+        "time"
+    )
+
+    func SyncClass() {
+        l := &sync.RWMutex{}
+        go lockFunc(l)
+        go lockFunc(l)
+        go lockFunc(l)
+        go lockFunc(l)
+        go readLockFunc(l)
+        go readLockFunc(l)
+        go readLockFunc(l)
+        go readLockFunc(l)
+        time.Sleep(20 * time.Second)
+    }
+
+    func lockFunc(lock *sync.RWMutex) {
+        lock.Lock() // 写的时候排斥其他写锁和读锁
+        fmt.Println("666")
+        time.Sleep(5 * time.Second)
+        lock.Unlock()
+    }
+
+    func readLockFunc(lock *sync.RWMutex) {
+        lock.RLock() // 在读取的时候不会阻塞其他的读取锁，但是会阻塞写入锁
+        fmt.Println("777")
+        time.Sleep(5 * time.Second)
+        lock.RUnlock()
+    }
+
+    func main() {
+        // sync.RWMutex{} 读写互斥锁
+        // Lock() 和 Unlock()
+        // RLock() 和 RUnlock()
+        SyncClass()
+    }
+
+## Once函数
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-12-01 23:29:42
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-12-03 00:58:22
+    * @FilePath: /src/chapter14/demo01/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import (
+        "fmt"
+        "sync"
+    )
+
+    func SyncClass() {
+        o := &sync.Once{}
+        for i := 0; i < 10; i++ {
+            o.Do(func() {
+                fmt.Println(i)
+            })
+        }
+    }
+
+    func main() {
+        // sync.RWMutex{} 读写互斥锁
+        // Lock() 和 Unlock()
+        // RLock() 和 RUnlock()
+        SyncClass()
+    }
+
+## sync.WaitGroup{}
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-12-03 13:52:49
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-12-03 14:00:34
+    * @FilePath: /src/chapter14/demo04/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import (
+        "fmt"
+        "sync"
+        "time"
+    )
+
+    func main() {
+        wg := &sync.WaitGroup{}
+        wg.Add(2)
+        go func() {
+            time.Sleep(8 * time.Second)
+            wg.Done()
+            fmt.Println("hp-1")
+        }()
+        go func() {
+            time.Sleep(6 * time.Second)
+            wg.Done()
+            fmt.Println("hp-2")
+        }()
+        wg.Wait()
+        fmt.Println("hp=0")
+    }
+
+## sync.Map{}
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-12-03 14:10:20
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-12-03 14:21:11
+    * @FilePath: /src/chapter14/demo05/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import (
+        "fmt"
+        "sync"
+        "time"
+    )
+
+    func main() {
+        m := &sync.Map{}
+        m.Store(1, 1)
+        fmt.Println(m.Load(1))
+        fmt.Println(m.Load(1))
+        m.Delete(1)
+        fmt.Println(m.Load(1))
+        m.Store(1, 1)
+        m.Store(2, 2)
+        m.Range(func(key, value interface{}) bool {
+            fmt.Println(key, value)
+            return true
+        })
+        time.Sleep(5 * time.Second)
+    }
+
+## &sync.Pool{}
+
+    /*
+    * @Author: wangju wangjuchn@outlook.com
+    * @Date: 2022-12-03 14:10:20
+    * @LastEditors: wangju wangjuchn@outlook.com
+    * @LastEditTime: 2022-12-03 14:24:41
+    * @FilePath: /src/chapter14/demo05/main.go
+    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    */
+    package main
+
+    import (
+        "fmt"
+        "sync"
+        "time"
+    )
+
+    func main() {
+        p := &sync.Pool{}
+        p.Put(1)
+        p.Put(2)
+        p.Put(3)
+        p.Put(4)
+        fmt.Println(p.Get())
+        fmt.Println(p.Get())
+        fmt.Println(p.Get())
+        fmt.Println(p.Get())
+        fmt.Println(p.Get())
+        time.Sleep(5 * time.Second)
+    }
+
 # 异常处理
 
 ## 1.基本介绍
