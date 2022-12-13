@@ -1,0 +1,4 @@
+2022-12-13T17:59:39.046+0800	DEBUG	zap_log/main.go:65	Trying to hit GET request for www.5lmh.com
+2022-12-13T17:59:39.061+0800	ERROR	zap_log/main.go:68	Error fetching URL www.5lmh.com : Error = Get "www.5lmh.com": unsupported protocol scheme ""
+2022-12-13T17:59:39.061+0800	DEBUG	zap_log/main.go:65	Trying to hit GET request for http://www.google.com
+2022-12-13T17:59:39.071+0800	ERROR	zap_log/main.go:68	Error fetching URL http://www.google.com : Error = Get "http://www.google.com": dial tcp: lookup www.google.com: no such host
