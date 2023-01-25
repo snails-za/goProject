@@ -4,2057 +4,2162 @@
 
 ### 1)代码解释
 
-    // 要求开发一个hello.go程序，可以输出hello world！
+```golang
+// 要求开发一个hello.go程序，可以输出hello world！
 
-    package main
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
+func main() {
 
-        fmt.Println("hello world!")
+    fmt.Println("hello world!")
 
-    }
+}
+```
 
-* (1)go文件的后缀是.go
-* (2)package main
-
+- (1)go文件的后缀是.go
+- (2)package main
+  
     表示该hello.go文件所在的包是main,在go中，每个文件都必须归属于一个包
-
-* (3)import "fmt"
-
+- (3)import "fmt"
+  
     表示引入一个包，包名fmt，引入该包后，就可以使用fmt包的函数，比如：fmt.Println
-
-* (4)func main(){
-
+- (4)func main(){
+  
      }
-     func是一个关键字，表示一个函数。
-     main是函数名，是一个主函数，即我们程序的入口
-
-* (5)fmt. Println("hello")
-
+   func是一个关键字，表示一个函数。
+   main是函数名，是一个主函数，即我们程序的入口
+- (5)fmt. Println("hello")
+  
      表示调用fmt包的函数Println输出“hello world!”
 
 ### 2)运行
 
-    go run hello.go
+```
+go run hello.go
+```
 
-* 速度慢，占内存小
+- 速度慢，占内存小
 
 ### 3)编译&运行
 
-    go build .\hello.go
-    .\hello.exe
+```
+go build .\hello.go
+.\hello.exe
 
-    go build -o myhello.exe .\hello.go
-    .\myhello.exe
+go build -o myhello.exe .\hello.go
+.\myhello.exe
+```
 
-* 速度快，占内存多
-* 可将执行文件拷贝到没有go环境的机器上运行
+- 速度快，占内存多
+- 可将执行文件拷贝到没有go环境的机器上运行
 
 ## 2. Go程序开发注意事項
 
-* (1)Go源文件以"go"为扩展名。
-* (2)Go应用程序的执行入口是main()方法。
-* (3)Go语言严格区分大小写。
-* (4)Go方法由一条条语句构成，每个语句后不需要分好（Go语言会在每行后自动加分号），这也体现出Golang的简洁性。
-* (5)Go编辑器是一行行进行编译的，因此我们一行就写一条语句，不能把多条语句写在同一个，否则报错。
-* (6)Go语言定义的变量或者import的包如果没有使用到，代码不能编译通过。
-* (7)大括号都是成对出现的，缺一不可。
+- (1)Go源文件以"go"为扩展名。
+- (2)Go应用程序的执行入口是main()方法。
+- (3)Go语言严格区分大小写。
+- (4)Go方法由一条条语句构成，每个语句后不需要分好（Go语言会在每行后自动加分号），这也体现出Golang的简洁性。
+- (5)Go编辑器是一行行进行编译的，因此我们一行就写一条语句，不能把多条语句写在同一个，否则报错。
+- (6)Go语言定义的变量或者import的包如果没有使用到，代码不能编译通过。
+- (7)大括号都是成对出现的，缺一不可。
 
 ## 3. Go语言转义字符
 
-* \t : 一个制表位，实现对齐的功能
-* \n : 换行符
-* \ \ : 一个\
-* \" : 一个"
-* \r : 一个回车fmt. Println("天龙八部雪山飞狐\r张飞")
+- \t : 一个制表位，实现对齐的功能
+- \n : 换行符
+- \ \ : 一个\
+- \" : 一个"
+- \r : 一个回车fmt. Println("天龙八部雪山飞狐\r张飞")
 
 ## 4. VS Code快捷键
 
 ### (1)编辑器与窗口管理
 
-* 新建文件:   Ctrl+N
-* 文件之间切换:   Ctrl+Tab
-* 打开一个新的VS Code编辑器:    Ctrl+Shift+N
-* 关闭当前窗口:   Ctrl+W
-* 关闭当前的VS Code编辑器:   Ctrl+Shift+W
-* 切出一个新的编辑器窗口（最多3个):   Ctrl+\
-* 切换左中右3个编辑器窗口的快捷键:   Ctrl+1  Ctrl+2  Ctrl+3
+- 新建文件:   Ctrl+N
+- 文件之间切换:   Ctrl+Tab
+- 打开一个新的VS Code编辑器:    Ctrl+Shift+N
+- 关闭当前窗口:   Ctrl+W
+- 关闭当前的VS Code编辑器:   Ctrl+Shift+W
+- 切出一个新的编辑器窗口（最多3个):   Ctrl+\
+- 切换左中右3个编辑器窗口的快捷键:   Ctrl+1  Ctrl+2  Ctrl+3
 
 ### (2)代码编辑
 
-* 代码行向左或向右缩进:   Ctrl+[ 、 Ctrl+]
-* 代码格式化:   Shift+Alt+F
-* 向上或向下移动一行:   Alt+Up 或 Alt+Down
-* 向上或向下复制一行:   Shift+Alt+Up 或 Shift+Alt+Down
-* 在当前行下方插入一行:   Ctrl+Enter
-* 在当前行上方插入一行:   Ctrl+Shift+Enter
+- 代码行向左或向右缩进:   Ctrl+[ 、 Ctrl+]
+- 代码格式化:   Shift+Alt+F
+- 向上或向下移动一行:   Alt+Up 或 Alt+Down
+- 向上或向下复制一行:   Shift+Alt+Up 或 Shift+Alt+Down
+- 在当前行下方插入一行:   Ctrl+Enter
+- 在当前行上方插入一行:   Ctrl+Shift+Enter
 
 ### (3)显示相关
 
-* 全屏显示(再次按则恢复):   F11
-* 放大或缩小(以编辑器左上角为基准):   Ctrl +/-
-* 侧边栏显示或隐藏： Ctrl+B
-* 显示 Debug:    Ctrl+Shift+D
-* 显示搜索(光标切到侧边栏中才有效):   Ctrl+Shift+F
-* 显示 Output:    Ctrl+Shift+U
+- 全屏显示(再次按则恢复):   F11
+- 放大或缩小(以编辑器左上角为基准):   Ctrl +/-
+- 侧边栏显示或隐藏： Ctrl+B
+- 显示 Debug:    Ctrl+Shift+D
+- 显示搜索(光标切到侧边栏中才有效):   Ctrl+Shift+F
+- 显示 Output:    Ctrl+Shift+U
 
 # Golang变量
 
 ## 1. 变量使用的基本步骤
 
-* 声明变量
-* 赋值
-* 使用
+- 声明变量
+- 赋值
+- 使用
 
 ## 2. 变量快速入门
 
 ### (1)定义单个变量
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main()  {
+func main()  {
 
-        // Golang的变量使用方式1
-        // 第一种：指定变量类型，声明后若不赋值，使用默认值
-        // int 的默认值是0
-        var i int
-        fmt. Println("i=", i)
+    // Golang的变量使用方式1
+    // 第一种：指定变量类型，声明后若不赋值，使用默认值
+    // int 的默认值是0
+    var i int
+    fmt. Println("i=", i)
 
-        // 第二种：根据值自行判定变量类型（类型推导）
-        var num = 10.11
-        fmt.Println("num=", num)
+    // 第二种：根据值自行判定变量类型（类型推导）
+    var num = 10.11
+    fmt.Println("num=", num)
 
-        // 第三种：省略var，注意 := 左侧的变量不应该是已经声明过的，否则会导致编译错误
-        // 下面的方式等价 var name string name = "tom"
-        name := "tom"
-        fmt.Println("name=", name)
+    // 第三种：省略var，注意 := 左侧的变量不应该是已经声明过的，否则会导致编译错误
+    // 下面的方式等价 var name string name = "tom"
+    name := "tom"
+    fmt.Println("name=", name)
 
-    }
+}
+```
 
 ### (2)定义多个变量和定义全局变量
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    // 定义全局变量
-    var n1 = 100
-    var n2 = 200
-    var name = "jack"
-    // 上面的声明方式，也可以改成一次性声明
-    var (
-        n3 = 300
-        n4 = 900
-        name2 = "mary"
-    )
+// 定义全局变量
+var n1 = 100
+var n2 = 200
+var name = "jack"
+// 上面的声明方式，也可以改成一次性声明
+var (
+    n3 = 300
+    n4 = 900
+    name2 = "mary"
+)
 
-    func main()  {
+func main()  {
 
-        // Golang如何一次性声明多个变量
-        // var n1, n2, n3 int
-        // fmt. Println("n1=", n1, "n2=", n2, "n3=", n3)
+    // Golang如何一次性声明多个变量
+    // var n1, n2, n3 int
+    // fmt. Println("n1=", n1, "n2=", n2, "n3=", n3)
 
-        
+    
 
-        // 一次性声明多个变量的方式2
-        // var n1, name, n2 = 100, "tom", 888
-        // fmt. Println("n1=", n1, "name=", name, "n2=", n2)
+    // 一次性声明多个变量的方式2
+    // var n1, name, n2 = 100, "tom", 888
+    // fmt. Println("n1=", n1, "name=", name, "n2=", n2)
 
-        
+    
 
-        // 一次性声明多个变量的方式3，同样可以使用类型推导
-        // n1, name, n3 := 100, "tom", 888
-        // fmt. Println("n1=", n1, "name=", name, "n3=", n3)
-        fmt. Println("n3=", n3, "name=", name, "n4=", n4)
+    // 一次性声明多个变量的方式3，同样可以使用类型推导
+    // n1, name, n3 := 100, "tom", 888
+    // fmt. Println("n1=", n1, "name=", name, "n3=", n3)
+    fmt. Println("n3=", n3, "name=", name, "n4=", n4)
 
-        
+    
 
-    }
+}
+```
 
 ## 3. 变量使用的注意事项
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    // 变量的注意事项
+// 变量的注意事项
 
-    func main()  {
+func main()  {
 
-        
+    
 
-        // 该区域的数据值可以在同一类型范围内不断变化
-        var i int = 10
-        i = 30
-        i = 50
-        fmt. Println("i", i)
-        // i = 1.2 //int, 原因是不能改变数据类型
+    // 该区域的数据值可以在同一类型范围内不断变化
+    var i int = 10
+    i = 30
+    i = 50
+    fmt. Println("i", i)
+    // i = 1.2 //int, 原因是不能改变数据类型
 
-        // 变量在同一个作用域（在一个函数或者代码块）内不能重名
-        // var i int = 59
-        // i := 99
+    // 变量在同一个作用域（在一个函数或者代码块）内不能重名
+    // var i int = 59
+    // i := 99
 
-    }
+}
+```
 
-* 该区域的数据值可以在同一类型范围内不断变化
-* 变量在同一个作用域内不能重名
-* 变量 = 变量名 + 值 + 数据类型
-* Golang的变量如果没有赋初始值，编译器会使用默认值，比如int默认值0、string默认值为空
+- 该区域的数据值可以在同一类型范围内不断变化
+- 变量在同一个作用域内不能重名
+- 变量 = 变量名 + 值 + 数据类型
+- Golang的变量如果没有赋初始值，编译器会使用默认值，比如int默认值0、string默认值为空
 
 ## 4. 程序中+号的使用
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main()  {
+func main()  {
 
-        var i = 1
-        var j = 2
-        var r = i + j //做加法运算
-        fmt. Println("r=", r)
+    var i = 1
+    var j = 2
+    var r = i + j //做加法运算
+    fmt. Println("r=", r)
 
-        var str1 = "hello "
-        var str2 = "world"
-        var res = str1 + str2  //做拼接操作
-        fmt. Println("res=", res)
+    var str1 = "hello "
+    var str2 = "world"
+    var res = str1 + str2  //做拼接操作
+    fmt. Println("res=", res)
 
-    }
+}
+```
 
-* 当左右两边都是数值型时，则做法加法运算
-* 当左右两边都是字符串，则做字符串拼接
+- 当左右两边都是数值型时，则做法加法运算
+- 当左右两边都是字符串，则做字符串拼接
 
 ## 5. 数据类型
 
 ### （1）整数类型
 
-    package main
+```golang
+package main
 
-    // import "fmt"
-    // import "unsafe"
+// import "fmt"
+// import "unsafe"
 
-    import (
-        "fmt"
-        "unsafe"
-    )
+import (
+    "fmt"
+    "unsafe"
+)
 
-    // 演示golang中整数类型使用
+// 演示golang中整数类型使用
 
-    func main()  {
+func main()  {
 
-        var i int = 1
-        fmt. Println("i=", i)
+    var i int = 1
+    fmt. Println("i=", i)
 
-        
+    
 
-        // 测试一下in8的范围 -128~127
-        // 其他的 int16, int32, int64, 类推。。。
-        var j int8 = 127
-        fmt. Println("j=", j)
+    // 测试一下in8的范围 -128~127
+    // 其他的 int16, int32, int64, 类推。。。
+    var j int8 = 127
+    fmt. Println("j=", j)
 
-        // 测试一下unit8的范围， 其他的uint16, uint32, unit64一样
-        var k uint8 = 255
-        fmt.Println("k=", k)
+    // 测试一下unit8的范围， 其他的uint16, uint32, unit64一样
+    var k uint8 = 255
+    fmt.Println("k=", k)
 
-        // int, unint, rune, byte的使用
-        var a int = 8900
-        fmt.Println("a=", a)
-        var b uint = 1
-        var c byte = 255
-        fmt.Println("b=", b, "c=", c)
+    // int, unint, rune, byte的使用
+    var a int = 8900
+    fmt.Println("a=", a)
+    var b uint = 1
+    var c byte = 255
+    fmt.Println("b=", b, "c=", c)
 
-        // 整型的使用细节
-        var n1 = 100 // ? n1 是什么类型
-        // 在这里我们介绍一下如何查看某个变量的数据类型
-        // fmt.Print()可以用于做格式化输出
-        fmt.Printf("n1 的类型%T", n1)
+    // 整型的使用细节
+    var n1 = 100 // ? n1 是什么类型
+    // 在这里我们介绍一下如何查看某个变量的数据类型
+    // fmt.Print()可以用于做格式化输出
+    fmt.Printf("n1 的类型%T", n1)
 
-        // 如何在程序查看某个变量的占用字节大小和数据类型（使用较多）
-        var n2 int64 = 10
-        // unsage.Sizeof(n2) 是unsafe包的一个函数，可以返回n1变量占用的字节数
-        fmt.Printf("n2 的类型%T, n2占用的字节数是%d \n", n2, unsafe.Sizeof(n2))
+    // 如何在程序查看某个变量的占用字节大小和数据类型（使用较多）
+    var n2 int64 = 10
+    // unsage.Sizeof(n2) 是unsafe包的一个函数，可以返回n1变量占用的字节数
+    fmt.Printf("n2 的类型%T, n2占用的字节数是%d \n", n2, unsafe.Sizeof(n2))
 
-        // Golang程序中整型变量在使用时，遵守保小不保大的原则，即：在保证程序正确运行下，尽量使用占用空间小的数据类型[如：年龄]
-        var age byte = 90
-        fmt. Printf("age= %d", age)
+    // Golang程序中整型变量在使用时，遵守保小不保大的原则，即：在保证程序正确运行下，尽量使用占用空间小的数据类型[如：年龄]
+    var age byte = 90
+    fmt. Printf("age= %d", age)
 
-    }
+}
+```
 
-* Golang个整数类型分：有符号和无符号，int uint的大小和系统有关
-* Golang的整型默认声明为int型
-* 如何在程序查看摸个变量的字节大小和数据类型
-* Golang程序中整型变量在使用时，遵守保小不保大的原则，即：在保证程序正确运行下，尽量使用占用空间小的数据类型[如：年龄]
-* bit：计算机中的最小存储单位，byte：计算机中基本存储单元[二进制在详细说] 1 byte = 8 bit
+- Golang个整数类型分：有符号和无符号，int uint的大小和系统有关
+- Golang的整型默认声明为int型
+- 如何在程序查看摸个变量的字节大小和数据类型
+- Golang程序中整型变量在使用时，遵守保小不保大的原则，即：在保证程序正确运行下，尽量使用占用空间小的数据类型[如：年龄]
+- bit：计算机中的最小存储单位，byte：计算机中基本存储单元[二进制在详细说] 1 byte = 8 bit
 
 ### （2）浮点类型
 
-    package main
+```golang
+package main
 
-    import (
-        "fmt"
-    )
+import (
+    "fmt"
+)
 
-    // 演示golang中小数类型使用
+// 演示golang中小数类型使用
 
-    func main()  {
+func main()  {
 
-        var price float32 = 89.12
-        fmt. Println("price=", price)
-        var num1 float32 = -0.00089
-        var num2 float32 = -7809656.09
-        fmt. Println("num1=", num1, "num2=", num2)
+    var price float32 = 89.12
+    fmt. Println("price=", price)
+    var num1 float32 = -0.00089
+    var num2 float32 = -7809656.09
+    fmt. Println("num1=", num1, "num2=", num2)
 
-        // 尾数部分可能丢失，造成精度损失。-123.0000901
-        var num3 float32 = -123.0000901
-        var num4 float64 = -123.0000901
-        fmt.Println("num3=", num3, "num4=", num4)
+    // 尾数部分可能丢失，造成精度损失。-123.0000901
+    var num3 float32 = -123.0000901
+    var num4 float64 = -123.0000901
+    fmt.Println("num3=", num3, "num4=", num4)
 
-        // Golang的浮点型默认声明为float64类型
-        var num5 = 1.1
-        fmt.Printf("num5的数据类型是%T \n", num5)
+    // Golang的浮点型默认声明为float64类型
+    var num5 = 1.1
+    fmt.Printf("num5的数据类型是%T \n", num5)
 
-        // 十进制数形式，如： 5.12    .512（必须有小数点）
-        num6 := 5.12
-        num7 := .123 // => 0.123
-        fmt. Println("num6=", num6, "num7=", num7)
+    // 十进制数形式，如： 5.12    .512（必须有小数点）
+    num6 := 5.12
+    num7 := .123 // => 0.123
+    fmt. Println("num6=", num6, "num7=", num7)
 
-        
+    
 
-        // 科学计数法形式
-        num8 := 5.1234e2 // 5.1234 * 10的2次方
-        num9 := 5.1234E2 // 5.1234 * 10的2次方
-        num10 := 5.1234E-2 // 5.1234 * 10的-2次方
-        fmt. Println("num8=", num8, "num9=", num9, "num10=", num10)
+    // 科学计数法形式
+    num8 := 5.1234e2 // 5.1234 * 10的2次方
+    num9 := 5.1234E2 // 5.1234 * 10的2次方
+    num10 := 5.1234E-2 // 5.1234 * 10的-2次方
+    fmt. Println("num8=", num8, "num9=", num9, "num10=", num10)
 
-        
+    
 
-    }
+}
+```
 
 ### （3）字符类型：char
 
-    package main
+```golang
+package main
 
-    import (
-        "fmt"
-    )
+import (
+    "fmt"
+)
 
-    // 演示golang中字符类型使用
+// 演示golang中字符类型使用
 
-    func main() {
+func main() {
 
-        var c1 byte = 'a'
-        var c2 byte = '0' // 字符的0
+    var c1 byte = 'a'
+    var c2 byte = '0' // 字符的0
 
-        // 当我们直接输出byte值，就是输出了对应字符的码值
-        fmt.Println("c1=", c1)
-        fmt.Println("c2=", c2)
-        // 如果我们希望输出对应字符串，需要使用格式化输出
-        fmt.Printf("c1=%c c2=%c \n", c1, c2)
+    // 当我们直接输出byte值，就是输出了对应字符的码值
+    fmt.Println("c1=", c1)
+    fmt.Println("c2=", c2)
+    // 如果我们希望输出对应字符串，需要使用格式化输出
+    fmt.Printf("c1=%c c2=%c \n", c1, c2)
 
-        // var c3 byte = '北' // overflow溢出
-        var c3 int = '北' // overflow溢出
-        fmt.Printf("c3=%c c3对应码值=%d \n", c3, c3)
+    // var c3 byte = '北' // overflow溢出
+    var c3 int = '北' // overflow溢出
+    fmt.Printf("c3=%c c3对应码值=%d \n", c3, c3)
 
-        // 可以直接给某个变量赋一个数字，然后按格式化输出时%c，会输出改数字对应的unicode字符
-        var c4 int = 120 // 22269 -> "国" 120 -> "x"
-        fmt.Printf("c4=%c \n", c4)
+    // 可以直接给某个变量赋一个数字，然后按格式化输出时%c，会输出改数字对应的unicode字符
+    var c4 int = 120 // 22269 -> "国" 120 -> "x"
+    fmt.Printf("c4=%c \n", c4)
 
-        // 字符类型是可以进行运算的，相当于一个整数，因为他都有对应的Unicode码
-        var n1 = 10 + 'a' // 10 + 97 = 107
-        fmt. Println("n1=", n1)
+    // 字符类型是可以进行运算的，相当于一个整数，因为他都有对应的Unicode码
+    var n1 = 10 + 'a' // 10 + 97 = 107
+    fmt. Println("n1=", n1)
 
-    }
+}
+```
 
 代码说明：
 
-* 如果我们保存的字符在ASCII表中， 比如[0-1, a-z, A-Z]直接可以保存到byte
-* 如果我们保存的字符对应码值大于255，这时我们可以考虑使用int类型保存
-* 如果我们需要安装字符的方式输出，这时我们需要格式化输出，即fmt. Printf("%c", c1)
+- 如果我们保存的字符在ASCII表中， 比如[0-1, a-z, A-Z]直接可以保存到byte
+- 如果我们保存的字符对应码值大于255，这时我们可以考虑使用int类型保存
+- 如果我们需要安装字符的方式输出，这时我们需要格式化输出，即fmt. Printf("%c", c1)
 
 字符类型使用细节：
 
-* 字符常量是使用单引号('')括起来的单个字符。例如：var c1 byte = 'a' var c2 int = '中' var c3 byte = '9'
-* Go中允许使用转义字符'\'来将其后的字符转换为特殊字符型常量。例如，var c3 char = '\n' // '\n'表示换行符
-* Go语言的字符使用UTF-8编码
-
+- 字符常量是使用单引号('')括起来的单个字符。例如：var c1 byte = 'a' var c2 int = '中' var c3 byte = '9'
+- Go中允许使用转义字符'\'来将其后的字符转换为特殊字符型常量。例如，var c3 char = '\n' // '\n'表示换行符
+- Go语言的字符使用UTF-8编码
+  
     英文字母-1个字节 汉字-3个字节
-
-* 在GO中，字符的本质是一个整数，直接输出是，是该字符对应的UTF-8编码的码值
-* 可以直接给某个变量赋一个数字，然后按格式化输出时%c，会输出改数字对应的unicode字符
-* 字符类型是可以进行运算的，相当于一个整数，因为他都有对应的Unicode码
+- 在GO中，字符的本质是一个整数，直接输出是，是该字符对应的UTF-8编码的码值
+- 可以直接给某个变量赋一个数字，然后按格式化输出时%c，会输出改数字对应的unicode字符
+- 字符类型是可以进行运算的，相当于一个整数，因为他都有对应的Unicode码
 
 字符类型本质探讨：
 
-* 字符类型存储到计算机中， 需要将字符类型对应的码值找出来（整数）找出来
-
+- 字符类型存储到计算机中， 需要将字符类型对应的码值找出来（整数）找出来
+  
     存储： 字符 ---> 对应码值 ---> 二进制 ----> 存储
-    读取： 二进制 ---> 码值 ---> 字符 ---> 读取
-
-* 字符和码值的对应关系是通过字符编码表决定的（是规定好）
-* Go语言的编码都统一成了utf-8，非常的方便，很统一，再也没有编码乱码的困扰
+  读取： 二进制 ---> 码值 ---> 字符 ---> 读取
+- 字符和码值的对应关系是通过字符编码表决定的（是规定好）
+- Go语言的编码都统一成了utf-8，非常的方便，很统一，再也没有编码乱码的困扰
 
 ### （4）布尔类型：bool
 
-    package main
+```golang
+package main
 
-    import (
-        "fmt"
-        "unsafe"
-    )
+import (
+    "fmt"
+    "unsafe"
+)
 
-    func main()  {
+func main()  {
 
-        var b = false
-        fmt. Println("b=", b)
-        // 注意事项
-        // 1.bool类型占用存储空间是1个字节
-        fmt. Printf("b占用存储空间是：%d", unsafe. Sizeof(b))
-        // 2.bool类型只能取值true或者false
+    var b = false
+    fmt. Println("b=", b)
+    // 注意事项
+    // 1.bool类型占用存储空间是1个字节
+    fmt. Printf("b占用存储空间是：%d", unsafe. Sizeof(b))
+    // 2.bool类型只能取值true或者false
 
-    }
+}
+```
 
-* 布尔类型也叫bool类型，bool类型数据只允许取值true和false
-* bool类型占1个字节
-* bool类型适用于逻辑运算，一般用于程序流程控制[注：这个后面会详细介绍]
-
+- 布尔类型也叫bool类型，bool类型数据只允许取值true和false
+- bool类型占1个字节
+- bool类型适用于逻辑运算，一般用于程序流程控制[注：这个后面会详细介绍]
+  
     1> if 条件控制语句:
-    2> for 循环控制语句:
+  2> for 循环控制语句:
 
 ### （5）字符串类型：string
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main()  {
+func main()  {
 
-        
+    
 
-        // string的基本使用
-        var address string = "北京长城 110 hello world"
-        fmt. Println("address=", address)
+    // string的基本使用
+    var address string = "北京长城 110 hello world"
+    fmt. Println("address=", address)
 
-        // 字符穿一旦赋值了，字符串就不能修改了，在Go语言中字符串是不可变的
-        // var str string = 'hello' // invalid character literal (more than one character)go
-        // str[0] = "a" // cannot assign to str[0]go
-        // fmt.Println("str=", str)
+    // 字符穿一旦赋值了，字符串就不能修改了，在Go语言中字符串是不可变的
+    // var str string = 'hello' // invalid character literal (more than one character)go
+    // str[0] = "a" // cannot assign to str[0]go
+    // fmt.Println("str=", str)
 
-        // 字符串的两种表示形式
-        // 1> 双引号， 会识别转义字符
-        str2 := "abc\nabc"
-        fmt.Println(str2)
-        // 2> 反引号， 以字符串的原生形式输出，包括换行和特殊字符，可以实现防止攻击、输出源代码等效果
-        str3 := `* Go语言的字符串使用UTF-8编码标识Unicode文本，这样Golang统一使用UTF-8编码
+    // 字符串的两种表示形式
+    // 1> 双引号， 会识别转义字符
+    str2 := "abc\nabc"
+    fmt.Println(str2)
+    // 2> 反引号， 以字符串的原生形式输出，包括换行和特殊字符，可以实现防止攻击、输出源代码等效果
+    str3 := `* Go语言的字符串使用UTF-8编码标识Unicode文本，这样Golang统一使用UTF-8编码
 
-        * 字符穿一旦赋值了，字符串就不能修改了，在Go语言中字符串是不可变的
-        * 字符串的两种表示形式`
+    * 字符穿一旦赋值了，字符串就不能修改了，在Go语言中字符串是不可变的
+    * 字符串的两种表示形式`
 
-        fmt.Println(str3)
+    fmt.Println(str3)
 
-        var str = "hello " + "world"
-        str += " hahaha"
-        fmt. Println(str)
-        // 当一个拼接的操作很长时，怎么办，可以分行写， 需要将'+'保留在上一行
-        var str4 = "hello " + "world" + "hello " + 
-        "world" + "hello " + "world" + "hello " + 
-        "world" + "hello " + "world"
-        fmt. Println(str4)
+    var str = "hello " + "world"
+    str += " hahaha"
+    fmt. Println(str)
+    // 当一个拼接的操作很长时，怎么办，可以分行写， 需要将'+'保留在上一行
+    var str4 = "hello " + "world" + "hello " + 
+    "world" + "hello " + "world" + "hello " + 
+    "world" + "hello " + "world"
+    fmt. Println(str4)
 
-    }
+}
+```
 
-* Go语言的字符串使用UTF-8编码标识Unicode文本，这样Golang统一使用UTF-8编码
-* 字符穿一旦赋值了，字符串就不能修改了，在Go语言中字符串是不可变的
-* 字符串的两种表示形式
-
+- Go语言的字符串使用UTF-8编码标识Unicode文本，这样Golang统一使用UTF-8编码
+- 字符穿一旦赋值了，字符串就不能修改了，在Go语言中字符串是不可变的
+- 字符串的两种表示形式
+  
     1> 双引号， 会识别转义字符
-    2> 反引号， 以字符串的原生形式输出，包括换行和特殊字符，可以实现防止攻击、输出源代码等效果
-
-* 字符串拼接方式
-* 当一个拼接的操作很长时，怎么办，可以分行写
+  2> 反引号， 以字符串的原生形式输出，包括换行和特殊字符，可以实现防止攻击、输出源代码等效果
+- 字符串拼接方式
+- 当一个拼接的操作很长时，怎么办，可以分行写
 
 ### （5）基本数据类型相互转换
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main()  {
+func main()  {
 
-        var i int32 = 100
-        // 希望将 i --> float
-        var n1 float32 = float32(i)
-        fmt. Println(n1)
-        var n2 int8 = int8(i)
-        fmt. Println(n2)
-        var n3 int64 = int64(i) // 低精度 -> 高精度
-        fmt. Println(n3)
+    var i int32 = 100
+    // 希望将 i --> float
+    var n1 float32 = float32(i)
+    fmt. Println(n1)
+    var n2 int8 = int8(i)
+    fmt. Println(n2)
+    var n3 int64 = int64(i) // 低精度 -> 高精度
+    fmt. Println(n3)
 
-        // 在转换中，比如将 int8 【-128 --- 127】， 编译时不会报错
-        // 只是转换的结果是按溢出处理， 和我们希望的结果不一样
-        var num1 int64 = 999999
-        var num2 int8 = int8(num1)
-        fmt. Println(num2)
+    // 在转换中，比如将 int8 【-128 --- 127】， 编译时不会报错
+    // 只是转换的结果是按溢出处理， 和我们希望的结果不一样
+    var num1 int64 = 999999
+    var num2 int8 = int8(num1)
+    fmt. Println(num2)
 
-    }
+}
+```
 
 ### （5）基本数据类型和string的转换
 
 方式1：fmt. Sprintf("%参数", 表达式)
 
-* 参数需要和表达式的数据类型相匹配
-* fmt. Sprintf() 会返回转换后的字符串
+- 参数需要和表达式的数据类型相匹配
+- fmt. Sprintf() 会返回转换后的字符串
 
 方式2：使用strconv包的函数
 
 案例演示:
 
-    package main
+```golang
+package main
 
-    import (
-        "fmt"
-        "strconv"
-    )
+import (
+    "fmt"
+    "strconv"
+)
 
-    // 演示golang中基本数据联系转成string使用
+// 演示golang中基本数据联系转成string使用
 
-    func main()  {
+func main()  {
 
-        var num1 int = 99
-        var num2 float64 = 23.456
-        var b bool = true
-        var myChar byte = 'h'
-        var str string // 空的str
+    var num1 int = 99
+    var num2 float64 = 23.456
+    var b bool = true
+    var myChar byte = 'h'
+    var str string // 空的str
 
-        
+    
 
-        // 使用第一种方式来转换fmt. Sprintf方法
-        str = fmt. Sprintf("%d", num1)
-        fmt. Printf("str type %T str=%q \n", str, str)
+    // 使用第一种方式来转换fmt. Sprintf方法
+    str = fmt. Sprintf("%d", num1)
+    fmt. Printf("str type %T str=%q \n", str, str)
 
-        
+    
 
-        str = fmt. Sprintf("%f", num2)
-        fmt. Printf("str type %T str=%q \n", str, str)
+    str = fmt. Sprintf("%f", num2)
+    fmt. Printf("str type %T str=%q \n", str, str)
 
-        str = fmt.Sprintf("%t", b)
-        fmt.Printf("str type %T str=%q \n", str, str)
+    str = fmt.Sprintf("%t", b)
+    fmt.Printf("str type %T str=%q \n", str, str)
 
-        str = fmt.Sprintf("%c", myChar)
-        fmt.Printf("str type %T str=%q \n", str, str)
+    str = fmt.Sprintf("%c", myChar)
+    fmt.Printf("str type %T str=%q \n", str, str)
 
-        // 第二种方式 strconv 包的函数
-        var num3 int = 99
-        var num4 float64 = 23.456
-        var b2 bool = true
-        str = strconv. FormatInt(int64(num3), 10)
-        fmt. Printf("str type %T str=%q \n", str, str)
-        // strconv. FormatFloat(num4, 'f', 10, 64)
-        // 说明： f：格式 10：表示小数位保留10位 64：表示这个小数是float64
-        str = strconv. FormatFloat(num4, 'f', 10, 64)
-        fmt. Printf("str type %T str=%q \n", str, str)
+    // 第二种方式 strconv 包的函数
+    var num3 int = 99
+    var num4 float64 = 23.456
+    var b2 bool = true
+    str = strconv. FormatInt(int64(num3), 10)
+    fmt. Printf("str type %T str=%q \n", str, str)
+    // strconv. FormatFloat(num4, 'f', 10, 64)
+    // 说明： f：格式 10：表示小数位保留10位 64：表示这个小数是float64
+    str = strconv. FormatFloat(num4, 'f', 10, 64)
+    fmt. Printf("str type %T str=%q \n", str, str)
 
-        
+    
 
-        str = strconv. FormatBool(b2)
-        fmt. Printf("str type %T str=%q \n", str, str)
+    str = strconv. FormatBool(b2)
+    fmt. Printf("str type %T str=%q \n", str, str)
 
-        // strconv包中有一个函数Itoa
-        var num5 int64 = 4567
-        str = strconv. Itoa(int(num5))
-        fmt. Printf("str type %T str=%q \n", str, str)
+    // strconv包中有一个函数Itoa
+    var num5 int64 = 4567
+    str = strconv. Itoa(int(num5))
+    fmt. Printf("str type %T str=%q \n", str, str)
 
-    }
+}
+```
 
 ### （6）string转基本数据类型的
 
-    package main
+```golang
+package main
 
-    import (
-        "fmt"
-        "strconv"
-    )
+import (
+    "fmt"
+    "strconv"
+)
 
-    // 演示go中string转成基本数据类型
-    func main(){
-        str := "true" 
-        var b bool
-        // b, _ = strconv. ParseBool(str)
-        // 说明
-        // 1.strconv. ParseBool(str) 函数会返回两个值(value bool, err error)
-        // 因为只想获取到value bool, 不想获取err 所以使用 _ 忽略
-        b, _ = strconv. ParseBool(str)
-        fmt. Printf("b type %T b = %v \n", b, b)
+// 演示go中string转成基本数据类型
+func main(){
+    str := "true" 
+    var b bool
+    // b, _ = strconv. ParseBool(str)
+    // 说明
+    // 1.strconv. ParseBool(str) 函数会返回两个值(value bool, err error)
+    // 因为只想获取到value bool, 不想获取err 所以使用 _ 忽略
+    b, _ = strconv. ParseBool(str)
+    fmt. Printf("b type %T b = %v \n", b, b)
 
-        var str2 string = "123456789"
-        var n1 int64
-        n1, _ = strconv. ParseInt(str2, 10, 64)
-        n2 := int(n1)
-        fmt. Printf("n1 type %T n1=%v \n", n1, n1)
-        fmt. Printf("n2 type %T n2=%v \n", n2, n2)
+    var str2 string = "123456789"
+    var n1 int64
+    n1, _ = strconv. ParseInt(str2, 10, 64)
+    n2 := int(n1)
+    fmt. Printf("n1 type %T n1=%v \n", n1, n1)
+    fmt. Printf("n2 type %T n2=%v \n", n2, n2)
 
-        
+    
 
-        var str3 string = "123.456"
-        var f1 float64
-        f1, _ = strconv. ParseFloat(str3, 64)
-        f2 := float32(f1)
-        fmt. Printf("f1 type %T f1=%v \n", f1, f1)
-        fmt. Printf("f2 type %T f2=%v \n", f2, f2)
+    var str3 string = "123.456"
+    var f1 float64
+    f1, _ = strconv. ParseFloat(str3, 64)
+    f2 := float32(f1)
+    fmt. Printf("f1 type %T f1=%v \n", f1, f1)
+    fmt. Printf("f2 type %T f2=%v \n", f2, f2)
 
-        // 注意：
-        var str4 string = "hello"
-        var n3 int64 = 11
-        n3, _ = strconv. ParseInt(str4, 10, 64)
-        fmt. Printf("n3 type %T n3=%v", n3, n3)
+    // 注意：
+    var str4 string = "hello"
+    var n3 int64 = 11
+    n3, _ = strconv. ParseInt(str4, 10, 64)
+    fmt. Printf("n3 type %T n3=%v", n3, n3)
 
-    }
+}
+```
 
 ### （7）时间日期相关函数
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-13 23:27:29
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-13 23:46:25
-    * @FilePath: /src/chapter06/timefunc/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-13 23:27:29
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-13 23:46:25
+* @FilePath: /src/chapter06/timefunc/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "time"
-    )
-    func main()  {
-        now := time.Now()
-        fmt.Println(now)
-        fmt.Println(now.Year())
-        fmt.Println(int(now.Month()))
-        fmt.Println(now.Day())
-        fmt.Println(now.Hour())
-        fmt.Println(now.Minute())
-        fmt.Println(now.Second())
+import (
+    "fmt"
+    "time"
+)
+func main()  {
+    now := time.Now()
+    fmt.Println(now)
+    fmt.Println(now.Year())
+    fmt.Println(int(now.Month()))
+    fmt.Println(now.Day())
+    fmt.Println(now.Hour())
+    fmt.Println(now.Minute())
+    fmt.Println(now.Second())
 
-        // 格式化
-        const layout = "Jan 2, 2006 at 3:04pm (MST)"
-        fmt.Println(now.Format(layout))
-        fmt.Println(now.Format("2006/01/02 15:04:05"))
-        fmt.Println(now.Format("2006-01-02 15:04:05"))
-        fmt.Println(now.Format("2006-01-02"))
-        fmt.Println(now.Format("15:04:05"))
+    // 格式化
+    const layout = "Jan 2, 2006 at 3:04pm (MST)"
+    fmt.Println(now.Format(layout))
+    fmt.Println(now.Format("2006/01/02 15:04:05"))
+    fmt.Println(now.Format("2006-01-02 15:04:05"))
+    fmt.Println(now.Format("2006-01-02"))
+    fmt.Println(now.Format("15:04:05"))
 
-        // 时间戳
-        fmt.Println(now.Unix())
-        fmt.Println(now.UnixNano())
-    }
+    // 时间戳
+    fmt.Println(now.Unix())
+    fmt.Println(now.UnixNano())
+}
+```
 
 ### （8）内置函数
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-15 23:36:35
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-15 23:46:40
-    * @FilePath: /src/chapter06/buildinfunc/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-15 23:36:35
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-15 23:46:40
+* @FilePath: /src/chapter06/buildinfunc/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func main()  {
-        // len函数
-        fmt.Println(len("nihao"))
+import "fmt"
+func main()  {
+    // len函数
+    fmt.Println(len("nihao"))
 
-        // new函数
-        num1 := 100
-        fmt.Printf("num1的类型：%T, num1的值：%v, num1的地址：%v\n", num1, num1, &num1)
+    // new函数
+    num1 := 100
+    fmt.Printf("num1的类型：%T, num1的值：%v, num1的地址：%v\n", num1, num1, &num1)
 
-        num2 := new(int)
-        fmt.Printf("num2的类型：%T, num2的值：%v, num2的地址：%v\n", num2, num2, &num2)
-        *num2 = 100
-        fmt.Printf("num2指向的值是：%v\n", *num2)
-    }
+    num2 := new(int)
+    fmt.Printf("num2的类型：%T, num2的值：%v, num2的地址：%v\n", num2, num2, &num2)
+    *num2 = 100
+    fmt.Printf("num2指向的值是：%v\n", *num2)
+}
+```
 
 # 数组
 
 ## 1.基本介绍
 
-    var 数组名 [数组大小]数据类型
-    var a [2]int
-    赋初值：
-        a[0] = 1 
-        a[1] = 30
+```
+var 数组名 [数组大小]数据类型
+var a [2]int
+赋初值：
+    a[0] = 1 
+    a[1] = 30
+```
 
 ## 快速入门
 
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-18 21:44:37
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-20 11:29:52
+* @FilePath: /src/chapter07/arraydemo/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
+
+import "fmt"
+func main() {
     /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-18 21:44:37
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-20 11:29:52
-    * @FilePath: /src/chapter07/arraydemo/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+    一个养鸡场有6只鸡，他们的体重分别是3kg，5kg，1kg，3.4kg，2kg，50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组 
     */
-    package main
 
-    import "fmt"
-    func main() {
-        /*
-        一个养鸡场有6只鸡，他们的体重分别是3kg，5kg，1kg，3.4kg，2kg，50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组 
-        */
+    // 思路分析：定义留个变量，分别表示六只鸡的体重，然后求出和，然后求出平均值。
+    hen1 := 3.0
+    hen2 := 5.0
+    hen3 := 1.0
+    hen4 := 3.4
+    hen5 := 2.0
+    hen6 := 50.0
 
-        // 思路分析：定义留个变量，分别表示六只鸡的体重，然后求出和，然后求出平均值。
-        hen1 := 3.0
-        hen2 := 5.0
-        hen3 := 1.0
-        hen4 := 3.4
-        hen5 := 2.0
-        hen6 := 50.0
+    totalweight := hen1 + hen2 + hen3 + hen4 + hen5 + hen6  // invalid operation: hen1 + hen2 + hen3 + hen4 (mismatched types int and float64)go
+    avgweight := totalweight / 6
 
-        totalweight := hen1 + hen2 + hen3 + hen4 + hen5 + hen6  // invalid operation: hen1 + hen2 + hen3 + hen4 (mismatched types int and float64)go
-        avgweight := totalweight / 6
+    fmt.Printf("totalweight=%.2f \n", totalweight)
+    fmt.Printf("totalweight=%v avgweight=%v \n", totalweight, avgweight)
 
-        fmt.Printf("totalweight=%.2f \n", totalweight)
-        fmt.Printf("totalweight=%v avgweight=%v \n", totalweight, avgweight)
+    // 使用数组方式来解决
+    // 1.定义一个数组
+    var hens [6]float64
+    // 给数组的每个元素赋值
+    hens[0] = 3.0
+    hens[1] = 5.0
+    hens[2] = 1.0
+    hens[3] = 3.4
+    hens[4] = 2.0
+    hens[5] = 50.0
 
-        // 使用数组方式来解决
-        // 1.定义一个数组
-        var hens [6]float64
-        // 给数组的每个元素赋值
-        hens[0] = 3.0
-        hens[1] = 5.0
-        hens[2] = 1.0
-        hens[3] = 3.4
-        hens[4] = 2.0
-        hens[5] = 50.0
-
-        // 遍历数组求出总体重
-        totalweight2 := 0.0
-        for i := 0; i < len(hens); i++ {
-            totalweight2 += hens[i]
-        }
-        avgweight2 := totalweight2 / float64(len(hens))
-        fmt.Printf("hens[1:]=%v \n", hens[1:])
-        fmt.Printf("totalweight2=%.2f \n", totalweight2)
-        fmt.Printf("totalweight2=%v avgweight2=%v \n", totalweight2, avgweight2)
-
-        // 数组的初始化
-        var arr1 [3]int = [3]int{1,2,3}
-        fmt.Println(arr1)
-
-        var arr2 = [3]int{1,2,3}
-        fmt.Println(arr2)
-
-        var arr3 = [...]int{1,2,3}
-        fmt.Println(arr3)
-
-        var arr4 = [...]int{1:1,0:2,2:3}
-        fmt.Println(arr4)
+    // 遍历数组求出总体重
+    totalweight2 := 0.0
+    for i := 0; i < len(hens); i++ {
+        totalweight2 += hens[i]
     }
+    avgweight2 := totalweight2 / float64(len(hens))
+    fmt.Printf("hens[1:]=%v \n", hens[1:])
+    fmt.Printf("totalweight2=%.2f \n", totalweight2)
+    fmt.Printf("totalweight2=%v avgweight2=%v \n", totalweight2, avgweight2)
+
+    // 数组的初始化
+    var arr1 [3]int = [3]int{1,2,3}
+    fmt.Println(arr1)
+
+    var arr2 = [3]int{1,2,3}
+    fmt.Println(arr2)
+
+    var arr3 = [...]int{1,2,3}
+    fmt.Println(arr3)
+
+    var arr4 = [...]int{1:1,0:2,2:3}
+    fmt.Println(arr4)
+}
+```
 
 ## for-range
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-20 11:34:07
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-20 11:39:45
-    * @FilePath: /src/chapter07/arraydemo02/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-20 11:34:07
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-20 11:39:45
+* @FilePath: /src/chapter07/arraydemo02/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func main()  {
-        var arr1 []string = []string{"宋佳", "无用", "卢俊义"}
-        fmt.Println(arr1)
-        for index, value := range arr1{
-            fmt.Println(index, value)
-        }
+import "fmt"
+func main()  {
+    var arr1 []string = []string{"宋佳", "无用", "卢俊义"}
+    fmt.Println(arr1)
+    for index, value := range arr1{
+        fmt.Println(index, value)
     }
+}
+```
 
 ## 使用细节
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-20 11:45:59
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-20 12:00:43
-    * @FilePath: /src/chapter07/arraydetails/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-20 11:45:59
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-20 12:00:43
+* @FilePath: /src/chapter07/arraydetails/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func test(arr [3]int)  {
-        arr[0] = 77
-    }
-    func test1(arr *[3]int)  {
-        (*arr)[0] = 77
-    }
-    func main()  {
-        // 1. 数组的长度不能动态变化
-        arr1 := [3]int {1,2,3}
-        // arr1[3] = 4
-        fmt.Println(arr1)
+import "fmt"
+func test(arr [3]int)  {
+    arr[0] = 77
+}
+func test1(arr *[3]int)  {
+    (*arr)[0] = 77
+}
+func main()  {
+    // 1. 数组的长度不能动态变化
+    arr1 := [3]int {1,2,3}
+    // arr1[3] = 4
+    fmt.Println(arr1)
 
-        // 2. 不指定数组大小，并不是一个数组，而是一个切片slice
-        var arr2 []int
-        fmt.Printf("%T", arr2)
+    // 2. 不指定数组大小，并不是一个数组，而是一个切片slice
+    var arr2 []int
+    fmt.Printf("%T", arr2)
 
-        // 3. 数组中的元素可以是任意类型，但是不能混用
-        // arr1[2] = 4.4
-        // 4. Go的数组是值类型，在默认情况下是值传递,因此会进行值拷贝，数组见不会互相影响
-        arr3 := [3]int {11,22,33}
-        test(arr3)
-        fmt.Println(arr3)
-        test1(&arr3)
-        fmt.Println(arr3)
-    }
+    // 3. 数组中的元素可以是任意类型，但是不能混用
+    // arr1[2] = 4.4
+    // 4. Go的数组是值类型，在默认情况下是值传递,因此会进行值拷贝，数组见不会互相影响
+    arr3 := [3]int {11,22,33}
+    test(arr3)
+    fmt.Println(arr3)
+    test1(&arr3)
+    fmt.Println(arr3)
+}
+```
 
 # 切片
 
 ## 基本介绍
 
-* 切片的英文叫slice
-* 切片是数组的引用,因此切片是引用类型，在进行传递时候，遵循引用数据类型的规则
-* 切片的使用和数据基本相似，遍历切片、访问元素和长度获取和数组都是一样的
-* 切片的长度是可以变化的，因此切片是一个可以动态变化的数组
-* 定义：var 变量名 []类型
-* 从底层来讲，其实就是一个struct结构体,包含三个元素：指针或地址【ptr】、长度【len】、容量【cap】
+- 切片的英文叫slice
+- 切片是数组的引用,因此切片是引用类型，在进行传递时候，遵循引用数据类型的规则
+- 切片的使用和数据基本相似，遍历切片、访问元素和长度获取和数组都是一样的
+- 切片的长度是可以变化的，因此切片是一个可以动态变化的数组
+- 定义：var 变量名 []类型
+- 从底层来讲，其实就是一个struct结构体,包含三个元素：指针或地址【ptr】、长度【len】、容量【cap】
 
 ## 快速入门
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-20 12:16:01
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-20 12:39:29
-    * @FilePath: /src/chapter08/slicedemo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+ * @Author: wangju wangjuchn@outlook.com
+ * @Date: 2022-11-20 12:16:01
+ * @LastEditors: wangju wangjuchn@outlook.com
+ * @LastEditTime: 2023-01-24 17:58:32
+ * @FilePath: /src/chapter08/slicedemo01/main.go
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+package main
 
-    import "fmt"
-    func main()  {
-        // 1. 引用数组
-        var arr = [5]int{1,2,3,4,5}
-        var slice []int
-        slice = arr[1:3]
-        fmt.Println(slice)
-        fmt.Println(len(slice))
-        fmt.Println(cap(slice))
+import "fmt"
 
-        // 2. 通过make来创建
-        var slice2 []int = make([]int, 5, 10)
-        fmt.Println(slice2)
+func main() {
+	// 1. 引用数组
+	var arr = [5]int{1, 2, 3, 4, 5}
+	var slice []int
+	slice = arr[1:3]
+	fmt.Println(slice)
+	fmt.Println(len(slice))
+	fmt.Println(cap(slice))
 
-        // 3. 直接定义
-        var slice3 []int = []int{1,2,3}
-        fmt.Println(slice3)
-        fmt.Println(len(slice3))
-        fmt.Println(cap(slice3))
-    }
+	// 2. 通过make来创建
+	var slice2 []int = make([]int, 5, 10)
+	fmt.Printf("silce2的类型是:%T，silce2的值是：%v \n", slice2, slice2)
+
+	// 3.new
+	slice3 := new([]int)
+	*slice3 = []int{1, 2, 3}
+	fmt.Printf("silce3的类型是:%T，silce3的值是：%v \n", slice3, slice3)
+
+	// 4. 直接定义
+	var slice4 []int = []int{1, 2, 3}
+	fmt.Println(slice4, len(slice4), cap(slice4))
+}
+```
 
 ## 内置函数
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-20 12:50:40
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-20 12:55:56
-    * @FilePath: /src/chapter08/slicedemo02/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-20 12:50:40
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-20 12:55:56
+* @FilePath: /src/chapter08/slicedemo02/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func main()  {
-        slice := []int{1,2,3}
-        fmt.Println(slice)
-        fmt.Println(&slice[0])
+import "fmt"
+func main()  {
+    slice := []int{1,2,3}
+    fmt.Println(slice)
+    fmt.Println(&slice[0])
 
-        slice = append(slice, 4, 5, 6)
-        fmt.Println(slice)
-        fmt.Println(&slice[0])
+    slice = append(slice, 4, 5, 6)
+    fmt.Println(slice)
+    fmt.Println(&slice[0])
 
-        slice = append(slice, slice...)
-        fmt.Println(slice)
-        fmt.Println(&slice[0])
-    }
+    slice = append(slice, slice...)
+    fmt.Println(slice)
+    fmt.Println(&slice[0])
+}
+```
 
 # Map
 
 ## 快速入门
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-20 16:56:29
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-20 17:12:50
-    * @FilePath: /src/chapter09/mapdemo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-20 16:56:29
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-20 17:12:50
+* @FilePath: /src/chapter09/mapdemo01/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func main()  {
-        // map的声明和注意事项
-        var a map[string]string
-        a = make(map[string]string, 10)
-        a["no1"] = "bob"
-        a["no2"] = "bob2"
-        a["no3"] = "bob4"
-        a["no2"] = "bob3"
-        fmt.Println(a)
-    }
+import "fmt"
+func main()  {
+    // map的声明和注意事项
+    var a map[string]string
+    a = make(map[string]string, 10)
+    a["no1"] = "bob"
+    a["no2"] = "bob2"
+    a["no3"] = "bob4"
+    a["no2"] = "bob3"
+    fmt.Println(a)
+}
+```
 
 ## 快速上手
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-20 17:21:21
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-20 17:26:41
-    * @FilePath: /src/chapter09/mapuse/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-20 17:21:21
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-20 17:26:41
+* @FilePath: /src/chapter09/mapuse/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func main() {
-        // 方式一
-        var a map[string]string
-        a = make(map[string]string, 10)
-        a["no1"] = "bob"
-        a["no2"] = "bob2"
-        a["no3"] = "bob4"
-        a["no2"] = "bob3"
-        fmt.Println(a)
+import "fmt"
+func main() {
+    // 方式一
+    var a map[string]string
+    a = make(map[string]string, 10)
+    a["no1"] = "bob"
+    a["no2"] = "bob2"
+    a["no3"] = "bob4"
+    a["no2"] = "bob3"
+    fmt.Println(a)
 
-        // 方式二
-        cities := make(map[string]string)
-        cities["no1"] = "beijing"
-        cities["no2"] = "shanghai"
-        fmt.Println(cities)
+    // 方式二
+    cities := make(map[string]string)
+    cities["no1"] = "beijing"
+    cities["no2"] = "shanghai"
+    fmt.Println(cities)
 
-        // 方式三
-        heros := map[string]string {
-            "no1": "11",
-            "no2": "22",
-        }
-        fmt.Println(heros)
+    // 方式三
+    heros := map[string]string {
+        "no1": "11",
+        "no2": "22",
     }
+    fmt.Println(heros)
+}
+```
 
 ## 增删改查
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-20 17:30:06
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-20 17:33:12
-    * @FilePath: /src/chapter09/mapcrud/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-20 17:30:06
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-20 17:33:12
+* @FilePath: /src/chapter09/mapcrud/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func main()  {
-        cities := make(map[string]string)
-        // 新增
-        cities["no1"] = "beijing"
-        cities["no2"] = "shjanghai"
-        // 修改
-        cities["no2"] = "shanghai"
-        // 删除
-        delete(cities, "no1")
-        // key不存在，不会报错
-        delete(cities, "no4")
-        fmt.Println(cities)
-        // 查询
-        val, ok := cities["no1"]
-        fmt.Println(val, ok)
-    }
+import "fmt"
+func main()  {
+    cities := make(map[string]string)
+    // 新增
+    cities["no1"] = "beijing"
+    cities["no2"] = "shjanghai"
+    // 修改
+    cities["no2"] = "shanghai"
+    // 删除
+    delete(cities, "no1")
+    // key不存在，不会报错
+    delete(cities, "no4")
+    fmt.Println(cities)
+    // 查询
+    val, ok := cities["no1"]
+    fmt.Println(val, ok)
+}
+```
 
 ## for-range
 
-    *
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-20 17:38:24
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-20 17:40:11
-    * @FilePath: /src/chapter09/forrange/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-20 17:38:24
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-20 17:40:11
+* @FilePath: /src/chapter09/forrange/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func main() {
-        cities := make(map[string]string)
-        cities["no1"] = "shanghai"
-        cities["no2"] = "beijing"
-        fmt.Println(cities)
-        fo/r k, v := range cities {
-            fmt.Println(k, v)
-        }
+import "fmt"
+func main() {
+    cities := make(map[string]string)
+    cities["no1"] = "shanghai"
+    cities["no2"] = "beijing"
+    fmt.Println(cities)
+    fo/r k, v := range cities {
+        fmt.Println(k, v)
     }
+}
+```
 
 ## map切片
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-20 19:26:54
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-20 19:37:35
-    * @FilePath: /src/chapter09/mapslice/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-20 19:26:54
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-20 19:37:35
+* @FilePath: /src/chapter09/mapslice/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func main()  {
-        // monsters用于存放所有妖怪的信息：name和age
-        monsters := make([]map[string]string, 2)
-        if monsters[0] == nil{
-            monsters[0] = make(map[string]string, 2)
-            monsters[0]["name"] = "牛魔王"
-            monsters[0]["age"] = "20"
-        }
-        fmt.Println(monsters)
-        monsters = append(monsters, map[string]string{"name": "玉兔", "age": "300",})
-        monsters = append(monsters, map[string]string{"name": "玉兔2", "age": "300",})
-        monsters = append(monsters, map[string]string{"name": "玉兔3", "age": "300",})
-        fmt.Println(monsters)
+import "fmt"
+func main()  {
+    // monsters用于存放所有妖怪的信息：name和age
+    monsters := make([]map[string]string, 2)
+    if monsters[0] == nil{
+        monsters[0] = make(map[string]string, 2)
+        monsters[0]["name"] = "牛魔王"
+        monsters[0]["age"] = "20"
     }
+    fmt.Println(monsters)
+    monsters = append(monsters, map[string]string{"name": "玉兔", "age": "300",})
+    monsters = append(monsters, map[string]string{"name": "玉兔2", "age": "300",})
+    monsters = append(monsters, map[string]string{"name": "玉兔3", "age": "300",})
+    fmt.Println(monsters)
+}
+```
 
 ## map排序
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-20 19:47:37
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-20 19:54:07
-    * @FilePath: /src/chapter09/mapsort/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-20 19:47:37
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-20 19:54:07
+* @FilePath: /src/chapter09/mapsort/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "sort"
-    )
-    func main()  {
-        map1 := make(map[int]int, 10)
-        map1[10] = 100
-        map1[1] = 13
-        map1[4] = 56
-        map1[8] = 90
+import (
+    "fmt"
+    "sort"
+)
+func main()  {
+    map1 := make(map[int]int, 10)
+    map1[10] = 100
+    map1[1] = 13
+    map1[4] = 56
+    map1[8] = 90
 
-        fmt.Println(map1)
+    fmt.Println(map1)
 
-        var keys []int
-        for k, _ := range map1 {
-            keys = append(keys, k)
-        }
-        sort.Ints(keys)
-        fmt.Println(keys)
-
-        for _, v := range keys {
-            fmt.Println(map1[v])
-        }
+    var keys []int
+    for k, _ := range map1 {
+        keys = append(keys, k)
     }
+    sort.Ints(keys)
+    fmt.Println(keys)
+
+    for _, v := range keys {
+        fmt.Println(map1[v])
+    }
+}
+```
 
 # 结构体
 
 ## 定义结构体
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-26 22:13:40
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-26 22:24:16
-    * @FilePath: /src/chapter10/demo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-26 22:13:40
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-26 22:24:16
+* @FilePath: /src/chapter10/demo01/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    type Qimiao struct {
-        Name string
-        Age  int
-        Sex  bool
-        Hobbys []string
+import "fmt"
+type Qimiao struct {
+    Name string
+    Age  int
+    Sex  bool
+    Hobbys []string
+}
+func main()  {
+    // 方法一
+    var qm Qimiao
+    qm.Name = "qimiao"
+    qm.Age = 10
+    qm.Sex = true
+    qm.Hobbys = []string{"play", "Song"}
+    fmt.Println(qm)
+    // 方法二
+    qm2 := Qimiao{
+        Name: "qimiao",
+        Age:  10,
+        Sex:  true,
+        Hobbys: []string{"play", "sang"},
     }
-    func main()  {
-        // 方法一
-        var qm Qimiao
-        qm.Name = "qimiao"
-        qm.Age = 10
-        qm.Sex = true
-        qm.Hobbys = []string{"play", "Song"}
-        fmt.Println(qm)
-        // 方法二
-        qm2 := Qimiao{
-            Name: "qimiao",
-            Age:  10,
-            Sex:  true,
-            Hobbys: []string{"play", "sang"},
-        }
-        fmt.Println(qm2)
-        // 方法三
-        qm3 := Qimiao{"qimiao", 10, true, []string{"play", "sang"}}
-        fmt.Println(qm3)
-        // 方法四
-        qm4 := new(Qimiao)
-        qm4.Name = "qimiao"
-        fmt.Println(qm4)
-    }
+    fmt.Println(qm2)
+    // 方法三
+    qm3 := Qimiao{"qimiao", 10, true, []string{"play", "sang"}}
+    fmt.Println(qm3)
+    // 方法四
+    qm4 := new(Qimiao)
+    qm4.Name = "qimiao"
+    fmt.Println(qm4)
+}
+```
 
 ## 结构体的函数
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-26 22:13:40
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-26 23:00:20
-    * @FilePath: /src/chapter10/demo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-26 22:13:40
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-26 23:00:20
+* @FilePath: /src/chapter10/demo01/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    type Qimiao struct {
-        Name string
-        Age  int
-        Sex  bool
-        Hobbys []string
-        Home
-    }
-    type Home struct {
-        P string
-    }
-    
-    func (q *Qimiao) Song(name string)(retur string) {
-        fmt.Println(q.Name)
-        fmt.Println(name)
-        retur = "666"
-        return retur
-    }
-    
-    func (h *Home)Open()  {
-        fmt.Println("8888", h.P)
-    }
-    
-    func main()  {
-        var qm Qimiao
-        qm.Name = "qimiao"
-        qm.Age = 10
-        qm.Sex = true
-        qm.Hobbys = []string{"play", "Song"}
-        fmt.Println(qm)
-        restr := qm.Song("凤凰传奇")
-        fmt.Println(restr)
-        qm.Home.P = "nihao"
-        fmt.Println(qm)
-        qm.Home.Open()
-    }
+import "fmt"
+type Qimiao struct {
+    Name string
+    Age  int
+    Sex  bool
+    Hobbys []string
+    Home
+}
+type Home struct {
+    P string
+}
+
+func (q *Qimiao) Song(name string)(retur string) {
+    fmt.Println(q.Name)
+    fmt.Println(name)
+    retur = "666"
+    return retur
+}
+
+func (h *Home)Open()  {
+    fmt.Println("8888", h.P)
+}
+
+func main()  {
+    var qm Qimiao
+    qm.Name = "qimiao"
+    qm.Age = 10
+    qm.Sex = true
+    qm.Hobbys = []string{"play", "Song"}
+    fmt.Println(qm)
+    restr := qm.Song("凤凰传奇")
+    fmt.Println(restr)
+    qm.Home.P = "nihao"
+    fmt.Println(qm)
+    qm.Home.Open()
+}
+```
 
 ## map使用
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-20 22:07:05
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-20 22:15:36
-    * @FilePath: /src/chapter09/mapstruct/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-20 22:07:05
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-20 22:15:36
+* @FilePath: /src/chapter09/mapstruct/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
+import "fmt"
 
-    type Stu struct {
-        Name string
-        Age int
-        Address string
+type Stu struct {
+    Name string
+    Age int
+    Address string
 
+}
+func main()  {
+    students := make(map[string]Stu)
+    stu1 := Stu{"tom", 20, "shanghai"}
+    stu2 := Stu{"jack", 40, "shanghai"}
+    students["no1"] = stu1
+    students["no2"] = stu2
+    fmt.Println(students)
+    
+    for k, v := range students {
+        fmt.Println("==============")
+        fmt.Println("学号：", k)
+        fmt.Println("姓名：", v.Name)
+        fmt.Println("年龄：", v.Age)
+        fmt.Println("地址：", v.Address)
+        fmt.Println("==============")
     }
-    func main()  {
-        students := make(map[string]Stu)
-        stu1 := Stu{"tom", 20, "shanghai"}
-        stu2 := Stu{"jack", 40, "shanghai"}
-        students["no1"] = stu1
-        students["no2"] = stu2
-        fmt.Println(students)
-        
-        for k, v := range students {
-            fmt.Println("==============")
-            fmt.Println("学号：", k)
-            fmt.Println("姓名：", v.Name)
-            fmt.Println("年龄：", v.Age)
-            fmt.Println("地址：", v.Address)
-            fmt.Println("==============")
-        }
-    }
+}
+```
 
 # interface
 
 ## 快速入门
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-26 23:03:08
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-27 21:34:26
-    * @FilePath: /src/chapter11/demo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-26 23:03:08
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-27 21:34:26
+* @FilePath: /src/chapter11/demo01/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    type Animal interface {
-        Eat()
-        Run()
-    }
-    type Cat struct {
-        Name string
-        Sex bool
-    }
-    type Dog struct {
-        Name string
-    }
-    func (c Cat) Run() {
-        fmt.Println(c.Name, "开始跑")
-    }
-    func (c Cat) Eat()  {
-        fmt.Println(c.Name, "开始吃")
-    }
+import "fmt"
+type Animal interface {
+    Eat()
+    Run()
+}
+type Cat struct {
+    Name string
+    Sex bool
+}
+type Dog struct {
+    Name string
+}
+func (c Cat) Run() {
+    fmt.Println(c.Name, "开始跑")
+}
+func (c Cat) Eat()  {
+    fmt.Println(c.Name, "开始吃")
+}
 
-    func (d Dog) Eat()  {
-        fmt.Println(d.Name, "开始吃")
-    }
-    func (d Dog) Run()  {
-        fmt.Println(d.Name, "开始跑")
-    }
+func (d Dog) Eat()  {
+    fmt.Println(d.Name, "开始吃")
+}
+func (d Dog) Run()  {
+    fmt.Println(d.Name, "开始跑")
+}
 
-    var L Animal
-    func Myfunc(a Animal)  {
-        // a.Run() 
-        // a.Eat() 
-        L = a
+var L Animal
+func Myfunc(a Animal)  {
+    // a.Run() 
+    // a.Eat() 
+    L = a
+}
+func main()  {
+    var a Animal
+    a = Cat{
+        "cat",
+        true,
     }
-    func main()  {
-        var a Animal
-        a = Cat{
-            "cat",
-            true,
-        }
-        a.Run()
-        a.Eat()
+    a.Run()
+    a.Eat()
 
-        Myfunc(a)
-        L.Run()
-    }
+    Myfunc(a)
+    L.Run()
+}
+```
 
 # goroutine
 
 ## 基本介绍
 
 在调用一个方法的时候，在前面加一个go就是goroutine，他会让方法异步执行
+
 ## 快速入门
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-26 23:03:08
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-27 21:50:05
-    * @FilePath: /src/chapter11/demo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-26 23:03:08
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-27 21:50:05
+* @FilePath: /src/chapter11/demo01/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "sync"
-    )
-    func main()  {
-        // goroutine
-        // 在调用一个方法的时候，在前面加一个go就是goroutine，他会让方法异步执行
-        var wg sync.WaitGroup
-        wg.Add(1)
-        go Run(&wg)
-        wg.Wait()
-    }
-    func Run(wg *sync.WaitGroup)  {
-        defer wg.Done()
-        fmt.Println("running!")
-    }
+import (
+    "fmt"
+    "sync"
+)
+func main()  {
+    // goroutine
+    // 在调用一个方法的时候，在前面加一个go就是goroutine，他会让方法异步执行
+    var wg sync.WaitGroup
+    wg.Add(1)
+    go Run(&wg)
+    wg.Wait()
+}
+func Run(wg *sync.WaitGroup)  {
+    defer wg.Done()
+    fmt.Println("running!")
+}
+```
 
 # channel
 
 ## 基本介绍
+
 goroutine之间通讯的桥梁
 
 ## 快速入门
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-27 22:00:57
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-27 22:41:01
-    * @FilePath: /src/chapter12/demo02/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-27 22:00:57
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-27 22:41:01
+* @FilePath: /src/chapter12/demo02/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        _ "sync"
-    )
+import (
+    "fmt"
+    _ "sync"
+)
 
-    func main() {
-        c1 := make(chan int, 10)
-        go func() {
-            for i := 0; i < 10; i++ {
-                c1 <- i
-                fmt.Println("aaaaa")
-            }
-        }()
+func main() {
+    c1 := make(chan int, 10)
+    go func() {
         for i := 0; i < 10; i++ {
-            fmt.Println(<-c1)
+            c1 <- i
+            fmt.Println("aaaaa")
         }
-
-        fmt.Println("==============")
-
-        c2 := make(chan int)
-        go func() {
-            for i := 0; i < 10; i++ {
-                c2 <- i
-                fmt.Println("bbbb")
-            }
-        }()
-        for i := 0; i < 10; i++ {
-            fmt.Println(<-c2)
-        }
-
-        fmt.Println("==============")
-
-        c3 := make(chan int, 5)
-        go func() {
-            for i := 0; i < 10; i++ {
-                c3 <- i
-                fmt.Println("ccc")
-            }
-        }()
-        for i := 0; i < 10; i++ {
-            fmt.Println(<-c3)
-        }
+    }()
+    for i := 0; i < 10; i++ {
+        fmt.Println(<-c1)
     }
+
+    fmt.Println("==============")
+
+    c2 := make(chan int)
+    go func() {
+        for i := 0; i < 10; i++ {
+            c2 <- i
+            fmt.Println("bbbb")
+        }
+    }()
+    for i := 0; i < 10; i++ {
+        fmt.Println(<-c2)
+    }
+
+    fmt.Println("==============")
+
+    c3 := make(chan int, 5)
+    go func() {
+        for i := 0; i < 10; i++ {
+            c3 <- i
+            fmt.Println("ccc")
+        }
+    }()
+    for i := 0; i < 10; i++ {
+        fmt.Println(<-c3)
+    }
+}
+```
 
 ## 只读只写
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-29 23:03:01
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-29 23:08:07
-    * @FilePath: /src/chapter12/demo03/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-29 23:03:01
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-29 23:08:07
+* @FilePath: /src/chapter12/demo03/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
-        c1 := make(chan int, 5)
-        var readc <-chan int = c1
-        var writec chan<- int = c1
-        writec <- 1
-        fmt.Println(<-readc)
-    }
+func main() {
+    c1 := make(chan int, 5)
+    var readc <-chan int = c1
+    var writec chan<- int = c1
+    writec <- 1
+    fmt.Println(<-readc)
+}
+```
 
 ## close
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-29 23:42:42
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-29 23:46:30
-    * @FilePath: /src/chapter12/demo04/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-29 23:42:42
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-29 23:46:30
+* @FilePath: /src/chapter12/demo04/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
-        c1 := make(chan int, 5)
-        c1 <- 1
-        c1 <- 2
-        c1 <- 3
-        c1 <- 4
-        c1 <- 5
-        // 使用for-range必须使用close关闭管道
-        close(c1)
-        for v := range c1 {
-            fmt.Println(v)
-        }
+func main() {
+    c1 := make(chan int, 5)
+    c1 <- 1
+    c1 <- 2
+    c1 <- 3
+    c1 <- 4
+    c1 <- 5
+    // 使用for-range必须使用close关闭管道
+    close(c1)
+    for v := range c1 {
+        fmt.Println(v)
     }
+}
+```
 
 ## select
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-29 23:48:30
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-29 23:54:24
-    * @FilePath: /src/chapter12/demo05/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-29 23:48:30
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-29 23:54:24
+* @FilePath: /src/chapter12/demo05/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
-        // select 执行没有顺序
-        ch1 := make(chan int, 1)
-        ch2 := make(chan int, 1)
-        ch3 := make(chan int, 1)
+func main() {
+    // select 执行没有顺序
+    ch1 := make(chan int, 1)
+    ch2 := make(chan int, 1)
+    ch3 := make(chan int, 1)
 
-        ch1 <- 1
-        ch2 <- 2
-        ch3 <- 3
-        select {
-        case <-ch1:
-            fmt.Println("ch1")
-        case <-ch2:
-            fmt.Println("ch2")
-        case <-ch3:
-            fmt.Println("ch3")
-        default:
-            fmt.Println("都不满足！")
-        }
-
+    ch1 <- 1
+    ch2 <- 2
+    ch3 <- 3
+    select {
+    case <-ch1:
+        fmt.Println("ch1")
+    case <-ch2:
+        fmt.Println("ch2")
+    case <-ch3:
+        fmt.Println("ch3")
+    default:
+        fmt.Println("都不满足！")
     }
+
+}
+```
 
 ## 使用
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-29 23:59:49
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-30 00:03:20
-    * @FilePath: /src/chapter12/demo06/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-29 23:59:49
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-30 00:03:20
+* @FilePath: /src/chapter12/demo06/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
-        ch := make(chan int)
-        var writec chan<- int = ch
-        var readc <-chan int = ch
+func main() {
+    ch := make(chan int)
+    var writec chan<- int = ch
+    var readc <-chan int = ch
 
-        go SetData(writec)
-        ReadData(readc)
+    go SetData(writec)
+    ReadData(readc)
 
+}
+func SetData(writec chan<- int) {
+    for i := 0; i < 10; i++ {
+        writec <- i
     }
-    func SetData(writec chan<- int) {
-        for i := 0; i < 10; i++ {
-            writec <- i
-        }
+}
+func ReadData(readc <-chan int) {
+    for i := 0; i < 10; i++ {
+        fmt.Println(<-readc)
     }
-    func ReadData(readc <-chan int) {
-        for i := 0; i < 10; i++ {
-            fmt.Println(<-readc)
-        }
-    }
+}
+```
 
 # 断言和反射
 
 ## 入门
-  
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-12-01 22:34:32
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-12-01 22:49:53
-    * @FilePath: /src/chapter13/demo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
 
-    import (
-        "fmt"
-    )
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-12-01 22:34:32
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-12-01 22:49:53
+* @FilePath: /src/chapter13/demo01/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    type User struct {
-        Name string
-        Age  int
-        Sex  bool
-    }
-    type Student struct {
-        Class string
-        User
-    }
+import (
+    "fmt"
+)
 
-    func (u User) SayName(name string) {
-        fmt.Println("我的名字叫做", name)
+type User struct {
+    Name string
+    Age  int
+    Sex  bool
+}
+type Student struct {
+    Class string
+    User
+}
+
+func (u User) SayName(name string) {
+    fmt.Println("我的名字叫做", name)
+}
+func main() {
+    u := User{
+        Name: "wj",
+        Age:  29,
+        Sex:  true,
     }
-    func main() {
-        u := User{
-            Name: "wj",
-            Age:  29,
-            Sex:  true,
-        }
-        check(u)
-        s := Student{
-            Class: "三年级二班",
-            User:  u,
-        }
-        check(s)
+    check(u)
+    s := Student{
+        Class: "三年级二班",
+        User:  u,
     }
-    func check(inter interface{}) {
-        switch inter.(type) {
-        case User:
-            fmt.Println("我是User!")
-        case Student:
-            fmt.Println(inter.(Student).Class)
-            fmt.Println("我是Student!")
-        }
+    check(s)
+}
+func check(inter interface{}) {
+    switch inter.(type) {
+    case User:
+        fmt.Println("我是User!")
+    case Student:
+        fmt.Println(inter.(Student).Class)
+        fmt.Println("我是Student!")
     }
+}
+```
 
 ## 引出反射
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-12-01 22:34:32
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-12-01 23:08:48
-    * @FilePath: /src/chapter13/demo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-12-01 22:34:32
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-12-01 23:08:48
+* @FilePath: /src/chapter13/demo01/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "reflect"
-    )
+import (
+    "fmt"
+    "reflect"
+)
 
-    type User struct {
-        Name string
-        Age  int
-        Sex  bool
-    }
-    type Student struct {
-        Class string
-        User
-    }
+type User struct {
+    Name string
+    Age  int
+    Sex  bool
+}
+type Student struct {
+    Class string
+    User
+}
 
-    func (u User) SayName(name string) {
-        fmt.Println("我的名字叫做", name)
+func (u User) SayName(name string) {
+    fmt.Println("我的名字叫做", name)
+}
+func main() {
+    u := User{
+        Name: "wj",
+        Age:  29,
+        Sex:  true,
     }
-    func main() {
-        u := User{
-            Name: "wj",
-            Age:  29,
-            Sex:  true,
-        }
-        // check(u)
-        s := Student{
-            Class: "三年级二班",
-            User:  u,
-        }
-        check(s)
+    // check(u)
+    s := Student{
+        Class: "三年级二班",
+        User:  u,
     }
-    func check(inter interface{}) {
-        t := reflect.TypeOf(inter)
-        v := reflect.ValueOf(inter)
-        for i := 0; i < t.NumField(); i++ {
-            fmt.Println(t.Field(i))
-        }
-        fmt.Println(t, v)
-        fmt.Println(v.FieldByIndex([]int{0}))
-        fmt.Println(v.FieldByIndex([]int{1, 1}))
-        fmt.Println(v.FieldByName("Class"))
+    check(s)
+}
+func check(inter interface{}) {
+    t := reflect.TypeOf(inter)
+    v := reflect.ValueOf(inter)
+    for i := 0; i < t.NumField(); i++ {
+        fmt.Println(t.Field(i))
     }
+    fmt.Println(t, v)
+    fmt.Println(v.FieldByIndex([]int{0}))
+    fmt.Println(v.FieldByIndex([]int{1, 1}))
+    fmt.Println(v.FieldByName("Class"))
+}
+```
 
 ## 利用反射更新数据
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-12-01 22:34:32
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-12-01 23:13:19
-    * @FilePath: /src/chapter13/demo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-12-01 22:34:32
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-12-01 23:13:19
+* @FilePath: /src/chapter13/demo01/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "reflect"
-    )
+import (
+    "fmt"
+    "reflect"
+)
 
-    type User struct {
-        Name string
-        Age  int
-        Sex  bool
-    }
-    type Student struct {
-        Class string
-        User
-    }
+type User struct {
+    Name string
+    Age  int
+    Sex  bool
+}
+type Student struct {
+    Class string
+    User
+}
 
-    func (u User) SayName(name string) {
-        fmt.Println("我的名字叫做", name)
+func (u User) SayName(name string) {
+    fmt.Println("我的名字叫做", name)
+}
+func main() {
+    u := User{
+        Name: "wj",
+        Age:  29,
+        Sex:  true,
     }
-    func main() {
-        u := User{
-            Name: "wj",
-            Age:  29,
-            Sex:  true,
-        }
-        // check(u)
-        s := Student{
-            Class: "三年级二班",
-            User:  u,
-        }
-        check(&s)
+    // check(u)
+    s := Student{
+        Class: "三年级二班",
+        User:  u,
     }
-    func check(inter interface{}) {
-        v := reflect.ValueOf(inter)
-        e := v.Elem()
-        e.FieldByName("Class").SetString("四年级二班")
-        fmt.Println(v)
+    check(&s)
+}
+func check(inter interface{}) {
+    v := reflect.ValueOf(inter)
+    e := v.Elem()
+    e.FieldByName("Class").SetString("四年级二班")
+    fmt.Println(v)
 
-    }
+}
+```
 
 ## 利用反射调用方法
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-12-01 22:34:32
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-12-01 23:18:48
-    * @FilePath: /src/chapter13/demo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-12-01 22:34:32
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-12-01 23:18:48
+* @FilePath: /src/chapter13/demo01/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "reflect"
-    )
+import (
+    "fmt"
+    "reflect"
+)
 
-    type User struct {
-        Name string
-        Age  int
-        Sex  bool
-    }
-    type Student struct {
-        Class string
-        User
-    }
+type User struct {
+    Name string
+    Age  int
+    Sex  bool
+}
+type Student struct {
+    Class string
+    User
+}
 
-    func (u User) SayName(name string) {
-        fmt.Println("我的名字叫做", name)
+func (u User) SayName(name string) {
+    fmt.Println("我的名字叫做", name)
+}
+func main() {
+    u := User{
+        Name: "wj",
+        Age:  29,
+        Sex:  true,
     }
-    func main() {
-        u := User{
-            Name: "wj",
-            Age:  29,
-            Sex:  true,
-        }
-        check(u)
-    }
-    func check(inter interface{}) {
-        v := reflect.ValueOf(inter)
-        m := v.MethodByName("SayName")
-        m.Call([]reflect.Value{reflect.ValueOf("666")})
-    }
+    check(u)
+}
+func check(inter interface{}) {
+    v := reflect.ValueOf(inter)
+    m := v.MethodByName("SayName")
+    m.Call([]reflect.Value{reflect.ValueOf("666")})
+}
+```
 
 # sync使用
 
 ## 互斥锁【sync.Mutex{}】
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-12-01 23:29:42
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-12-03 00:08:38
-    * @FilePath: /src/chapter14/demo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-12-01 23:29:42
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-12-03 00:08:38
+* @FilePath: /src/chapter14/demo01/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "sync"
-        "time"
-    )
+import (
+    "fmt"
+    "sync"
+    "time"
+)
 
-    func SyncClass() {
-        l := &sync.Mutex{}
-        go lockFunc(l)
-        go lockFunc(l)
-        go lockFunc(l)
-        go lockFunc(l)
-        time.Sleep(5 * time.Second)
-    }
-    func lockFunc(lock *sync.Mutex) {
-        lock.Lock()
-        fmt.Println("666")
-        time.Sleep(1 * time.Second)
-        lock.Unlock()
-    }
-    func main() {
-        // sync.Mutex{} 互斥锁
-        // Lock() 和 Unlock()
-        SyncClass()
-    }
+func SyncClass() {
+    l := &sync.Mutex{}
+    go lockFunc(l)
+    go lockFunc(l)
+    go lockFunc(l)
+    go lockFunc(l)
+    time.Sleep(5 * time.Second)
+}
+func lockFunc(lock *sync.Mutex) {
+    lock.Lock()
+    fmt.Println("666")
+    time.Sleep(1 * time.Second)
+    lock.Unlock()
+}
+func main() {
+    // sync.Mutex{} 互斥锁
+    // Lock() 和 Unlock()
+    SyncClass()
+}
+```
 
 ## 读取互斥锁【sync.RWMutex{}】
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-12-01 23:29:42
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-12-03 00:51:50
-    * @FilePath: /src/chapter14/demo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-12-01 23:29:42
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-12-03 00:51:50
+* @FilePath: /src/chapter14/demo01/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "sync"
-        "time"
-    )
+import (
+    "fmt"
+    "sync"
+    "time"
+)
 
-    func SyncClass() {
-        l := &sync.RWMutex{}
-        go lockFunc(l)
-        go lockFunc(l)
-        go lockFunc(l)
-        go lockFunc(l)
-        go readLockFunc(l)
-        go readLockFunc(l)
-        go readLockFunc(l)
-        go readLockFunc(l)
-        time.Sleep(20 * time.Second)
-    }
+func SyncClass() {
+    l := &sync.RWMutex{}
+    go lockFunc(l)
+    go lockFunc(l)
+    go lockFunc(l)
+    go lockFunc(l)
+    go readLockFunc(l)
+    go readLockFunc(l)
+    go readLockFunc(l)
+    go readLockFunc(l)
+    time.Sleep(20 * time.Second)
+}
 
-    func lockFunc(lock *sync.RWMutex) {
-        lock.Lock() // 写的时候排斥其他写锁和读锁
-        fmt.Println("666")
-        time.Sleep(5 * time.Second)
-        lock.Unlock()
-    }
+func lockFunc(lock *sync.RWMutex) {
+    lock.Lock() // 写的时候排斥其他写锁和读锁
+    fmt.Println("666")
+    time.Sleep(5 * time.Second)
+    lock.Unlock()
+}
 
-    func readLockFunc(lock *sync.RWMutex) {
-        lock.RLock() // 在读取的时候不会阻塞其他的读取锁，但是会阻塞写入锁
-        fmt.Println("777")
-        time.Sleep(5 * time.Second)
-        lock.RUnlock()
-    }
+func readLockFunc(lock *sync.RWMutex) {
+    lock.RLock() // 在读取的时候不会阻塞其他的读取锁，但是会阻塞写入锁
+    fmt.Println("777")
+    time.Sleep(5 * time.Second)
+    lock.RUnlock()
+}
 
-    func main() {
-        // sync.RWMutex{} 读写互斥锁
-        // Lock() 和 Unlock()
-        // RLock() 和 RUnlock()
-        SyncClass()
-    }
+func main() {
+    // sync.RWMutex{} 读写互斥锁
+    // Lock() 和 Unlock()
+    // RLock() 和 RUnlock()
+    SyncClass()
+}
+```
 
 ## Once函数
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-12-01 23:29:42
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-12-03 00:58:22
-    * @FilePath: /src/chapter14/demo01/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-12-01 23:29:42
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-12-03 00:58:22
+* @FilePath: /src/chapter14/demo01/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "sync"
-    )
+import (
+    "fmt"
+    "sync"
+)
 
-    func SyncClass() {
-        o := &sync.Once{}
-        for i := 0; i < 10; i++ {
-            o.Do(func() {
-                fmt.Println(i)
-            })
-        }
+func SyncClass() {
+    o := &sync.Once{}
+    for i := 0; i < 10; i++ {
+        o.Do(func() {
+            fmt.Println(i)
+        })
     }
+}
 
-    func main() {
-        // sync.RWMutex{} 读写互斥锁
-        // Lock() 和 Unlock()
-        // RLock() 和 RUnlock()
-        SyncClass()
-    }
+func main() {
+    // sync.RWMutex{} 读写互斥锁
+    // Lock() 和 Unlock()
+    // RLock() 和 RUnlock()
+    SyncClass()
+}
+```
 
 ## sync.WaitGroup{}
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-12-03 13:52:49
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-12-03 14:00:34
-    * @FilePath: /src/chapter14/demo04/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-12-03 13:52:49
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-12-03 14:00:34
+* @FilePath: /src/chapter14/demo04/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "sync"
-        "time"
-    )
+import (
+    "fmt"
+    "sync"
+    "time"
+)
 
-    func main() {
-        wg := &sync.WaitGroup{}
-        wg.Add(2)
-        go func() {
-            time.Sleep(8 * time.Second)
-            wg.Done()
-            fmt.Println("hp-1")
-        }()
-        go func() {
-            time.Sleep(6 * time.Second)
-            wg.Done()
-            fmt.Println("hp-2")
-        }()
-        wg.Wait()
-        fmt.Println("hp=0")
-    }
+func main() {
+    wg := &sync.WaitGroup{}
+    wg.Add(2)
+    go func() {
+        time.Sleep(8 * time.Second)
+        wg.Done()
+        fmt.Println("hp-1")
+    }()
+    go func() {
+        time.Sleep(6 * time.Second)
+        wg.Done()
+        fmt.Println("hp-2")
+    }()
+    wg.Wait()
+    fmt.Println("hp=0")
+}
+```
 
 ## sync.Map{}
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-12-03 14:10:20
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-12-03 14:21:11
-    * @FilePath: /src/chapter14/demo05/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-12-03 14:10:20
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-12-03 14:21:11
+* @FilePath: /src/chapter14/demo05/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "sync"
-        "time"
-    )
+import (
+    "fmt"
+    "sync"
+    "time"
+)
 
-    func main() {
-        m := &sync.Map{}
-        m.Store(1, 1)
-        fmt.Println(m.Load(1))
-        fmt.Println(m.Load(1))
-        m.Delete(1)
-        fmt.Println(m.Load(1))
-        m.Store(1, 1)
-        m.Store(2, 2)
-        m.Range(func(key, value interface{}) bool {
-            fmt.Println(key, value)
-            return true
-        })
-        time.Sleep(5 * time.Second)
-    }
+func main() {
+    m := &sync.Map{}
+    m.Store(1, 1)
+    fmt.Println(m.Load(1))
+    fmt.Println(m.Load(1))
+    m.Delete(1)
+    fmt.Println(m.Load(1))
+    m.Store(1, 1)
+    m.Store(2, 2)
+    m.Range(func(key, value interface{}) bool {
+        fmt.Println(key, value)
+        return true
+    })
+    time.Sleep(5 * time.Second)
+}
+```
 
 ## &sync.Pool{}
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-12-03 14:10:20
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-12-03 14:24:41
-    * @FilePath: /src/chapter14/demo05/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-12-03 14:10:20
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-12-03 14:24:41
+* @FilePath: /src/chapter14/demo05/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "sync"
-        "time"
-    )
+import (
+    "fmt"
+    "sync"
+    "time"
+)
 
-    func main() {
-        p := &sync.Pool{}
-        p.Put(1)
-        p.Put(2)
-        p.Put(3)
-        p.Put(4)
-        fmt.Println(p.Get())
-        fmt.Println(p.Get())
-        fmt.Println(p.Get())
-        fmt.Println(p.Get())
-        fmt.Println(p.Get())
-        time.Sleep(5 * time.Second)
-    }
+func main() {
+    p := &sync.Pool{}
+    p.Put(1)
+    p.Put(2)
+    p.Put(3)
+    p.Put(4)
+    fmt.Println(p.Get())
+    fmt.Println(p.Get())
+    fmt.Println(p.Get())
+    fmt.Println(p.Get())
+    fmt.Println(p.Get())
+    time.Sleep(5 * time.Second)
+}
+```
 
 # 异常处理
 
 ## 1.基本介绍
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-16 00:06:39
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-16 00:10:03
-    * @FilePath: /src/chapter06/exceptfunc/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-16 00:06:39
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-16 00:10:03
+* @FilePath: /src/chapter06/exceptfunc/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func test()  {
-        var num1 int = 10
-        var num2 int = 0
-        fmt.Println(num1 / num2)
-    }
+import "fmt"
+func test()  {
+    var num1 int = 10
+    var num2 int = 0
+    fmt.Println(num1 / num2)
+}
 
-    func main()  {
-        test()
-        fmt.Println("其他代码！")
-    }
+func main()  {
+    test()
+    fmt.Println("其他代码！")
+}
+```
 
-* GO语言不支持try...except...finally
-* GO采用defer、panic、recover
-* 这几个异常使用场景，可以这样简单描述：GO可以抛出一个panic的异常，然后再defer中通过recover进行捕获。
+- GO语言不支持try...except...finally
+- GO采用defer、panic、recover
+- 这几个异常使用场景，可以这样简单描述：GO可以抛出一个panic的异常，然后再defer中通过recover进行捕获。
 
 ## 2.捕获异常
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-16 00:06:39
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-16 00:15:24
-    * @FilePath: /src/chapter06/exceptfunc/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-16 00:06:39
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-16 00:15:24
+* @FilePath: /src/chapter06/exceptfunc/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func test()  {
-        defer func() {
-            err := recover()
-            if err != nil {
-                fmt.Println("err=", err)
-            }
-        }()
-        var num1 int = 10
-        var num2 int = 0
-        fmt.Println(num1 / num2)
-    }
+import "fmt"
+func test()  {
+    defer func() {
+        err := recover()
+        if err != nil {
+            fmt.Println("err=", err)
+        }
+    }()
+    var num1 int = 10
+    var num2 int = 0
+    fmt.Println(num1 / num2)
+}
 
-    func main()  {
-        test()
-        fmt.Println("其他代码！")
-    }
+func main()  {
+    test()
+    fmt.Println("其他代码！")
+}
+```
 
 ## 3. 自定义异常
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-16 00:06:39
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-16 00:38:50
-    * @FilePath: /src/chapter06/exceptfunc/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-16 00:06:39
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-16 00:38:50
+* @FilePath: /src/chapter06/exceptfunc/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import (
-        "fmt"
-        "errors"
-    )
+import (
+    "fmt"
+    "errors"
+)
 
-    func readConf(filename string) (err error) {
-        if filename == "config.ini" {
-            return nil
-        } else {
-            return errors.New("读取文件错误！")
-        }
+func readConf(filename string) (err error) {
+    if filename == "config.ini" {
+        return nil
+    } else {
+        return errors.New("读取文件错误！")
     }
+}
 
-    func test2()  {
-        err := readConf("config2.ini")
-        if err != nil {
-            panic(err)
-        }
-        fmt.Println("test2继续执行。。。")
+func test2()  {
+    err := readConf("config2.ini")
+    if err != nil {
+        panic(err)
     }
+    fmt.Println("test2继续执行。。。")
+}
 
-    func main()  {
-        test2()
-        fmt.Println("test2()执行后，继续执行其他代码！")
-    }
+func main()  {
+    test2()
+    fmt.Println("test2()执行后，继续执行其他代码！")
+}
+```
 
 # 指针
 
 ## 1. 基本介绍
 
-    package main
+```golang
+package main
 
-    import (
-        "fmt"
-    )
+import (
+    "fmt"
+)
 
-    // 演示golang中指针的类型
+// 演示golang中指针的类型
 
-    func main() {
+func main() {
 
-        // 基本数据类型在内存布局
-        var i int = 10
-        // i 的地址是什么，&i
-        fmt. Println("i的地址=", &i)
+    // 基本数据类型在内存布局
+    var i int = 10
+    // i 的地址是什么，&i
+    fmt. Println("i的地址=", &i)
 
-        // 指针类型，指针变量存的是一个地址，这个地址指向的空间存的才是值
-        // var ptr *int = &num
-        // 1.ptr 是一个指针变量
-        // 2.ptr的类型 *int
-        // 3.ptr本身的值&i
-        var ptr *int = &i
-        fmt.Printf("ptr=%v \n", ptr)
-        fmt.Printf("ptr的地址是%v \n", &ptr)
-        fmt.Printf("ptr的指向是%v \n", *ptr)
-        fmt.Printf("ptr的指向是%v \n", *ptr)
+    // 指针类型，指针变量存的是一个地址，这个地址指向的空间存的才是值
+    // var ptr *int = &num
+    // 1.ptr 是一个指针变量
+    // 2.ptr的类型 *int
+    // 3.ptr本身的值&i
+    var ptr *int = &i
+    fmt.Printf("ptr=%v \n", ptr)
+    fmt.Printf("ptr的地址是%v \n", &ptr)
+    fmt.Printf("ptr的指向是%v \n", *ptr)
+    fmt.Printf("ptr的指向是%v \n", *ptr)
 
-    }
+}
+```
 
-* 基本数据类型，变量存的就是值，也叫值类型
-* 获取变量的地址，用&，比如：var num int，获取num的地址：&num
-* 指针类型，指针变量存的是一个地址，这个地址指向的空间存的才是值
-
+- 基本数据类型，变量存的就是值，也叫值类型
+- 获取变量的地址，用&，比如：var num int，获取num的地址：&num
+- 指针类型，指针变量存的是一个地址，这个地址指向的空间存的才是值
+  
     比如： var ptr *int = &num
-
-* 获取指针类型所指向的值，使用 `*` ，比如： `var *ptr int` , 使用 *ptr获取p指向的值
-* 图解：
-
+- 获取指针类型所指向的值，使用 `*` ，比如： `var *ptr int` , 使用 *ptr获取p指向的值
+- 图解：
+  
     0xc000006030 ---------> 0xc0000120b8 ---------> ptr ---------> 10 ---------> i
 
 ## 2. 指针细节说明
 
-* 值类型，都有对应的指针类型，形式为 `*数据类型` ，比如int的对应的指针就是 `*int` , float32对应的指针类型就是 `*float32` ，依次类推。
-* 值类型包括：基本数据类型 `int系列，float系列，bool、数组和结构体struct`
+- 值类型，都有对应的指针类型，形式为 `*数据类型` ，比如int的对应的指针就是 `*int` , float32对应的指针类型就是 `*float32` ，依次类推。
+- 值类型包括：基本数据类型 `int系列，float系列，bool、数组和结构体struct`
 
 # 值类型和引用类型
 
-* 值类型：基本数据类型 `int系列，float系列，bool，string、数组和结构体struct`
-* 引用类型： `指针、slice切片、map、管道chan、interface` 等都是引用类型
+- 值类型：基本数据类型 `int系列，float系列，bool，string、数组和结构体struct`
+- 引用类型： `指针、slice切片、map、管道chan、interface` 等都是引用类型
 
 ## 值类型和引用类型使用特点
 
@@ -2063,227 +2168,232 @@ goroutine之间通讯的桥梁
 
 # 标识符的命名规范
 
-* 包名：保持package的名字和目录保持一致，尽量采取有意义的包名，简短，有意义，不要和标准库有冲突
-* 变量名、函数名、常量名：采用驼峰法
-* 如果变量名、函数名、常量名首字母大写，则可以被其他的报访问；如果首字母小写，则只能在本包中使用（ `注` ：可以简单的理解成，首字母大写是共有的，首字母小写是私有的）
+- 包名：保持package的名字和目录保持一致，尽量采取有意义的包名，简短，有意义，不要和标准库有冲突
+- 变量名、函数名、常量名：采用驼峰法
+- 如果变量名、函数名、常量名首字母大写，则可以被其他的报访问；如果首字母小写，则只能在本包中使用（ `注` ：可以简单的理解成，首字母大写是共有的，首字母小写是私有的）
 
 案例演示：
 
 工具包：
 
-    package model
+```golang
+package model
 
-    var Heroname string = "宋江"
+var Heroname string = "宋江"
+```
 
 引用包：
 
-    package main
+```golang
+package main
 
-    import (
-        "fmt"
-        "go_code/project02/model"
-    )
+import (
+    "fmt"
+    "go_code/project02/model"
+)
 
-    func main() {
+func main() {
 
-        fmt. Println(model. Heroname)
+    fmt. Println(model. Heroname)
 
-    }
+}
+```
 
 # Golang的运算符
 
 ## 1. 算数运算符
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
+func main() {
 
-        // 重点讲解 /  %
-        // 说明，如果运算的数都是整数，运算的结果是小数，去掉小数部分，保留整数部分
-        fmt. Println(10 / 4)
+    // 重点讲解 /  %
+    // 说明，如果运算的数都是整数，运算的结果是小数，去掉小数部分，保留整数部分
+    fmt. Println(10 / 4)
 
-        
+    
 
-        var n1 float32 = 10 / 4
-        fmt. Println(n1)
+    var n1 float32 = 10 / 4
+    fmt. Println(n1)
 
-        
+    
 
-        // 说明，如果需要保留小数部分
-        var n2 float32 = 10.0 / 4
-        fmt. Println(n2)
+    // 说明，如果需要保留小数部分
+    var n2 float32 = 10.0 / 4
+    fmt. Println(n2)
 
-        
+    
 
-        // 演示%
-        // 看一个公式：a % b = a - a / b * b
-        fmt. Println("10%3=", 10 % 3)
-        fmt. Println("-10%3=", -10 % 3)
-        fmt. Println("10%-3=", 10 % -3)
-        fmt. Println("-10%-3=", -10 % -3)
+    // 演示%
+    // 看一个公式：a % b = a - a / b * b
+    fmt. Println("10%3=", 10 % 3)
+    fmt. Println("-10%3=", -10 % 3)
+    fmt. Println("10%-3=", 10 % -3)
+    fmt. Println("-10%-3=", -10 % -3)
 
-    }
+}
+```
 
-* `+` --------> `正号、加号、拼接` ------> `+3; 5+5; "he" + "llo"`
-* `-` --------> `负号、减号` ------> `-4; 6-4`
-* `*` --------> `乘` ------> `4*3`
-* `/` --------> `除` ------> `5/5`
-* `%` --------> `取余` ------> `7%5`
-* `++` --------> `自增` ------> `a=2 a++`
-* `--` --------> `自减` ------> `a=2 a--`
+- `+` --------> `正号、加号、拼接` ------> `+3; 5+5; "he" + "llo"`
+- `-` --------> `负号、减号` ------> `-4; 6-4`
+- `*` --------> `乘` ------> `4*3`
+- `/` --------> `除` ------> `5/5`
+- `%` --------> `取余` ------> `7%5`
+- `++` --------> `自增` ------> `a=2 a++`
+- `--` --------> `自减` ------> `a=2 a--`
 细节说明
-
+  
     package main
-
+  
     import (
-        "fmt"
-    )
-
+  "fmt"
+  )
+  
     func main() {
-
-        var i = 8
-        var a int
-        // a = i++ // 错误，i++只能独立使用
-        // a = i-- // 错误，i--只能独立使用
-        i++
-        // ++i // 错误，在golang中没有++i
-        // --i // 错误，在golang中没有--i
-
+  ```
+    var i = 8
+    var a int
+    // a = i++ // 错误，i++只能独立使用
+    // a = i-- // 错误，i--只能独立使用
+    i++
+    // ++i // 错误，在golang中没有++i
+    // --i // 错误，在golang中没有--i
+  ```
+  
     }
 
 ## 2. 关系运算符(比较运算符)
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
+func main() {
 
-        // 演示关系运算符
-        var n1 int = 9
-        var n2 int = 8
-        fmt. Println(n1 == n2)
-        fmt. Println(n1 != n2)
-        fmt. Println(n1 > n2)
-        fmt. Println(n1 < n2)
-        fmt. Println(n1 >= n2)
-        fmt. Println(n1 <= n2)
-        flag := n1 > n2
-        fmt. Printf("flag 的type 是 %T flag:%s", flag, flag)
+    // 演示关系运算符
+    var n1 int = 9
+    var n2 int = 8
+    fmt. Println(n1 == n2)
+    fmt. Println(n1 != n2)
+    fmt. Println(n1 > n2)
+    fmt. Println(n1 < n2)
+    fmt. Println(n1 >= n2)
+    fmt. Println(n1 <= n2)
+    flag := n1 > n2
+    fmt. Printf("flag 的type 是 %T flag:%s", flag, flag)
 
-    }
+}
+```
 
-* `==` --------> `相等于` ------> `4==3` -------> `false`
-* `!=` --------> `不等于` ------> `4!=3` -------> `true`
-* `<` ---------> `小于` ------> `4<3` -------> `false`
-* `>` ---------> `大于` ------> `5>5` -------> `false`
-* `<=` --------> `小于等于` ------> `7<=5` -------> `false`
-* `>=` --------> `大于等于` ------> `7>=5` -------> `true`
+- `==` --------> `相等于` ------> `4==3` -------> `false`
+- `!=` --------> `不等于` ------> `4!=3` -------> `true`
+- `<` ---------> `小于` ------> `4<3` -------> `false`
+- `>` ---------> `大于` ------> `5>5` -------> `false`
+- `<=` --------> `小于等于` ------> `7<=5` -------> `false`
+- `>=` --------> `大于等于` ------> `7>=5` -------> `true`
 
 ## 2. 逻辑运算符
 
-* `&&` 与
-* `||` 或
-* `!` 非
+- `&&` 与
+- `||` 或
+- `!` 非
 
 注意事项和细节说明
 
-* && 也叫短路与：如果第一个条件为false，则第二个条件不会判断，最终结果为false
-
-* || 也叫短路或，如果第一个条件为true， 则第二个条件不会判断，最终结果为true
-
-    package main
-
-    import "fmt"
-
-    func test() bool {
-        fmt. Println("test...")
-        return true
-
+- && 也叫短路与：如果第一个条件为false，则第二个条件不会判断，最终结果为false
+- || 也叫短路或，如果第一个条件为true， 则第二个条件不会判断，最终结果为true
+  
+  <br/>
+  ```golang
+  package main
+  
+  import "fmt"
+  func test() bool {
+    fmt. Println("test...")
+    return true
+  }
+  
+  func main() {
+    var i int = 10
+    if i < 9 && test() {
+        fmt. Print("ok")
     }
-
-    func main() {
-
-        var i int = 10
-        if i < 9 && test() {
-            fmt. Print("ok")
-
-        }
-
-        if i > 9 || test() {
-            fmt. Println("hello")
-
-        }
-
+  
+    if i > 9 || test() {
+        fmt. Println("hello")
     }
+  }
+  ```
 
 ## 3. 赋值运算符
 
-* `=` --------> `简单的赋值运算` ------> `c=a+b`
-* `+=` --------> `相加后在赋值` ------> `c+=b`
-* `-=` --------> `相减后再赋值` ------> `c-=b`
-* `*=` --------> `相乘后在赋值` ------> `c*=b`
-* `/=` --------> `相除后再赋值` ------> `c/=b`
-* `<<=` --------> `左移后赋值` ------> `c%=b`
-* `>>=` --------> `右移后赋值` ------> `c%=b`
-* `&=` --------> `换位与后赋值` ------> `c%=b`
-* `^=` --------> `换位异或后赋值` ------> `c%=b`
-* `|=` --------> `换位或后赋值` ------> `c%=b`
+- `=` --------> `简单的赋值运算` ------> `c=a+b`
+- `+=` --------> `相加后在赋值` ------> `c+=b`
+- `-=` --------> `相减后再赋值` ------> `c-=b`
+- `*=` --------> `相乘后在赋值` ------> `c*=b`
+- `/=` --------> `相除后再赋值` ------> `c/=b`
+- `<<=` --------> `左移后赋值` ------> `c%=b`
+- `>>=` --------> `右移后赋值` ------> `c%=b`
+- `&=` --------> `换位与后赋值` ------> `c%=b`
+- `^=` --------> `换位异或后赋值` ------> `c%=b`
+- `|=` --------> `换位或后赋值` ------> `c%=b`
 案例演示
-
-    package main
-
-    import "fmt"
-
-    func main() {
-
-        // 赋值运算符的使用演示
-        // var i int
-        // i = 10 // 基本赋值
-
-        // 有两个变量， a和b， 要求将其进行交换，最终打印结果
-        // a = 9, b = 2 ====> a = 2  b = 9
-        a := 9
-        b := 2
-        fmt.Printf("交换前的情况是 a = %v, b = %v \n", a, b)
-        // 定义一个临时变量
-        t := a
-        a = b 
-        b = t
-        fmt.Printf("交换后的情况是 a = %v, b = %v \n", a, b)
-
-        a += 17
-        fmt. Println("a=", a)
-
-    }
+  ```golang
+  package main
+  
+  import "fmt"
+  func main() {
+    // 赋值运算符的使用演示
+    // var i int
+    // i = 10 // 基本赋值
+  
+    // 有两个变量， a和b， 要求将其进行交换，最终打印结果
+    // a = 9, b = 2 ====> a = 2  b = 9
+    a := 9
+    b := 2
+    fmt.Printf("交换前的情况是 a = %v, b = %v \n", a, b)
+    // 定义一个临时变量
+    t := a
+    a = b 
+    b = t
+    fmt.Printf("交换后的情况是 a = %v, b = %v \n", a, b)
+  
+    a += 17
+    fmt. Println("a=", a)
+  }
+  ```
 
 ## 4. 三元运算符
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
+func main() {
 
-        // 三元运算符
-        var n int
-        var i int = 10
-        var j int = 10
+    // 三元运算符
+    var n int
+    var i int = 10
+    var j int = 10
 
-        // 传统的三元运算
-        // n = i > j ? i : j
-        if i > j {
-            n = i
-        } else {
-            n = j
-
-        }
-
-        fmt. Println("n=", n)
+    // 传统的三元运算
+    // n = i > j ? i : j
+    if i > j {
+        n = i
+    } else {
+        n = j
 
     }
+
+    fmt. Println("n=", n)
+
+}
+```
 
 特别说明：Golang不支持三元运算符
 
@@ -2291,46 +2401,50 @@ goroutine之间通讯的桥梁
 
 ## (1)fmt. Scanln函数
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
+func main() {
 
-        // 要求：可以从控制台接收用户信息 
-        // 方式1  fmt. Scanln
-        // 先声明需要的变量
-        var name string
-        var age byte
-        var sal float32
-        var isPass bool
-        fmt. Println("请输入姓名 ")
-        fmt. Scanln(&name)
-        fmt. Println("请输入年龄 ")
-        fmt. Scanln(&age)
-        fmt. Println("请输入薪资 ")
-        fmt. Scanln(&sal)
-        fmt. Println("请输入是否通过考试")
-        fmt. Scanln(&isPass)
+    // 要求：可以从控制台接收用户信息 
+    // 方式1  fmt. Scanln
+    // 先声明需要的变量
+    var name string
+    var age byte
+    var sal float32
+    var isPass bool
+    fmt. Println("请输入姓名 ")
+    fmt. Scanln(&name)
+    fmt. Println("请输入年龄 ")
+    fmt. Scanln(&age)
+    fmt. Println("请输入薪资 ")
+    fmt. Scanln(&sal)
+    fmt. Println("请输入是否通过考试")
+    fmt. Scanln(&isPass)
 
-        fmt. Printf("名字是 %v \n年龄是 %v \n薪水是 %v \n是否通过考试 %v \n", name, age, sal, isPass)
+    fmt. Printf("名字是 %v \n年龄是 %v \n薪水是 %v \n是否通过考试 %v \n", name, age, sal, isPass)
 
-    }
+}
+```
 
 ## (2)Scanf函数
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
+func main() {
 
-        // 方式2  fmt.Scanf
-        fmt.Println("请输入你的姓名，年龄，薪水，是否通过考试，使用空格隔开")
-        fmt.Scanf("%s %d %f %t", &name, &age, &sal, &isPass)
-        fmt.Printf("名字是 %v \n年龄是 %v \n薪水是 %v \n是否通过考试 %v \n", name, age, sal, isPass)
+    // 方式2  fmt.Scanf
+    fmt.Println("请输入你的姓名，年龄，薪水，是否通过考试，使用空格隔开")
+    fmt.Scanf("%s %d %f %t", &name, &age, &sal, &isPass)
+    fmt.Printf("名字是 %v \n年龄是 %v \n薪水是 %v \n是否通过考试 %v \n", name, age, sal, isPass)
 
-    }
+}
+```
 
 # 分支控制
 
@@ -2338,152 +2452,161 @@ goroutine之间通讯的桥梁
 
 ### (1)单分支
 
-    跳过
+```
+跳过
+```
 
 ### (2)多分支
 
-    跳过
+```
+跳过
+```
 
 ### (3)单分支
 
-    跳过
+```
+跳过
+```
 
 ## 2.switch分支结构
 
 ### (1)基本介绍
 
-* Go 编程语言中 switch 语句的语法如下：
-
+- Go 编程语言中 switch 语句的语法如下：
+  
     switch var1 {
-        case val1:
-            ...
-        case val2:
-            ...
-        default:
-            ...
-
-    }
-
-* 变量 var1 可以是任何类型，而 val1 和 val2 则可以是同类型的任意值。类型不被局限于常量或整数，但必须是相同的类型；或者最终结果为相同类型的表达式。
-* switch 语句用于基于不同条件执行不同动作，每一个 case 分支都是唯一的，从上至下逐一测试，直到匹配为止。
-* switch 语句执行的过程从上至下，直到找到匹配项，匹配项后面也不需要再加 break。
-* switch 默认情况下 case 最后自带 break 语句，匹配成功后就不会执行其他 case，如果我们需要执行后面的 case，可以使用 fallthrough 。
-* switch 可以同时测试多个可能符合条件的值，使用逗号分割它们，例如：case val1, val2, val3。
-
+  case val1:
+      ...
+  case val2:
+      ...
+  default:
+      ...
+  }
+- 变量 var1 可以是任何类型，而 val1 和 val2 则可以是同类型的任意值。类型不被局限于常量或整数，但必须是相同的类型；或者最终结果为相同类型的表达式。
+- switch 语句用于基于不同条件执行不同动作，每一个 case 分支都是唯一的，从上至下逐一测试，直到匹配为止。
+- switch 语句执行的过程从上至下，直到找到匹配项，匹配项后面也不需要再加 break。
+- switch 默认情况下 case 最后自带 break 语句，匹配成功后就不会执行其他 case，如果我们需要执行后面的 case，可以使用 fallthrough 。
+- switch 可以同时测试多个可能符合条件的值，使用逗号分割它们，例如：case val1, val2, val3。
+  
     switch{
-        case 1, 2, 3, 4:
-        default:
-
-    }
+  case 1, 2, 3, 4:
+  default:
+  }
 
 ### (2)快速入门案例
 
 代码：
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
+func main() {
 
-    /* 定义局部变量 */
-    var grade string = "B"
-    var marks int = 90
+/* 定义局部变量 */
+var grade string = "B"
+var marks int = 90
 
-    switch marks {
+switch marks {
 
-        case 90: grade = "A"
-        case 80: grade = "B"
-        case 50,60,70 : grade = "C"
-        default: grade = "D"  
+    case 90: grade = "A"
+    case 80: grade = "B"
+    case 50,60,70 : grade = "C"
+    default: grade = "D"  
+
+}
+
+switch {
+
+    case grade == "A" :
+        fmt.Printf("优秀!\n" )    
+    case grade == "B", grade == "C" :
+        fmt.Printf("良好\n" )      
+    case grade == "D" :
+        fmt.Printf("及格\n" )      
+    case grade == "F":
+        fmt.Printf("不及格\n" )
+    default:
+        fmt.Printf("差\n" );
+
+}
+
+fmt. Printf("你的等级是 %s\n", grade ); 
+
+}
+```
+
+以上代码执行结果为：
+
+```
+优秀!
+你的等级是 A
+```
+
+### (3)细节讨论
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+
+    var a byte
+    fmt. Println("请输入字符：")
+    fmt. Scanf("%c", &a)
+    switch a {
+        case 'a':
+            fmt. Println("周一")
+        case 'b':
+            fmt. Println("周二")
+        case 'c':
+            fmt. Println("周三")
+        case 'd', 'e':
+            fmt. Println("周四")
+        default:
+            fmt. Println("有误")
+
+    }
+
+    switch age := 10; {
+        case age == 10:
+            fmt.Println("age == 10")
+        case age == 20:
+            fmt.Println("age == 20")
+        case age == 30:
+            fmt.Println("age == 30")
+        default:
+            fmt.Println("没有匹配到")
 
     }
 
     switch {
-
-        case grade == "A" :
-            fmt.Printf("优秀!\n" )    
-        case grade == "B", grade == "C" :
-            fmt.Printf("良好\n" )      
-        case grade == "D" :
-            fmt.Printf("及格\n" )      
-        case grade == "F":
-            fmt.Printf("不及格\n" )
+        case false:
+                fmt. Println("1、case 条件语句为 false")
+                fallthrough
+        case true:
+                fmt. Println("2、case 条件语句为 true")
+                fallthrough
+        case false:
+                fmt. Println("3、case 条件语句为 false")
+                fallthrough
+        case true:
+                fmt. Println("4、case 条件语句为 true")
+        case false:
+                fmt. Println("5、case 条件语句为 false")
+                fallthrough
         default:
-            fmt.Printf("差\n" );
+                fmt. Println("6、默认 case")
 
     }
 
-    fmt. Printf("你的等级是 %s\n", grade ); 
+}
+```
 
-    }
-
-以上代码执行结果为：
-
-    优秀!
-    你的等级是 A
-
-### (3)细节讨论
-
-    package main
-
-    import "fmt"
-
-    func main() {
-
-        var a byte
-        fmt. Println("请输入字符：")
-        fmt. Scanf("%c", &a)
-        switch a {
-            case 'a':
-                fmt. Println("周一")
-            case 'b':
-                fmt. Println("周二")
-            case 'c':
-                fmt. Println("周三")
-            case 'd', 'e':
-                fmt. Println("周四")
-            default:
-                fmt. Println("有误")
-
-        }
-
-        switch age := 10; {
-            case age == 10:
-                fmt.Println("age == 10")
-            case age == 20:
-                fmt.Println("age == 20")
-            case age == 30:
-                fmt.Println("age == 30")
-            default:
-                fmt.Println("没有匹配到")
-
-        }
-
-        switch {
-            case false:
-                    fmt. Println("1、case 条件语句为 false")
-                    fallthrough
-            case true:
-                    fmt. Println("2、case 条件语句为 true")
-                    fallthrough
-            case false:
-                    fmt. Println("3、case 条件语句为 false")
-                    fallthrough
-            case true:
-                    fmt. Println("4、case 条件语句为 true")
-            case false:
-                    fmt. Println("5、case 条件语句为 false")
-                    fallthrough
-            default:
-                    fmt. Println("6、默认 case")
-
-        }
-
-    }
-
-* switch后也可以不带表达式，类似if -- else分支来使用
-* switch后也可以直接声明定义一个变量分号结束， 【不推荐】
+- switch后也可以不带表达式，类似if -- else分支来使用
+- switch后也可以直接声明定义一个变量分号结束， 【不推荐】
 
 ## 3.for 循环控制
 
@@ -2495,52 +2618,58 @@ goroutine之间通讯的桥梁
 
 ### （2）快速入门案例
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-06 15:54:27
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-06 15:55:56
-    * @FilePath: /go_code/chapter05/fordemo/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-06 15:54:27
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-06 15:55:56
+* @FilePath: /go_code/chapter05/fordemo/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func main()  {
-        for i:=0; i < 10; i++ {
-            fmt.Println(i)
-        }
+import "fmt"
+func main()  {
+    for i:=0; i < 10; i++ {
+        fmt.Println(i)
     }
+}
+```
 
 ## 4.while和do...while
 
 ### （1）基本介绍
 
-    Go语言没有while和do...while，可以通过for循环实现相同效果。
+```
+Go语言没有while和do...while，可以通过for循环实现相同效果。
+```
 
 ### （2）快速入门案例
 
-    /*
-    * @Author: wangju wangjuchn@outlook.com
-    * @Date: 2022-11-06 16:07:54
-    * @LastEditors: wangju wangjuchn@outlook.com
-    * @LastEditTime: 2022-11-06 16:09:02
-    * @FilePath: /go_code/chapter05/whiledemo/main.go
-    * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-    */
-    package main
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-11-06 16:07:54
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-11-06 16:09:02
+* @FilePath: /go_code/chapter05/whiledemo/main.go
+* @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+*/
+package main
 
-    import "fmt"
-    func main()  {
-        i := 1
-        for {
-            if i > 10 {
-                break
-            }
-            fmt.Println(i)
-            i++
+import "fmt"
+func main()  {
+    i := 1
+    for {
+        if i > 10 {
+            break
         }
+        fmt.Println(i)
+        i++
     }
+}
+```
 
 # Go语言函数
 
@@ -2558,38 +2687,42 @@ Go 语言标准库提供了多种可动用的内置的函数。例如，len() �
 
 Go 语言函数定义格式如下：
 
-    func function_name( [parameter list] ) [return_types] {
-        函数体
+```
+func function_name( [parameter list] ) [return_types] {
+    函数体
 
-    }
+}
+```
 
 函数定义解析：
 
-* func：函数由 func 开始声明
-* function_name：函数名称，函数名和参数列表一起构成了函数签名。
-* parameter list：参数列表，参数就像一个占位符，当函数被调用时，你可以将值传递给参数，这个值被称为实际参数。参数列表指定的是参数类型、顺序、及参数个数。参数是可选的，也就是说函数也可以不包含参数。
-* return_types：返回类型，函数返回一列值。return_types 是该列值的数据类型。有些功能不需要返回值，这种情况下 return_types 不是必须的。
-* 函数体：函数定义的代码集合
+- func：函数由 func 开始声明
+- function_name：函数名称，函数名和参数列表一起构成了函数签名。
+- parameter list：参数列表，参数就像一个占位符，当函数被调用时，你可以将值传递给参数，这个值被称为实际参数。参数列表指定的是参数类型、顺序、及参数个数。参数是可选的，也就是说函数也可以不包含参数。
+- return_types：返回类型，函数返回一列值。return_types 是该列值的数据类型。有些功能不需要返回值，这种情况下 return_types 不是必须的。
+- 函数体：函数定义的代码集合
 
 ## 2. 实例
 
 以下实例为 max() 函数的代码，该函数传入两个整型参数 num1 和 num2，并返回这两个参数的最大值：
 
-    /* 函数返回两个数的最大值 */
-    func max(num1, num2 int) int {
-        /* 声明局部变量 */
-        var result int
+```golang
+/* 函数返回两个数的最大值 */
+func max(num1, num2 int) int {
+    /* 声明局部变量 */
+    var result int
 
-        if (num1 > num2) {
-            result = num1
-        } else {
-            result = num2
-
-        }
-
-        return result
+    if (num1 > num2) {
+        result = num1
+    } else {
+        result = num2
 
     }
+
+    return result
+
+}
+```
 
 ## 3. 函数调用
 
@@ -2597,67 +2730,75 @@ Go 语言函数定义格式如下：
 
 调用函数，向函数传递参数，并返回值，例如：
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
+func main() {
 
-        /* 定义局部变量 */
-        var a int = 100
-        var b int = 200
-        var ret int
+    /* 定义局部变量 */
+    var a int = 100
+    var b int = 200
+    var ret int
 
-        /* 调用函数并返回最大值 */
-        ret = max(a, b)
+    /* 调用函数并返回最大值 */
+    ret = max(a, b)
 
-        fmt. Printf( "最大值是 : %d\n", ret )
+    fmt. Printf( "最大值是 : %d\n", ret )
 
-    }
+}
 
-    /* 函数返回两个数的最大值 */
-    func max(num1, num2 int) int {
-        /* 定义局部变量 */
-        var result int
+/* 函数返回两个数的最大值 */
+func max(num1, num2 int) int {
+    /* 定义局部变量 */
+    var result int
 
-        if (num1 > num2) {
-            result = num1
-        } else {
-            result = num2
-
-        }
-
-        return result
+    if (num1 > num2) {
+        result = num1
+    } else {
+        result = num2
 
     }
+
+    return result
+
+}
+```
 
 以上实例在 main() 函数中调用 max（）函数，执行结果为：
 
-    最大值是 : 200
+```
+最大值是 : 200
+```
 
 ## 4. 函数返回多个值
 
 Go 函数可以返回多个值，例如：
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func swap(x, y string) (string, string) {
-        return y, x
+func swap(x, y string) (string, string) {
+    return y, x
 
-    }
+}
 
-    func main() {
+func main() {
 
-        a, b := swap("Google", "Runoob")
-        fmt. Println(a, b)
+    a, b := swap("Google", "Runoob")
+    fmt. Println(a, b)
 
-    }
+}
+```
 
 以上实例执行结果为：
 
-    Runoob Google
+```
+Runoob Google
+```
 
 ## 5. 函数参数
 
@@ -2669,90 +2810,98 @@ Go 函数可以返回多个值，例如：
 
 值传递是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
+func main() {
 
-    /* 定义局部变量 */
-    var a int = 100
-    var b int = 200
+/* 定义局部变量 */
+var a int = 100
+var b int = 200
 
-    fmt.Printf("交换前 a 的值为 : %d\n", a )
-    fmt.Printf("交换前 b 的值为 : %d\n", b )
+fmt.Printf("交换前 a 的值为 : %d\n", a )
+fmt.Printf("交换前 b 的值为 : %d\n", b )
 
-    /* 通过调用函数来交换值 */
-    swap(a, b)
+/* 通过调用函数来交换值 */
+swap(a, b)
 
-    fmt. Printf("交换后 a 的值 : %d\n", a )
-    fmt. Printf("交换后 b 的值 : %d\n", b )
+fmt. Printf("交换后 a 的值 : %d\n", a )
+fmt. Printf("交换后 b 的值 : %d\n", b )
 
-    }
+}
 
-    /* 定义相互交换值的函数 */
-    func swap(x, y int) int {
-    var temp int
+/* 定义相互交换值的函数 */
+func swap(x, y int) int {
+var temp int
 
-    temp = x /* 保存 x 的值 */
-    x = y    /* 将 y 值赋给 x */
-    y = temp /* 将 temp 值赋给 y*/
+temp = x /* 保存 x 的值 */
+x = y    /* 将 y 值赋给 x */
+y = temp /* 将 temp 值赋给 y*/
 
-    return temp; 
+return temp; 
 
-    }
+}
+```
 
 以下代码执行结果为：
 
-    交换前 a 的值为 : 100
-    交换前 b 的值为 : 200
-    交换后 a 的值 : 100
-    交换后 b 的值 : 200
+```
+交换前 a 的值为 : 100
+交换前 b 的值为 : 200
+交换后 a 的值 : 100
+交换后 b 的值 : 200
+```
 
 ### (2)引用传递
 
 引用传递是指在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
+func main() {
 
-    /* 定义局部变量 */
-    var a int = 100
-    var b int= 200
+/* 定义局部变量 */
+var a int = 100
+var b int= 200
 
-    fmt.Printf("交换前，a 的值 : %d\n", a )
-    fmt.Printf("交换前，b 的值 : %d\n", b )
+fmt.Printf("交换前，a 的值 : %d\n", a )
+fmt.Printf("交换前，b 的值 : %d\n", b )
 
-    /* 调用 swap() 函数
+/* 调用 swap() 函数
 
-    - &a 指向 a 指针，a 变量的地址
-    - &b 指向 b 指针，b 变量的地址
+- &a 指向 a 指针，a 变量的地址
+- &b 指向 b 指针，b 变量的地址
 
-    */
-    swap(&a, &b)
+*/
+swap(&a, &b)
 
-    fmt. Printf("交换后，a 的值 : %d\n", a )
-    fmt. Printf("交换后，b 的值 : %d\n", b )
+fmt. Printf("交换后，a 的值 : %d\n", a )
+fmt. Printf("交换后，b 的值 : %d\n", b )
 
-    }
+}
 
-    func swap(x *int, y *int) {
-    var temp int
-    temp = *x    /* 保存 x 地址上的值 */
-    *x = *y      /* 将 y 值赋给 x */
-    *y = temp    /* 将 temp 值赋给 y */
+func swap(x *int, y *int) {
+var temp int
+temp = *x    /* 保存 x 地址上的值 */
+*x = *y      /* 将 y 值赋给 x */
+*y = temp    /* 将 temp 值赋给 y */
 
-    }
+}
+```
 
 以上代码执行结果为：
 
-    交换前，a 的值 : 100
-    交换前，b 的值 : 200
-    交换后，a 的值 : 200
-    交换后，b 的值 : 100
+```
+交换前，a 的值 : 100
+交换前，b 的值 : 200
+交换后，a 的值 : 200
+交换后，b 的值 : 100
+```
 
 `注意` ：默认情况下，Go 语言使用的是值传递，即在调用过程中不会影响到实际参数。
 
@@ -2763,25 +2912,27 @@ Go 函数可以返回多个值，例如：
 函数定义后可作为另外一个函数的实参数传入
 Go 语言可以很灵活的创建函数，并作为另外一个函数的实参。以下实例中我们在定义的函数中初始化一个变量，该函数仅仅是为了使用内置函数 math.sqrt()，实例为：
 
-    package main
+```golang
+package main
 
-    import (
-        "fmt"
-        "math"
-    )
+import (
+    "fmt"
+    "math"
+)
 
-    func main(){
-        /* 声明函数变量 */
-        getSquareRoot := func(x float64) float64 {
+func main(){
+    /* 声明函数变量 */
+    getSquareRoot := func(x float64) float64 {
 
-            return math. Sqrt(x)
-
-        }
-
-        /* 使用函数 */
-        fmt. Println(getSquareRoot(9))
+        return math. Sqrt(x)
 
     }
+
+    /* 使用函数 */
+    fmt. Println(getSquareRoot(9))
+
+}
+```
 
 ### (2)闭包
 
@@ -2790,37 +2941,39 @@ Go 语言可以很灵活的创建函数，并作为另外一个函数的实参�
 Go 语言支持匿名函数，可作为闭包。匿名函数是一个"内联"语句或表达式。匿名函数的优越性在于可以直接使用函数内的变量，不必申明。
 以下实例中，我们创建了函数 getSequence() ，返回另外一个函数。该函数的目的是在闭包中递增 i 变量，代码如下：
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    func getSequence() func() int {
-        i:=0
-        return func() int {
-            i+=1
-            return i  
-
-        }
-
-    }
-
-    func main(){
-        /* nextNumber 为一个函数，函数 i 为 0 */
-        nextNumber := getSequence()  
-
-        /* 调用 nextNumber 函数，i 变量自增 1 并返回 */
-        fmt. Println(nextNumber())
-        fmt. Println(nextNumber())
-        fmt. Println(nextNumber())
-
-        
-
-        /* 创建新的函数 nextNumber1，并查看结果 */
-        nextNumber1 := getSequence()  
-        fmt. Println(nextNumber1())
-        fmt. Println(nextNumber1())
+func getSequence() func() int {
+    i:=0
+    return func() int {
+        i+=1
+        return i  
 
     }
+
+}
+
+func main(){
+    /* nextNumber 为一个函数，函数 i 为 0 */
+    nextNumber := getSequence()  
+
+    /* 调用 nextNumber 函数，i 变量自增 1 并返回 */
+    fmt. Println(nextNumber())
+    fmt. Println(nextNumber())
+    fmt. Println(nextNumber())
+
+    
+
+    /* 创建新的函数 nextNumber1，并查看结果 */
+    nextNumber1 := getSequence()  
+    fmt. Println(nextNumber1())
+    fmt. Println(nextNumber1())
+
+}
+```
 
 ### (3)方法
 
@@ -2828,103 +2981,111 @@ Go 语言支持匿名函数，可作为闭包。匿名函数是一个"内联"语
 
 Go 语言中同时有函数和方法。一个方法就是一个包含了接受者的函数，接受者可以是命名类型或者结构体类型的一个值或者是一个指针。所有给定类型的方法属于该类型的方法集。语法格式如下：
 
-    func (variable_name variable_data_type) function_name() [return_type]{
-        /* 函数体*/
+```
+func (variable_name variable_data_type) function_name() [return_type]{
+    /* 函数体*/
 
-    }
+}
+```
 
 实例:
 
-    package main
+```golang
+package main
 
-    import (
-        "fmt"  
-    )
+import (
+    "fmt"  
+)
 
-    /* 定义结构体 */
-    type Circle struct {
-     radius float64
+/* 定义结构体 */
+type Circle struct {
+ radius float64
 
-    }
+}
 
-    func main() {
+func main() {
 
-        var c1 Circle
-        c1.radius = 10.00
-        fmt. Println("圆的面积 = ", c1.getArea())
+    var c1 Circle
+    c1.radius = 10.00
+    fmt. Println("圆的面积 = ", c1.getArea())
 
-    }
+}
 
-    //该 method 属于 Circle 类型对象中的方法
-    func (c Circle) getArea() float64 {
-        //c.radius 即为 Circle 类型对象中的属性
-        return 3.14 * c.radius * c.radius
+//该 method 属于 Circle 类型对象中的方法
+func (c Circle) getArea() float64 {
+    //c.radius 即为 Circle 类型对象中的属性
+    return 3.14 * c.radius * c.radius
 
-    }
+}
+```
 
 以上代码执行结果为：
 
-    圆的面积 =  314
+```
+圆的面积 =  314
+```
 
 ### (4)init函数
 
-* 基本介绍
+- 基本介绍
 
 每一个源文件都可以包含一个init函数，该函数会在main函数之前运行
 
-    package main
+```golang
+package main
 
-    import "fmt"
-    var a = test()
-    func test() int {
-        fmt.Println("全局变量定义！。。。")
-        return 90
-    }
-    func main()  {
-        fmt.Println("main()...")
-    }
-    func init()  {
-        fmt.Println("init()...")
-    }
+import "fmt"
+var a = test()
+func test() int {
+    fmt.Println("全局变量定义！。。。")
+    return 90
+}
+func main()  {
+    fmt.Println("main()...")
+}
+func init()  {
+    fmt.Println("init()...")
+}
+```
 
-* 注意事项
+- 注意事项
 
 全局变量定义代码会在init之前运行
 
 ### (5)匿名函数
 
-* 介绍
+- 介绍
 
 Go支持匿名函数，就是没有名字的函数，如果我们某个函数只是希望使用一次，可以考虑使用匿名函数，匿名函数也可以实现多次调用。
 
-* 使用
-
-    package main
-
-    import (
-        "fmt"
-    )
-    func main()  {
-        res := func (n1, n2 int) int {
-            return n1 + n2
-        }(10, 11)
-        fmt.Println(res)
-
-        f := func (a, b int) int {
-            return a - b
-        }
-        fmt.Println(f(10, 5))
-    }
+- 使用
+  ```golang
+  package main
+  
+  import "fmt"
+  func main()  {
+      res := func (n1, n2 int) int {
+          return n1 + n2
+      }(10, 11)
+      fmt.Println(res)
+      
+      f := func (a, b int) int {
+          return a - b
+      }
+      fmt.Println(f(10, 5))
+  }
+  
+  ```
 
 ### (6)defer
 
-* 介绍
+- 介绍
 
 再函数中，程序员经常需要创建资源（数据库连接，文件句柄、锁等），在函数执行完毕之后，及时的释放资源，Go的设计者提供了defer
 
-* 快速入门
+- 快速入门
 
-```
+```golang
 package main
 
 import "fmt"
@@ -2944,71 +3105,73 @@ func main()  {
 
 ### (7)字符串内置函数
 
-    package main
+```golang
+package main
 
-    import (
-        "fmt"
-        "strconv"
-        "strings"
-    ) 
-    func main()  {
-        // 统计字符串长度，按照字节len(str)
-        // golang的统一编码为utf8，ascii的字符占用一个字节，一个汉字占用3个字节
-        str := "hello北京"
-        fmt.Println("str len=", len(str))
+import (
+    "fmt"
+    "strconv"
+    "strings"
+) 
+func main()  {
+    // 统计字符串长度，按照字节len(str)
+    // golang的统一编码为utf8，ascii的字符占用一个字节，一个汉字占用3个字节
+    str := "hello北京"
+    fmt.Println("str len=", len(str))
 
-        // 字符串遍历，同时处理中文问题 r := []rune(str)
-        r := []rune(str)
-        for i:=0; i < len(r); i++ {
-            fmt.Printf("字符：%c\n", r[i])
-        }
-
-        // 字符串转整数
-        n, err := strconv.Atoi("12a3")
-        if err != nil {
-            fmt.Println(err)
-        } else {
-            fmt.Println(n)
-        }
-
-        // 整数转字符串
-        str = strconv.Itoa(123)
-        fmt.Println("str: ", str)
-
-        // 字符串转字节
-        bytes := []byte("hello bytes")
-        fmt.Printf("bytes: %v\n", bytes)
-
-        // byte 转字符串
-        str = string([]byte{97, 98, 99})
-        fmt.Printf("str: %v\n", str)
-
-        // 10进制转2，8，16进制
-        str = strconv.FormatInt(123, 2)
-        fmt.Printf("123对应的2进制是：%v\n", str)
-        str = strconv.FormatInt(123, 16)
-        fmt.Printf("123对应的16进制是：%v\n", str)
-
-        // strings 包
-        fmt.Println(strings.Contains("seafood", "foods"))
-        fmt.Println(strings.Count("cheese", "e"))
-        fmt.Println(strings.Index("chicken", "ken"))
-        fmt.Println(strings.LastIndex("go gopher", "go"))
-        fmt.Println(strings.EqualFold("Go", "go"))
-        fmt.Println("Go" == "go")
-        fmt.Println(strings.HasPrefix("chicken", "chi"))
-        fmt.Println(strings.HasSuffix("chicken.txt", ".txt"))
-        fmt.Println(strings.Replace("oink oink oink", "k", "ky", 2))
-        fmt.Println("ba" + strings.Repeat("na", 2))
-        fmt.Println(strings.Trim(" !!! Achtung! Achtung! !!! ", "! "))
-        fmt.Println(strings.TrimSpace(" \t\n a lone gopher \n\t\r\n"))
-        fmt.Println(strings.TrimLeft(" n a lone gopher", " "))
-        fmt.Println(strings.TrimRight(" a lone gopher", " "))
-        fmt.Println(strings.ToLower("Gopher"))
-        fmt.Println(strings.ToUpper("Gopher"))
-        fmt.Printf("%q\n", strings.Split("a,b,c", ","))
-
+    // 字符串遍历，同时处理中文问题 r := []rune(str)
+    r := []rune(str)
+    for i:=0; i < len(r); i++ {
+        fmt.Printf("字符：%c\n", r[i])
     }
+
+    // 字符串转整数
+    n, err := strconv.Atoi("12a3")
+    if err != nil {
+        fmt.Println(err)
+    } else {
+        fmt.Println(n)
+    }
+
+    // 整数转字符串
+    str = strconv.Itoa(123)
+    fmt.Println("str: ", str)
+
+    // 字符串转字节
+    bytes := []byte("hello bytes")
+    fmt.Printf("bytes: %v\n", bytes)
+
+    // byte 转字符串
+    str = string([]byte{97, 98, 99})
+    fmt.Printf("str: %v\n", str)
+
+    // 10进制转2，8，16进制
+    str = strconv.FormatInt(123, 2)
+    fmt.Printf("123对应的2进制是：%v\n", str)
+    str = strconv.FormatInt(123, 16)
+    fmt.Printf("123对应的16进制是：%v\n", str)
+
+    // strings 包
+    fmt.Println(strings.Contains("seafood", "foods"))
+    fmt.Println(strings.Count("cheese", "e"))
+    fmt.Println(strings.Index("chicken", "ken"))
+    fmt.Println(strings.LastIndex("go gopher", "go"))
+    fmt.Println(strings.EqualFold("Go", "go"))
+    fmt.Println("Go" == "go")
+    fmt.Println(strings.HasPrefix("chicken", "chi"))
+    fmt.Println(strings.HasSuffix("chicken.txt", ".txt"))
+    fmt.Println(strings.Replace("oink oink oink", "k", "ky", 2))
+    fmt.Println("ba" + strings.Repeat("na", 2))
+    fmt.Println(strings.Trim(" !!! Achtung! Achtung! !!! ", "! "))
+    fmt.Println(strings.TrimSpace(" \t\n a lone gopher \n\t\r\n"))
+    fmt.Println(strings.TrimLeft(" n a lone gopher", " "))
+    fmt.Println(strings.TrimRight(" a lone gopher", " "))
+    fmt.Println(strings.ToLower("Gopher"))
+    fmt.Println(strings.ToUpper("Gopher"))
+    fmt.Printf("%q\n", strings.Split("a,b,c", ","))
+
+}
+```
 
 # Go 语言结构体
 
@@ -3018,407 +3181,441 @@ Go 语言中数组可以存储同一类型的数据，但在结构体中我们�
 
 结构体表示一项记录，比如保存图书馆的书籍记录，每本书有以下属性：
 
-* Title ：标题
-* Author ： 作者
-* Subject：学科
-* ID：书籍ID
+- Title ：标题
+- Author ： 作者
+- Subject：学科
+- ID：书籍ID
 
 ## 1. 定义结构体
 
 结构体定义需要使用 type 和 struct 语句。struct 语句定义一个新的数据类型，结构体中有一个或多个成员。type 语句设定了结构体的名称。结构体的格式如下：
 
-    type struct_variable_type struct {
-        member definition
-        member definition
-        ...
-        member definition
+```
+type struct_variable_type struct {
+    member definition
+    member definition
+    ...
+    member definition
 
-    }
+}
+```
 
 一旦定义了结构体类型，它就能用于变量的声明，语法格式如下：
 
-    variable_name := structure_variable_type {value1, value2...valuen}
-    或
-    variable_name := structure_variable_type { key1: value1, key2: value2..., keyn: valuen}
+```
+variable_name := structure_variable_type {value1, value2...valuen}
+或
+variable_name := structure_variable_type { key1: value1, key2: value2..., keyn: valuen}
+```
 
 实例:
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    type Books struct {
-    title string
-    author string
-    subject string
-    book_id int
+type Books struct {
+title string
+author string
+subject string
+book_id int
 
-    }
+}
 
-    func main() {
+func main() {
 
-        // 创建一个新的结构体
-        fmt.Println(Books{"Go 语言", "www.runoob.com", "Go 语言教程", 6495407})
+    // 创建一个新的结构体
+    fmt.Println(Books{"Go 语言", "www.runoob.com", "Go 语言教程", 6495407})
 
-        // 也可以使用 key => value 格式
-        fmt.Println(Books{title: "Go 语言", author: "www.runoob.com", subject: "Go 语言教程", book_id: 6495407})
+    // 也可以使用 key => value 格式
+    fmt.Println(Books{title: "Go 语言", author: "www.runoob.com", subject: "Go 语言教程", book_id: 6495407})
 
-        // 忽略的字段为 0 或 空
-    fmt. Println(Books{title: "Go 语言", author: "www.runoob.com"})
+    // 忽略的字段为 0 或 空
+fmt. Println(Books{title: "Go 语言", author: "www.runoob.com"})
 
-    }
+}
+```
 
 输出结果为：
 
-    {Go 语言 www.runoob.com Go 语言教程 6495407}
-    {Go 语言 www.runoob.com Go 语言教程 6495407}
-    {Go 语言 www.runoob.com  0}
+```
+{Go 语言 www.runoob.com Go 语言教程 6495407}
+{Go 语言 www.runoob.com Go 语言教程 6495407}
+{Go 语言 www.runoob.com  0}
+```
 
 ## 2. 访问结构体成员
 
 如果要访问结构体成员，需要使用点号 `.` 操作符，格式为：
 
-    结构体.成员名
+```
+结构体.成员名
+```
 
 实例：
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    type Books struct {
-        title string
-        author string
-        subject string
-        book_id int
+type Books struct {
+    title string
+    author string
+    subject string
+    book_id int
 
-    }
+}
 
-    func main() {
+func main() {
 
-        var Book1 Books // 声明Book1为Books类型
-        var Book2 Books // 声明Book2为Books类型
+    var Book1 Books // 声明Book1为Books类型
+    var Book2 Books // 声明Book2为Books类型
 
-        /* Book1描述 */
-        Book1.title = "Go 语言"
-        Book1.author = "www.runoob.com"
-        Book1.subject = "Go 语言教程"
-        Book1.book_id = 6495407
+    /* Book1描述 */
+    Book1.title = "Go 语言"
+    Book1.author = "www.runoob.com"
+    Book1.subject = "Go 语言教程"
+    Book1.book_id = 6495407
 
-        
+    
 
-        /* Book2描述 */
-        Book2.title = "Pyhton 语言"
-        Book2.author = "www.runoob.com"
-        Book2.subject = "Pyhton 语言教程"
-        Book2.book_id = 6495407
+    /* Book2描述 */
+    Book2.title = "Pyhton 语言"
+    Book2.author = "www.runoob.com"
+    Book2.subject = "Pyhton 语言教程"
+    Book2.book_id = 6495407
 
-        /* 打印 Book1 信息 */
-        fmt.Printf( "Book 1 title : %s\n", Book1.title)
-        fmt.Printf( "Book 1 author : %s\n", Book1.author)
-        fmt.Printf( "Book 1 subject : %s\n", Book1.subject)
-        fmt.Printf( "Book 1 book_id : %d\n", Book1.book_id)
+    /* 打印 Book1 信息 */
+    fmt.Printf( "Book 1 title : %s\n", Book1.title)
+    fmt.Printf( "Book 1 author : %s\n", Book1.author)
+    fmt.Printf( "Book 1 subject : %s\n", Book1.subject)
+    fmt.Printf( "Book 1 book_id : %d\n", Book1.book_id)
 
-        /* 打印 Book2 信息 */
-        fmt. Printf( "Book 2 title : %s\n", Book2.title)
-        fmt. Printf( "Book 2 author : %s\n", Book2.author)
-        fmt. Printf( "Book 2 subject : %s\n", Book2.subject)
-        fmt. Printf( "Book 2 book_id : %d\n", Book2.book_id)
+    /* 打印 Book2 信息 */
+    fmt. Printf( "Book 2 title : %s\n", Book2.title)
+    fmt. Printf( "Book 2 author : %s\n", Book2.author)
+    fmt. Printf( "Book 2 subject : %s\n", Book2.subject)
+    fmt. Printf( "Book 2 book_id : %d\n", Book2.book_id)
 
-    }
+}
+```
 
 以上实例执行运行结果为：
 
-    Book 1 title : Go 语言
-    Book 1 author : www.runoob.com
-    Book 1 subject : Go 语言教程
-    Book 1 book_id : 6495407
-    Book 2 title : Python 教程
-    Book 2 author : www.runoob.com
-    Book 2 subject : Python 语言教程
-    Book 2 book_id : 6495700
+```
+Book 1 title : Go 语言
+Book 1 author : www.runoob.com
+Book 1 subject : Go 语言教程
+Book 1 book_id : 6495407
+Book 2 title : Python 教程
+Book 2 author : www.runoob.com
+Book 2 subject : Python 语言教程
+Book 2 book_id : 6495700
+```
 
 ## 3. 结构体作为函数参数
 
 你可以像其他数据类型一样将结构体类型作为参数传递给函数。并以以上实例的方式访问结构体变量：
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    type Books struct {
-        title string
-        author string
-        subject string
-        book_id int
+type Books struct {
+    title string
+    author string
+    subject string
+    book_id int
 
-    }
+}
 
-    func main() {
+func main() {
 
-        var Book1 Books // 声明Book1为Books类型
-        var Book2 Books // 声明Book2为Books类型
+    var Book1 Books // 声明Book1为Books类型
+    var Book2 Books // 声明Book2为Books类型
 
-        /* Book1描述 */
-        Book1.title = "Go 语言"
-        Book1.author = "www.runoob.com"
-        Book1.subject = "Go 语言教程"
-        Book1.book_id = 6495407
+    /* Book1描述 */
+    Book1.title = "Go 语言"
+    Book1.author = "www.runoob.com"
+    Book1.subject = "Go 语言教程"
+    Book1.book_id = 6495407
 
-        
+    
 
-        /* Book2描述 */
-        Book2.title = "Pyhton 语言"
-        Book2.author = "www.runoob.com"
-        Book2.subject = "Pyhton 语言教程"
-        Book2.book_id = 6495407
+    /* Book2描述 */
+    Book2.title = "Pyhton 语言"
+    Book2.author = "www.runoob.com"
+    Book2.subject = "Pyhton 语言教程"
+    Book2.book_id = 6495407
 
-        // /* 打印 Book1 信息 */
-        // fmt.Printf( "Book 1 title : %s\n", Book1.title)
-        // fmt.Printf( "Book 1 author : %s\n", Book1.author)
-        // fmt.Printf( "Book 1 subject : %s\n", Book1.subject)
-        // fmt.Printf( "Book 1 book_id : %d\n", Book1.book_id)
+    // /* 打印 Book1 信息 */
+    // fmt.Printf( "Book 1 title : %s\n", Book1.title)
+    // fmt.Printf( "Book 1 author : %s\n", Book1.author)
+    // fmt.Printf( "Book 1 subject : %s\n", Book1.subject)
+    // fmt.Printf( "Book 1 book_id : %d\n", Book1.book_id)
 
-        // /* 打印 Book2 信息 */
-        // fmt.Printf( "Book 2 title : %s\n", Book2.title)
-        // fmt.Printf( "Book 2 author : %s\n", Book2.author)
-        // fmt.Printf( "Book 2 subject : %s\n", Book2.subject)
-        // fmt.Printf( "Book 2 book_id : %d\n", Book2.book_id)
+    // /* 打印 Book2 信息 */
+    // fmt.Printf( "Book 2 title : %s\n", Book2.title)
+    // fmt.Printf( "Book 2 author : %s\n", Book2.author)
+    // fmt.Printf( "Book 2 subject : %s\n", Book2.subject)
+    // fmt.Printf( "Book 2 book_id : %d\n", Book2.book_id)
 
-        /* 打印 Book1 信息 */
-        printBook(Book1)
+    /* 打印 Book1 信息 */
+    printBook(Book1)
 
-        /* 打印 Book2 信息 */
-        printBook(Book2)
-    }  
+    /* 打印 Book2 信息 */
+    printBook(Book2)
+}  
 
-    func printBook(book Books) {
-        fmt. Printf("Book title : %s\n", book.title)
-        fmt. Printf("Book author : %s\n", book.author)
-        fmt. Printf("Book subject : %s\n", book.subject)
-        fmt. Printf("Book book_id : %d\n", book.book_id)
+func printBook(book Books) {
+    fmt. Printf("Book title : %s\n", book.title)
+    fmt. Printf("Book author : %s\n", book.author)
+    fmt. Printf("Book subject : %s\n", book.subject)
+    fmt. Printf("Book book_id : %d\n", book.book_id)
 
-    }
+}
+```
 
 以上实例执行运行结果为:
 
-    Book title : Go 语言
-    Book author : www.runoob.com
-    Book subject : Go 语言教程
-    Book book_id : 6495407
-    Book title : Python 教程
-    Book author : www.runoob.com
-    Book subject : Python 语言教程
-    Book book_id : 6495700
+```
+Book title : Go 语言
+Book author : www.runoob.com
+Book subject : Go 语言教程
+Book book_id : 6495407
+Book title : Python 教程
+Book author : www.runoob.com
+Book subject : Python 语言教程
+Book book_id : 6495700
+```
 
 ## 4. 结构体指针
 
 你可以定义指向结构体的指针类似于其他指针变量，格式如下：
 
-    var struct_pointer *Books
+```
+var struct_pointer *Books
+```
 
 以上定义的指针变量可以存储结构体变量的地址。查看结构体变量地址，可以将 `&` 符号放置于结构体变量前：
 
-    struct_pointer = &Book1
+```
+struct_pointer = &Book1
+```
 
 使用结构体指针访问结构体成员，使用 `.` 操作符：
 
-    struct_pointer.title
+```
+struct_pointer.title
+```
 
 实例:
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    type Books struct {
-        title string
-        author string
-        subject string
-        book_id int
+type Books struct {
+    title string
+    author string
+    subject string
+    book_id int
 
-    }
+}
 
-    func main() {
+func main() {
 
-        var book1 Books
-        var book2 Books
+    var book1 Books
+    var book2 Books
 
-        // book1 描述
-        book1.title = "Go 语言"
-        book1.author = "www.runoob.com"
-        book1.subject = "Go 语言教程"
-        book1.book_id = 6495407
+    // book1 描述
+    book1.title = "Go 语言"
+    book1.author = "www.runoob.com"
+    book1.subject = "Go 语言教程"
+    book1.book_id = 6495407
 
-        
+    
 
-        // book2 描述
-        book2.title = "Python 语言"
-        book2.author = "www.runoob.com"
-        book2.subject = "Python 语言教程"
-        book2.book_id = 6495000
+    // book2 描述
+    book2.title = "Python 语言"
+    book2.author = "www.runoob.com"
+    book2.subject = "Python 语言教程"
+    book2.book_id = 6495000
 
-        /* 打印 Book1 信息 */
-        printBook(&book1)
+    /* 打印 Book1 信息 */
+    printBook(&book1)
 
-        /* 打印 Book2 信息 */
-        printBook(&book2)
+    /* 打印 Book2 信息 */
+    printBook(&book2)
 
-    }
+}
 
-    func printBook(book *Books) {
-        fmt. Printf( "Book title : %s\n", book.title)
-        fmt. Printf( "Book author : %s\n", book.author)
-        fmt. Printf( "Book subject : %s\n", book.subject)
-        fmt. Printf( "Book book_id : %d\n", book.book_id)
+func printBook(book *Books) {
+    fmt. Printf( "Book title : %s\n", book.title)
+    fmt. Printf( "Book author : %s\n", book.author)
+    fmt. Printf( "Book subject : %s\n", book.subject)
+    fmt. Printf( "Book book_id : %d\n", book.book_id)
 
-    }
+}
+```
 
 以上实例执行运行结果为：
 
-    Book title : Go 语言
-    Book author : www.runoob.com
-    Book subject : Go 语言教程
-    Book book_id : 6495407
-    Book title : Python 教程
-    Book author : www.runoob.com
-    Book subject : Python 语言教程
-    Book book_id : 6495700
+```
+Book title : Go 语言
+Book author : www.runoob.com
+Book subject : Go 语言教程
+Book book_id : 6495407
+Book title : Python 教程
+Book author : www.runoob.com
+Book subject : Python 语言教程
+Book book_id : 6495700
+```
 
 ## 5. 结构体是作为参数的值传递
 
-    package main
+```golang
+package main
 
-    import "fmt"
+import "fmt"
 
-    type Books struct {
-        title string
-        author string
-        subject string
-        book_id int
+type Books struct {
+    title string
+    author string
+    subject string
+    book_id int
 
-    }
+}
 
-    func changeBook(book Books) {
-        book.title = "book1_change"
-
-    }
-
-    func changeBook2(book *Books) {
+func changeBook(book Books) {
     book.title = "book1_change"
 
-    }
+}
 
-    func main() {
+func changeBook2(book *Books) {
+book.title = "book1_change"
 
-        var book1 Books
-        book1.title = "book1"
-        book1.author = "zuozhe"
-        book1.book_id = 1
-        changeBook(book1)
-        fmt. Println(book1)
+}
 
-        changeBook2(&book1)
-        fmt. Println(book1)
+func main() {
 
-    }
+    var book1 Books
+    book1.title = "book1"
+    book1.author = "zuozhe"
+    book1.book_id = 1
+    changeBook(book1)
+    fmt. Println(book1)
+
+    changeBook2(&book1)
+    fmt. Println(book1)
+
+}
+```
 
 总结：
 
-    struct 类似于 java 中的类，可以在 struct 中定义成员变量。
-    要访问成员变量，可以有两种方式：
+```
+struct 类似于 java 中的类，可以在 struct 中定义成员变量。
+要访问成员变量，可以有两种方式：
 
-        1. 通过 struct 变量. 成员 变量来访问。
-        2. 通过 struct 指针. 成员 变量来访问。
+    1. 通过 struct 变量. 成员 变量来访问。
+    2. 通过 struct 指针. 成员 变量来访问。
 
-    不需要通过 getter, setter 来设置访问权限。
-    type Rect struct{   //定义矩形类
-        x, y float64       //类型只包含属性，并没有方法
-        width, height float64
+不需要通过 getter, setter 来设置访问权限。
+type Rect struct{   //定义矩形类
+    x, y float64       //类型只包含属性，并没有方法
+    width, height float64
 
-    }
+}
 
-    func (r *Rect) Area() float64{    //为Rect类型绑定Area的方法，*Rect为指针引用可以修改传入参数的值
-        return r.width*r.height         //方法归属于类型，不归属于具体的对象，声明该类型的对象即可调用该类型的方法
+func (r *Rect) Area() float64{    //为Rect类型绑定Area的方法，*Rect为指针引用可以修改传入参数的值
+    return r.width*r.height         //方法归属于类型，不归属于具体的对象，声明该类型的对象即可调用该类型的方法
 
-    }
+}
+```
 
 ## 5. 数组和切片
 
 ### (1)为什么需要数组
 
-* 看一个问题
+- 看一个问题
 
 一个养鸡场有6只鸡，他们的体重分别是3kg, 5kg, 1kg, 3.4kg, 2kg, 50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组
 
-* 使用传统方法解决
-
-        package main
-
-        import "fmt"
-
-        func main() {
-
-            /*
-            一个养鸡场有6只鸡，他们的体重分别是3kg，5kg，1kg，3.4kg，2kg，50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组 
-            */
-
-            // 思路分析：定义留个变量，分别表示六只鸡的体重，然后求出和，然后求出平均值。
-            hen1 := 3.0
-            hen2 := 5.0
-            hen3 := 1.0
-            hen4 := 3.4
-            hen5 := 2.0
-            hen6 := 50.0
-
-            totalweight := hen1 + hen2 + hen3 + hen4 + hen5 + hen6  // invalid operation: hen1 + hen2 + hen3 + hen4 (mismatched types int and float64)go
-            avgweight := totalweight / 6
-
-            fmt. Printf("totalweight=%.2f \n", totalweight)
-            fmt. Printf("totalweight=%v avgweight=%v", totalweight, avgweight)
-
-        }
+- 使用传统方法解决
+  ```golang
+    package main
+  
+    import "fmt"
+  
+    func main() {
+  
+        /*
+        一个养鸡场有6只鸡，他们的体重分别是3kg，5kg，1kg，3.4kg，2kg，50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组 
+        */
+  
+        // 思路分析：定义留个变量，分别表示六只鸡的体重，然后求出和，然后求出平均值。
+        hen1 := 3.0
+        hen2 := 5.0
+        hen3 := 1.0
+        hen4 := 3.4
+        hen5 := 2.0
+        hen6 := 50.0
+  
+        totalweight := hen1 + hen2 + hen3 + hen4 + hen5 + hen6  // invalid operation: hen1 + hen2 + hen3 + hen4 (mismatched types int and float64)go
+        avgweight := totalweight / 6
+  
+        fmt. Printf("totalweight=%.2f \n", totalweight)
+        fmt. Printf("totalweight=%v avgweight=%v", totalweight, avgweight)
+  
+    }
+  ```
 
 代码说明：
 1)使用传统的方法不利于数据的管理和维护
 2)传统的方法不够灵活，因此我们引出需要学习的心的数量类型=》数组
 
-* 数组介绍
+- 数组介绍
 
 数组可以存放多个同意类型数据。数组也是一种数据类型，在Go中，数组是值类型
 
-* 使用数组的方式来解决养鸡场问题
-
-        package main
-
-        import "fmt"
-
-        func main() {
-
-            /*
-            一个养鸡场有6只鸡，他们的体重分别是3kg，5kg，1kg，3.4kg，2kg，50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组 
-            */
-
-            // 使用数组方式来解决
-            // 1. 定义一个数组
-            var hens [6]float64
-            // 给数组的每个元素赋值
-            hens[0] = 3.0
-            hens[1] = 5.0
-            hens[2] = 1.0
-            hens[3] = 3.4
-            hens[4] = 2.0
-            hens[5] = 50.0
-
-            // 遍历数组求出总体重
-            totalweight2 := 0.0
-            for i := 0; i < len(hens); i++ {
-                totalweight2 += hens[i]
-
-            }
-
-            avgweight2 := totalweight / 6
-            fmt. Printf("totalweight2=%.2f \n", totalweight2)
-            fmt. Printf("totalweight2=%v avgweight2=%v \n", totalweight2, avgweight2)
-
+- 使用数组的方式来解决养鸡场问题
+  ```golang
+    package main
+  
+    import "fmt"
+  
+    func main() {
+  
+        /*
+        一个养鸡场有6只鸡，他们的体重分别是3kg，5kg，1kg，3.4kg，2kg，50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组 
+        */
+  
+        // 使用数组方式来解决
+        // 1. 定义一个数组
+        var hens [6]float64
+        // 给数组的每个元素赋值
+        hens[0] = 3.0
+        hens[1] = 5.0
+        hens[2] = 1.0
+        hens[3] = 3.4
+        hens[4] = 2.0
+        hens[5] = 50.0
+  
+        // 遍历数组求出总体重
+        totalweight2 := 0.0
+        for i := 0; i < len(hens); i++ {
+            totalweight2 += hens[i]
+  
         }
+  
+        avgweight2 := totalweight / 6
+        fmt. Printf("totalweight2=%.2f \n", totalweight2)
+        fmt. Printf("totalweight2=%v avgweight2=%v \n", totalweight2, avgweight2)
+  
+    }
+  ```
