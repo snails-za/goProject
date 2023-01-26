@@ -73,7 +73,35 @@ go build -o myhello.exe .\hello.go
 - \" : 一个"
 - \r : 一个回车fmt. Println("天龙八部雪山飞狐\r张飞")
 
-## 4. VS Code快捷键
+## 4.数据类型介绍
+
+Golang 更明确的数字类型命名，支持 Unicode，支持常用数据结构。
+
+|类型|长度(字节)|默认值|说明|
+|:--:|:--:|:--:|:--:|
+|bool|1|false||
+|byte|1|0|uint8|
+|rune|4|0|Unicode Code Point, int32|
+|int, uint|4或8|0|32 或 64 位|
+|int8, uint8|1|0|-128 ~ 127, 0 ~ 255，byte是uint8 的别名|
+|int16, uint16|2|0|-32768 ~ 32767, 0 ~ 65535|
+|int32, uint32|4|0|-21亿~ 21亿, 0 ~ 42亿，rune是int32 的别名|
+|int64, uint64|8|0||
+|float32|4|0.0||
+|float64|8|0.0||
+|complex64|8|||
+|complex128|16|||
+|uintptr|4或8||以存储指针的 uint32 或 uint64 整数|
+|array|||值类型|
+|struct|||值类型|
+|string||“”|UTF-8 字符串|
+|slice||nil|引用类型|
+|map||nil|引用类型|
+|channel||nil|引用类型|
+|interface||nil|接口|
+|function||nil|函数|
+
+## 5. VS Code快捷键
 
 ### (1)编辑器与窗口管理
 
@@ -709,7 +737,7 @@ func main()  {
 
 # 数组
 
-## 1.基本介绍
+## 基本介绍
 
 ```
 var 数组名 [数组大小]数据类型
@@ -861,7 +889,11 @@ func main()  {
 - 切片的使用和数据基本相似，遍历切片、访问元素和长度获取和数组都是一样的
 - 切片的长度是可以变化的，因此切片是一个可以动态变化的数组
 - 定义：var 变量名 []类型
-- 从底层来讲，其实就是一个struct结构体,包含三个元素：指针或地址【ptr】、长度【len】、容量【cap】
+- ==从底层来讲，其实就是一个struct结构体,包含三个元素：指针或地址【ptr】、长度【len】、容量【cap】==
+- new与make的区别
+  - 二者都是用来做内存分配的。
+  - make只用于slice、map以及channel的初始化，返回的还是这三个引用类型本身；
+  - 而new用于类型的内存分配，并且内存对应的值为类型零值，返回的是指向类型的指针
 
 ## 快速入门
 
@@ -932,6 +964,8 @@ func main()  {
 ```
 
 # Map
+
+map是一种无序的基于key-value的数据结构，Go语言中的map是==引用类型==，必须初始化才能使用。
 
 ## 快速入门
 
@@ -1126,6 +1160,14 @@ func main()  {
 
 # 结构体
 
+Go语言中没有“类”的概念，也不支持“类”的继承等面向对象的概念。Go语言中通过结构体的==内嵌==再配合==接口==比面向对象具有更高的扩展性和灵活性。
+
+Go语言中的基础数据类型可以表示一些事物的基本属性，但是当我们想表达一个事物的全部或部分属性时，这时候再用单一的基本数据类型明显就无法满足需求了，Go语言提供了一种自定义数据类型，可以封装多个基本数据类型，这种数据类型叫结构体，英文名称struct。 也就是我们可以通过struct来定义自己的类型了。
+
+Go语言中通过struct来实现面向对象。
+
+**便于理解：**<u>我们可以认为结构体和Python的类是等价的，那么经过思考，结构体是否会和类一样，也是有自己的方法或函数？是否也可以被继承？这里我们后边在进行讨论？</u>
+
 ## 定义结构体
 
 ```golang
@@ -1172,7 +1214,456 @@ func main()  {
 }
 ```
 
+## 面试题
+
+```golang
+/*
+ * @Author: wangju wangjuchn@outlook.com
+ * @Date: 2023-01-26 16:36:57
+ * @LastEditors: wangju wangjuchn@outlook.com
+ * @LastEditTime: 2023-01-26 17:07:27
+ * @FilePath: /src/chapter10/demo03/main.go
+ * @Description: 面试题
+ */
+package main
+
+import "fmt"
+
+type student struct {
+	name string
+	age  int
+}
+
+func main() {
+	m := make(map[string]*student)
+	stus := []student{
+		{name: "pprof.cn", age: 18},
+		{name: "测试", age: 23},
+		{name: "博客", age: 28},
+	}
+	// 这里实际上只创建了一个变量，所以stu地址是一样的，不能重复使用传递
+	for _, stu := range stus {
+		stu2 := stu
+		m[stu.name] = &stu2
+		fmt.Println(m)
+	}
+	for k, v := range m {
+		fmt.Println(k, "=>", v)
+	}
+}
+```
+
 ## 结构体的函数
+
+### 构造函数
+
+Go语言的结构体没有构造函数，我们可以自己实现。 例如，下方的代码就实现了一个person的构造函数。 因为struct是值类型，如果结构体比较复杂的话，值拷贝性能开销会比较大，所以该构造函数返回的是结构体指针类型。
+
+```golang
+func newPerson(name, city string, age int8) *person {
+    return &person{
+        name: name,
+        city: city,
+        age:  age,
+    }
+}
+```
+
+调用构造函数
+
+```golang
+p9 := newPerson("pprof.cn", "测试", 90)
+fmt.Printf("%#v\n", p9)
+```
+
+### 方法和接收者
+
+Go语言中的方法（Method）是一种作用于特定类型变量的函数。这种特定类型变量叫做接收者（Receiver）。接收者的概念就类似于其他语言中的this或者 self。
+
+方法的定义格式如下：
+
+```golang
+func (接收者变量 接收者类型) 方法名(参数列表) (返回参数) {
+    函数体
+}
+```
+
+其中，
+
+```
+1.接收者变量：接收者中的参数变量名在命名时，官方建议使用接收者类型名的第一个小写字母，而不是self、this之类的命名。例如，Person类型的接收者变量应该命名为 p，Connector类型的接收者变量应该命名为c等。
+2.接收者类型：接收者类型和参数类似，可以是指针类型和非指针类型。
+3.方法名、参数列表、返回参数：具体格式与函数定义相同。
+```
+
+举个例子：
+
+```golang
+//Person 结构体
+type Person struct {
+    name string
+    age  int8
+}
+
+//NewPerson 构造函数
+func NewPerson(name string, age int8) *Person {
+    return &Person{
+        name: name,
+        age:  age,
+    }
+}
+
+//Dream Person做梦的方法
+func (p Person) Dream() {
+    fmt.Printf("%s的梦想是学好Go语言！\n", p.name)
+}
+
+func main() {
+    p1 := NewPerson("测试", 25)
+    p1.Dream()
+}
+```
+
+方法与函数的区别是，函数不属于任何类型，方法属于特定的类型。
+
+### 指针类型的接收者
+
+指针类型的接收者由一个结构体的指针组成，由于指针的特性，调用方法时修改接收者指针的任意成员变量，在方法结束后，修改都是有效的。这种方式就十分接近于其他语言中面向对象中的this或者self。 例如我们为Person添加一个SetAge方法，来修改实例变量的年龄。
+
+```golang
+// SetAge 设置p的年龄
+// 使用指针接收者
+func (p *Person) SetAge(newAge int8) {
+    p.age = newAge
+}
+```
+
+调用该方法：
+
+```golang
+func main() {
+    p1 := NewPerson("测试", 25)
+    fmt.Println(p1.age) // 25
+    p1.SetAge(30)
+    fmt.Println(p1.age) // 30
+}
+```
+
+### 值类型的接收者
+
+当方法作用于值类型接收者时，Go语言会在代码运行时将接收者的值复制一份。在值类型接收者的方法中可以获取接收者的成员值，但修改操作只是针对副本，无法修改接收者变量本身。
+
+```golang
+// SetAge2 设置p的年龄
+// 使用值接收者
+func (p Person) SetAge2(newAge int8) {
+    p.age = newAge
+}
+
+func main() {
+    p1 := NewPerson("测试", 25)
+    p1.Dream()
+    fmt.Println(p1.age) // 25
+    p1.SetAge2(30) // (*p1).SetAge2(30)
+    fmt.Println(p1.age) // 25
+}
+```
+
+### 什么时候应该使用指针类型接收者
+
+```
+1.需要修改接收者中的值
+2.接收者是拷贝代价比较大的大对象
+3.保证一致性，如果有某个方法使用了指针接收者，那么其他的方法也应该使用指针接收者。
+```
+
+### 任意类型添加方法
+
+在Go语言中，接收者的类型可以是任何类型，不仅仅是结构体，任何类型都可以拥有方法。 举个例子，我们基于内置的int类型使用type关键字可以定义新的自定义类型，然后为我们的自定义类型添加方法。
+
+```golang
+//MyInt 将int定义为自定义MyInt类型
+type MyInt int
+
+//SayHello 为MyInt添加一个SayHello的方法
+func (m MyInt) SayHello() {
+    fmt.Println("Hello, 我是一个int。")
+}
+func main() {
+    var m1 MyInt
+    m1.SayHello() //Hello, 我是一个int。
+    m1 = 100
+    fmt.Printf("%#v  %T\n", m1, m1) //100  main.MyInt
+}
+```
+
+注意事项： 非本地类型不能定义方法，也就是说我们不能给别的包的类型定义方法
+
+### 结构体的匿名字段
+
+结构体允许其成员字段在声明时没有字段名而只有类型，这种没有名字的字段就称为匿名字段。
+
+```golang
+//Person 结构体Person类型
+type Person struct {
+    string
+    int
+}
+
+func main() {
+    p1 := Person{
+        "pprof.cn",
+        18,
+    }
+    fmt.Printf("%#v\n", p1)        //main.Person{string:"pprof.cn", int:18}
+    fmt.Println(p1.string, p1.int) //pprof.cn 18
+}
+
+```
+
+匿名字段默认采用类型名作为字段名，结构体要求字段名称必须唯一，因此一个结构体中同种类型的匿名字段只能有一个。
+
+### 嵌套结构体
+
+一个结构体中可以嵌套包含另一个结构体或结构体指针。
+
+```golang
+//Address 地址结构体
+type Address struct {
+    Province string
+    City     string
+}
+
+//User 用户结构体
+type User struct {
+    Name    string
+    Gender  string
+    Address Address
+}
+
+func main() {
+    user1 := User{
+        Name:   "pprof",
+        Gender: "女",
+        Address: Address{
+            Province: "黑龙江",
+            City:     "哈尔滨",
+        },
+    }
+    fmt.Printf("user1=%#v\n", user1)//user1=main.User{Name:"pprof", Gender:"女", Address:main.Address{Province:"黑龙江", City:"哈尔滨"}}
+}
+```
+
+### 嵌套匿名结构体
+
+```golang
+//Address 地址结构体
+type Address struct {
+    Province string
+    City     string
+}
+
+//User 用户结构体
+type User struct {
+    Name    string
+    Gender  string
+    Address //匿名结构体
+}
+
+func main() {
+    var user2 User
+    user2.Name = "pprof"
+    user2.Gender = "女"
+    user2.Address.Province = "黑龙江"    //通过匿名结构体.字段名访问
+    user2.City = "哈尔滨"                //直接访问匿名结构体的字段名
+    fmt.Printf("user2=%#v\n", user2) //user2=main.User{Name:"pprof", Gender:"女", Address:main.Address{Province:"黑龙江", City:"哈尔滨"}}
+}
+```
+
+当访问结构体成员时会先在结构体中查找该字段，找不到再去匿名结构体中查找。
+
+### 嵌套结构体的字段名冲突
+
+嵌套结构体内部可能存在相同的字段名。这个时候为了避免歧义需要指定具体的内嵌结构体的字段。
+
+```golang
+//Address 地址结构体
+type Address struct {
+    Province   string
+    City       string
+    CreateTime string
+}
+
+//Email 邮箱结构体
+type Email struct {
+    Account    string
+    CreateTime string
+}
+
+//User 用户结构体
+type User struct {
+    Name   string
+    Gender string
+    Address
+    Email
+}
+
+func main() {
+    var user3 User
+    user3.Name = "pprof"
+    user3.Gender = "女"
+    // user3.CreateTime = "2019" //ambiguous selector user3.CreateTime
+    user3.Address.CreateTime = "2000" //指定Address结构体中的CreateTime
+    user3.Email.CreateTime = "2000"   //指定Email结构体中的CreateTime
+}
+```
+
+### 结构体的“继承”
+
+Go语言中使用结构体也可以实现其他编程语言中面向对象的继承。
+
+```golang
+//Animal 动物
+type Animal struct {
+    name string
+}
+
+func (a *Animal) move() {
+    fmt.Printf("%s会动！\n", a.name)
+}
+
+//Dog 狗
+type Dog struct {
+    Feet    int8
+    *Animal //通过嵌套匿名结构体实现继承
+}
+
+func (d *Dog) wang() {
+    fmt.Printf("%s会汪汪汪~\n", d.name)
+}
+
+func main() {
+    d1 := &Dog{
+        Feet: 4,
+        Animal: &Animal{ //注意嵌套的是结构体指针
+            name: "乐乐",
+        },
+    }
+    d1.wang() //乐乐会汪汪汪~
+    d1.move() //乐乐会动！
+}
+```
+
+### 结构体字段的可见性
+
+结构体中字段大写开头表示可公开访问，小写表示私有（仅在定义当前结构体的包中可访问）。
+
+### ==结构体与JSON序列化==
+
+JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。同时也易于机器解析和生成。JSON键值对是用来保存JS对象的一种方式，键/值对组合中的键名写在前面并用双引号""包裹，使用冒号:分隔，然后紧接着值；多个键值之间使用英文,分隔。
+
+```golang
+/*
+* @Author: wangju wangjuchn@outlook.com
+* @Date: 2022-12-14 23:52:15
+* @LastEditors: wangju wangjuchn@outlook.com
+* @LastEditTime: 2022-12-17 00:41:57
+* @FilePath: /src/struct_json/main.go
+* @Description: JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易于人阅读和编写。
+同时也易于机器解析和生成。JSON键值对是用来保存JS对象的一种方式，键/值对组合中的键名写在前面并用双引号""包裹，
+使用冒号:分隔，然后紧接着值；多个键值之间使用英文,分隔。
+*/
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+)
+
+// Student 学生
+type Student struct {
+	ID     int
+	Gender string
+	Name   string
+}
+
+// Class 班级
+type Class struct {
+	Title    string
+	Students []*Student
+}
+
+func main() {
+	c := &Class{
+		Title:    "101",
+		Students: make([]*Student, 0, 200),
+	}
+	for i := 0; i < 10; i++ {
+		stu := &Student{
+			Name:   fmt.Sprintf("stu%02d", i),
+			Gender: "男",
+			ID:     i,
+		}
+		c.Students = append(c.Students, stu)
+	}
+	//JSON序列化：结构体-->JSON格式的字符串
+	data, err := json.Marshal(c)
+	if err != nil {
+		fmt.Println("json marshal failed")
+		return
+	}
+	fmt.Printf("json:%s\n", data)
+	//JSON反序列化：JSON格式的字符串-->结构体
+	str := `{"Title":"101","Students":[{"ID":0,"Gender":"男","Name":"stu00"},{"ID":1,"Gender":"男","Name":"stu01"},{"ID":2,"Gender":"男","Name":"stu02"},{"ID":3,"Gender":"男","Name":"stu03"},{"ID":4,"Gender":"男","Name":"stu04"},{"ID":5,"Gender":"男","Name":"stu05"},{"ID":6,"Gender":"男","Name":"stu06"},{"ID":7,"Gender":"男","Name":"stu07"},{"ID":8,"Gender":"男","Name":"stu08"},{"ID":9,"Gender":"男","Name":"stu09"}]}`
+	c1 := &Class{}
+	err = json.Unmarshal([]byte(str), c1)
+	if err != nil {
+		fmt.Println("json unmarshal failed!")
+		return
+	}
+	fmt.Printf("%#v\n", c1)
+}
+
+```
+
+### ==结构体标签（Tag）==
+
+Tag是结构体的元信息，可以在运行的时候通过反射的机制读取出来。
+
+Tag在结构体字段的后方定义，由一对反引号包裹起来，具体的格式如下：
+
+```
+`key1:"value1" key2:"value2"`
+```
+
+结构体标签由一个或多个键值对组成。键与值使用冒号分隔，值用双引号括起来。键值对之间使用一个空格分隔。 注意事项： 为结构体编写Tag时，必须严格遵守键值对的规则。结构体标签的解析代码的容错能力很差，一旦格式写错，编译和运行时都不会提示任何错误，通过反射也无法正确取值。例如==**不要在key和value之间添加空格**==。
+
+例如我们为Student结构体的每个字段定义json序列化时使用的Tag：
+
+```golang
+//Student 学生
+type Student struct {
+    ID     int    `json:"id"` //通过指定tag实现json序列化该字段时的key
+    Gender string //json序列化是默认使用字段名作为key
+    name   string //私有不能被json包访问
+}
+
+func main() {
+    s1 := Student{
+        ID:     1,
+        Gender: "女",
+        name:   "pprof",
+    }
+    data, err := json.Marshal(s1)
+    if err != nil {
+        fmt.Println("json marshal failed!")
+        return
+    }
+    fmt.Printf("json str:%s\n", data) //json str:{"id":1,"Gender":"女"}
+}
+```
+
+### 快速使用
 
 ```golang
 /*
