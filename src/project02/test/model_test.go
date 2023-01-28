@@ -1,14 +1,15 @@
-package model
+package test
 
 import (
 	"fmt"
+	"project02/model"
 	"testing"
 )
 
 func TestHeroname(t *testing.T) {
-	fmt.Println(Heroname)
+	fmt.Println(model.Heroname)
 }
 
 func TestDbConnect(t *testing.T) {
-	DbConnect()
+	model.DbConnect()
 }

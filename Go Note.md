@@ -28,8 +28,8 @@ func main() {
 - (4)func main(){
   
      }
-   func是一个关键字，表示一个函数。
-   main是函数名，是一个主函数，即我们程序的入口
+ func是一个关键字，表示一个函数。
+ main是函数名，是一个主函数，即我们程序的入口
 - (5)fmt. Println("hello")
   
      表示调用fmt包的函数Println输出“hello world!”
@@ -267,7 +267,7 @@ func main()  {
 - 当左右两边都是数值型时，则做法加法运算
 - 当左右两边都是字符串，则做字符串拼接
 
-## 5. 数据类型
+## 5. 基本数据类型
 
 ### （1）整数类型
 
@@ -436,7 +436,7 @@ func main() {
 - 字符类型存储到计算机中， 需要将字符类型对应的码值找出来（整数）找出来
   
     存储： 字符 ---> 对应码值 ---> 二进制 ----> 存储
-  读取： 二进制 ---> 码值 ---> 字符 ---> 读取
+读取： 二进制 ---> 码值 ---> 字符 ---> 读取
 - 字符和码值的对应关系是通过字符编码表决定的（是规定好）
 - Go语言的编码都统一成了utf-8，非常的方便，很统一，再也没有编码乱码的困扰
 
@@ -467,7 +467,7 @@ func main()  {
 - bool类型适用于逻辑运算，一般用于程序流程控制[注：这个后面会详细介绍]
   
     1> if 条件控制语句:
-  2> for 循环控制语句:
+2> for 循环控制语句:
 
 ### （5）字符串类型：string
 
@@ -518,7 +518,7 @@ func main()  {
 - 字符串的两种表示形式
   
     1> 双引号， 会识别转义字符
-  2> 反引号， 以字符串的原生形式输出，包括换行和特殊字符，可以实现防止攻击、输出源代码等效果
+2> 反引号， 以字符串的原生形式输出，包括换行和特殊字符，可以实现防止攻击、输出源代码等效果
 - 字符串拼接方式
 - 当一个拼接的操作很长时，怎么办，可以分行写
 
@@ -735,6 +735,103 @@ func main()  {
 }
 ```
 
+函数
+函数是基本的代码块，用于执行一个任务。
+Go 语言最少有个 main() 函数。
+你可以通过函数来划分不同功能，逻辑上每个函数执行的是指定的任务。
+函数声明告诉了编译器函数的名称，返回类型，和参数。
+Go 语言标准库提供了多种可动用的内置的函数。例如，len() 函数可以接收不同类型参数并返回该类型的长度。如果我们传入的是字符串则返回字符串的长度，如果传入的是数组，则返回数组中包含的元素个数。
+
+# 函数
+
+## 1. 函数定义
+
+Go 语言函数定义格式如下：
+
+函数定义解析：
+func：函数由 func 开始声明function_name：函数名称，函数名和参数列表一起构成了函数签名。parameter list：参数列表，参数就像一个占位符，当函数被调用时，你可以将值传递给参数，这个值被称为实际参数。参数列表指定的是参数类型、顺序、及参数个数。参数是可选的，也就是说函数也可以不包含参数。return_types：返回类型，函数返回一列值。return_types 是该列值的数据类型。有些功能不需要返回值，这种情况下 return_types 不是必须的。函数体：函数定义的代码集合
+
+## 2. 实例
+
+以下实例为 max() 函数的代码，该函数传入两个整型参数 num1 和 num2，并返回这两个参数的最大值：
+
+## 3. 函数调用
+
+当创建函数时，你定义了函数需要做什么，通过调用该函数来执行指定任务。
+调用函数，向函数传递参数，并返回值，例如：
+
+以上实例在 main() 函数中调用 max（）函数，执行结果为：
+
+## 4. 函数返回多个值
+
+Go 函数可以返回多个值，例如：
+
+以上实例执行结果为：
+
+## 5. 函数参数
+
+函数如果使用参数，该变量可称为函数的形参。
+形参就像定义在函数体内的局部变量。
+调用函数，可以通过两种方式来传递参数：
+
+### (1)值传递
+
+值传递是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。
+
+以下代码执行结果为：
+
+### (2)引用传递
+
+引用传递是指在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。
+
+以上代码执行结果为：
+
+`注意` ：默认情况下，Go 语言使用的是值传递，即在调用过程中不会影响到实际参数。
+
+## 6. 函数用法
+
+### (1)函数作为另外一个函数的实参
+
+函数定义后可作为另外一个函数的实参数传入
+Go 语言可以很灵活的创建函数，并作为另外一个函数的实参。以下实例中我们在定义的函数中初始化一个变量，该函数仅仅是为了使用内置函数 math.sqrt()，实例为：
+
+### (2)闭包
+
+闭包是匿名函数，可在动态编程中使用
+Go 语言支持匿名函数，可作为闭包。匿名函数是一个"内联"语句或表达式。匿名函数的优越性在于可以直接使用函数内的变量，不必申明。
+以下实例中，我们创建了函数 getSequence() ，返回另外一个函数。该函数的目的是在闭包中递增 i 变量，代码如下：
+
+### (3)方法
+
+方法就是一个包含了接受者的函数
+Go 语言中同时有函数和方法。一个方法就是一个包含了接受者的函数，接受者可以是命名类型或者结构体类型的一个值或者是一个指针。所有给定类型的方法属于该类型的方法集。语法格式如下：
+
+实例:
+
+以上代码执行结果为：
+
+### (4)init函数
+
+基本介绍
+每一个源文件都可以包含一个init函数，该函数会在main函数之前运行
+
+注意事项
+全局变量定义代码会在init之前运行
+
+### (5)匿名函数
+
+介绍
+Go支持匿名函数，就是没有名字的函数，如果我们某个函数只是希望使用一次，可以考虑使用匿名函数，匿名函数也可以实现多次调用。
+使用
+
+### (6)defer
+
+介绍
+再函数中，程序员经常需要创建资源（数据库连接，文件句柄、锁等），在函数执行完毕之后，及时的释放资源，Go的设计者提供了defer
+快速入门
+
+### (7)字符串内置函数
+
 # 数组
 
 ## 基本介绍
@@ -911,26 +1008,26 @@ package main
 import "fmt"
 
 func main() {
-	// 1. 引用数组
-	var arr = [5]int{1, 2, 3, 4, 5}
-	var slice []int
-	slice = arr[1:3]
-	fmt.Println(slice)
-	fmt.Println(len(slice))
-	fmt.Println(cap(slice))
+    // 1. 引用数组
+    var arr = [5]int{1, 2, 3, 4, 5}
+    var slice []int
+    slice = arr[1:3]
+    fmt.Println(slice)
+    fmt.Println(len(slice))
+    fmt.Println(cap(slice))
 
-	// 2. 通过make来创建
-	var slice2 []int = make([]int, 5, 10)
-	fmt.Printf("silce2的类型是:%T，silce2的值是：%v \n", slice2, slice2)
+    // 2. 通过make来创建
+    var slice2 []int = make([]int, 5, 10)
+    fmt.Printf("silce2的类型是:%T，silce2的值是：%v \n", slice2, slice2)
 
-	// 3.new
-	slice3 := new([]int)
-	*slice3 = []int{1, 2, 3}
-	fmt.Printf("silce3的类型是:%T，silce3的值是：%v \n", slice3, slice3)
+    // 3.new
+    slice3 := new([]int)
+    *slice3 = []int{1, 2, 3}
+    fmt.Printf("silce3的类型是:%T，silce3的值是：%v \n", slice3, slice3)
 
-	// 4. 直接定义
-	var slice4 []int = []int{1, 2, 3}
-	fmt.Println(slice4, len(slice4), cap(slice4))
+    // 4. 直接定义
+    var slice4 []int = []int{1, 2, 3}
+    fmt.Println(slice4, len(slice4), cap(slice4))
 }
 ```
 
@@ -1230,26 +1327,26 @@ package main
 import "fmt"
 
 type student struct {
-	name string
-	age  int
+    name string
+    age  int
 }
 
 func main() {
-	m := make(map[string]*student)
-	stus := []student{
-		{name: "pprof.cn", age: 18},
-		{name: "测试", age: 23},
-		{name: "博客", age: 28},
-	}
-	// 这里实际上只创建了一个变量，所以stu地址是一样的，不能重复使用传递
-	for _, stu := range stus {
-		stu2 := stu
-		m[stu.name] = &stu2
-		fmt.Println(m)
-	}
-	for k, v := range m {
-		fmt.Println(k, "=>", v)
-	}
+    m := make(map[string]*student)
+    stus := []student{
+        {name: "pprof.cn", age: 18},
+        {name: "测试", age: 23},
+        {name: "博客", age: 28},
+    }
+    // 这里实际上只创建了一个变量，所以stu地址是一样的，不能重复使用传递
+    for _, stu := range stus {
+        stu2 := stu
+        m[stu.name] = &stu2
+        fmt.Println(m)
+    }
+    for k, v := range m {
+        fmt.Println(k, "=>", v)
+    }
 }
 ```
 
@@ -1576,52 +1673,52 @@ JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。易�
 package main
 
 import (
-	"encoding/json"
-	"fmt"
+    "encoding/json"
+    "fmt"
 )
 
 // Student 学生
 type Student struct {
-	ID     int
-	Gender string
-	Name   string
+    ID     int
+    Gender string
+    Name   string
 }
 
 // Class 班级
 type Class struct {
-	Title    string
-	Students []*Student
+    Title    string
+    Students []*Student
 }
 
 func main() {
-	c := &Class{
-		Title:    "101",
-		Students: make([]*Student, 0, 200),
-	}
-	for i := 0; i < 10; i++ {
-		stu := &Student{
-			Name:   fmt.Sprintf("stu%02d", i),
-			Gender: "男",
-			ID:     i,
-		}
-		c.Students = append(c.Students, stu)
-	}
-	//JSON序列化：结构体-->JSON格式的字符串
-	data, err := json.Marshal(c)
-	if err != nil {
-		fmt.Println("json marshal failed")
-		return
-	}
-	fmt.Printf("json:%s\n", data)
-	//JSON反序列化：JSON格式的字符串-->结构体
-	str := `{"Title":"101","Students":[{"ID":0,"Gender":"男","Name":"stu00"},{"ID":1,"Gender":"男","Name":"stu01"},{"ID":2,"Gender":"男","Name":"stu02"},{"ID":3,"Gender":"男","Name":"stu03"},{"ID":4,"Gender":"男","Name":"stu04"},{"ID":5,"Gender":"男","Name":"stu05"},{"ID":6,"Gender":"男","Name":"stu06"},{"ID":7,"Gender":"男","Name":"stu07"},{"ID":8,"Gender":"男","Name":"stu08"},{"ID":9,"Gender":"男","Name":"stu09"}]}`
-	c1 := &Class{}
-	err = json.Unmarshal([]byte(str), c1)
-	if err != nil {
-		fmt.Println("json unmarshal failed!")
-		return
-	}
-	fmt.Printf("%#v\n", c1)
+    c := &Class{
+        Title:    "101",
+        Students: make([]*Student, 0, 200),
+    }
+    for i := 0; i < 10; i++ {
+        stu := &Student{
+            Name:   fmt.Sprintf("stu%02d", i),
+            Gender: "男",
+            ID:     i,
+        }
+        c.Students = append(c.Students, stu)
+    }
+    //JSON序列化：结构体-->JSON格式的字符串
+    data, err := json.Marshal(c)
+    if err != nil {
+        fmt.Println("json marshal failed")
+        return
+    }
+    fmt.Printf("json:%s\n", data)
+    //JSON反序列化：JSON格式的字符串-->结构体
+    str := `{"Title":"101","Students":[{"ID":0,"Gender":"男","Name":"stu00"},{"ID":1,"Gender":"男","Name":"stu01"},{"ID":2,"Gender":"男","Name":"stu02"},{"ID":3,"Gender":"男","Name":"stu03"},{"ID":4,"Gender":"男","Name":"stu04"},{"ID":5,"Gender":"男","Name":"stu05"},{"ID":6,"Gender":"男","Name":"stu06"},{"ID":7,"Gender":"男","Name":"stu07"},{"ID":8,"Gender":"男","Name":"stu08"},{"ID":9,"Gender":"男","Name":"stu09"}]}`
+    c1 := &Class{}
+    err = json.Unmarshal([]byte(str), c1)
+    if err != nil {
+        fmt.Println("json unmarshal failed!")
+        return
+    }
+    fmt.Printf("%#v\n", c1)
 }
 
 ```
@@ -2740,8 +2837,8 @@ func main() {
     package main
   
     import (
-  "fmt"
-  )
+"fmt"
+)
   
     func main() {
   ```
@@ -2799,26 +2896,26 @@ func main() {
 - || 也叫短路或，如果第一个条件为true， 则第二个条件不会判断，最终结果为true
   
   <br/>
-  ```golang
-  package main
+```golang
+package main
   
   import "fmt"
-  func test() bool {
-    fmt. Println("test...")
-    return true
-  }
+func test() bool {
+  fmt. Println("test...")
+  return true
+}
   
   func main() {
-    var i int = 10
-    if i < 9 && test() {
-        fmt. Print("ok")
-    }
+  var i int = 10
+  if i < 9 && test() {
+  fmt. Print("ok")
+  }
   
     if i > 9 || test() {
-        fmt. Println("hello")
-    }
+  fmt. Println("hello")
   }
-  ```
+}
+```
 
 ## 3. 赋值运算符
 
@@ -2966,13 +3063,13 @@ func main() {
 - Go 编程语言中 switch 语句的语法如下：
   
     switch var1 {
-  case val1:
-      ...
-  case val2:
-      ...
-  default:
-      ...
-  }
+case val1:
+...
+case val2:
+...
+default:
+...
+}
 - 变量 var1 可以是任何类型，而 val1 和 val2 则可以是同类型的任意值。类型不被局限于常量或整数，但必须是相同的类型；或者最终结果为相同类型的表达式。
 - switch 语句用于基于不同条件执行不同动作，每一个 case 分支都是唯一的，从上至下逐一测试，直到匹配为止。
 - switch 语句执行的过程从上至下，直到找到匹配项，匹配项后面也不需要再加 break。
@@ -2980,9 +3077,9 @@ func main() {
 - switch 可以同时测试多个可能符合条件的值，使用逗号分割它们，例如：case val1, val2, val3。
   
     switch{
-  case 1, 2, 3, 4:
-  default:
-  }
+case 1, 2, 3, 4:
+default:
+}
 
 ### (2)快速入门案例
 
@@ -3162,951 +3259,4 @@ func main()  {
 }
 ```
 
-# Go语言函数
-
-函数是基本的代码块，用于执行一个任务。
-
-Go 语言最少有个 main() 函数。
-
-你可以通过函数来划分不同功能，逻辑上每个函数执行的是指定的任务。
-
-函数声明告诉了编译器函数的名称，返回类型，和参数。
-
-Go 语言标准库提供了多种可动用的内置的函数。例如，len() 函数可以接收不同类型参数并返回该类型的长度。如果我们传入的是字符串则返回字符串的长度，如果传入的是数组，则返回数组中包含的元素个数。
-
-## 1. 函数定义
-
-Go 语言函数定义格式如下：
-
-```
-func function_name( [parameter list] ) [return_types] {
-    函数体
-
-}
-```
-
-函数定义解析：
-
-- func：函数由 func 开始声明
-- function_name：函数名称，函数名和参数列表一起构成了函数签名。
-- parameter list：参数列表，参数就像一个占位符，当函数被调用时，你可以将值传递给参数，这个值被称为实际参数。参数列表指定的是参数类型、顺序、及参数个数。参数是可选的，也就是说函数也可以不包含参数。
-- return_types：返回类型，函数返回一列值。return_types 是该列值的数据类型。有些功能不需要返回值，这种情况下 return_types 不是必须的。
-- 函数体：函数定义的代码集合
-
-## 2. 实例
-
-以下实例为 max() 函数的代码，该函数传入两个整型参数 num1 和 num2，并返回这两个参数的最大值：
-
-```golang
-/* 函数返回两个数的最大值 */
-func max(num1, num2 int) int {
-    /* 声明局部变量 */
-    var result int
-
-    if (num1 > num2) {
-        result = num1
-    } else {
-        result = num2
-
-    }
-
-    return result
-
-}
-```
-
-## 3. 函数调用
-
-当创建函数时，你定义了函数需要做什么，通过调用该函数来执行指定任务。
-
-调用函数，向函数传递参数，并返回值，例如：
-
-```golang
-package main
-
-import "fmt"
-
-func main() {
-
-    /* 定义局部变量 */
-    var a int = 100
-    var b int = 200
-    var ret int
-
-    /* 调用函数并返回最大值 */
-    ret = max(a, b)
-
-    fmt. Printf( "最大值是 : %d\n", ret )
-
-}
-
-/* 函数返回两个数的最大值 */
-func max(num1, num2 int) int {
-    /* 定义局部变量 */
-    var result int
-
-    if (num1 > num2) {
-        result = num1
-    } else {
-        result = num2
-
-    }
-
-    return result
-
-}
-```
-
-以上实例在 main() 函数中调用 max（）函数，执行结果为：
-
-```
-最大值是 : 200
-```
-
-## 4. 函数返回多个值
-
-Go 函数可以返回多个值，例如：
-
-```golang
-package main
-
-import "fmt"
-
-func swap(x, y string) (string, string) {
-    return y, x
-
-}
-
-func main() {
-
-    a, b := swap("Google", "Runoob")
-    fmt. Println(a, b)
-
-}
-```
-
-以上实例执行结果为：
-
-```
-Runoob Google
-```
-
-## 5. 函数参数
-
-函数如果使用参数，该变量可称为函数的形参。
-形参就像定义在函数体内的局部变量。
-调用函数，可以通过两种方式来传递参数：
-
-### (1)值传递
-
-值传递是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。
-
-```golang
-package main
-
-import "fmt"
-
-func main() {
-
-/* 定义局部变量 */
-var a int = 100
-var b int = 200
-
-fmt.Printf("交换前 a 的值为 : %d\n", a )
-fmt.Printf("交换前 b 的值为 : %d\n", b )
-
-/* 通过调用函数来交换值 */
-swap(a, b)
-
-fmt. Printf("交换后 a 的值 : %d\n", a )
-fmt. Printf("交换后 b 的值 : %d\n", b )
-
-}
-
-/* 定义相互交换值的函数 */
-func swap(x, y int) int {
-var temp int
-
-temp = x /* 保存 x 的值 */
-x = y    /* 将 y 值赋给 x */
-y = temp /* 将 temp 值赋给 y*/
-
-return temp; 
-
-}
-```
-
-以下代码执行结果为：
-
-```
-交换前 a 的值为 : 100
-交换前 b 的值为 : 200
-交换后 a 的值 : 100
-交换后 b 的值 : 200
-```
-
-### (2)引用传递
-
-引用传递是指在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。
-
-```golang
-package main
-
-import "fmt"
-
-func main() {
-
-/* 定义局部变量 */
-var a int = 100
-var b int= 200
-
-fmt.Printf("交换前，a 的值 : %d\n", a )
-fmt.Printf("交换前，b 的值 : %d\n", b )
-
-/* 调用 swap() 函数
-
-- &a 指向 a 指针，a 变量的地址
-- &b 指向 b 指针，b 变量的地址
-
-*/
-swap(&a, &b)
-
-fmt. Printf("交换后，a 的值 : %d\n", a )
-fmt. Printf("交换后，b 的值 : %d\n", b )
-
-}
-
-func swap(x *int, y *int) {
-var temp int
-temp = *x    /* 保存 x 地址上的值 */
-*x = *y      /* 将 y 值赋给 x */
-*y = temp    /* 将 temp 值赋给 y */
-
-}
-```
-
-以上代码执行结果为：
-
-```
-交换前，a 的值 : 100
-交换前，b 的值 : 200
-交换后，a 的值 : 200
-交换后，b 的值 : 100
-```
-
-`注意` ：默认情况下，Go 语言使用的是值传递，即在调用过程中不会影响到实际参数。
-
-## 6. 函数用法
-
-### (1)函数作为另外一个函数的实参
-
-函数定义后可作为另外一个函数的实参数传入
-Go 语言可以很灵活的创建函数，并作为另外一个函数的实参。以下实例中我们在定义的函数中初始化一个变量，该函数仅仅是为了使用内置函数 math.sqrt()，实例为：
-
-```golang
-package main
-
-import (
-    "fmt"
-    "math"
-)
-
-func main(){
-    /* 声明函数变量 */
-    getSquareRoot := func(x float64) float64 {
-
-        return math. Sqrt(x)
-
-    }
-
-    /* 使用函数 */
-    fmt. Println(getSquareRoot(9))
-
-}
-```
-
-### (2)闭包
-
-闭包是匿名函数，可在动态编程中使用
-
-Go 语言支持匿名函数，可作为闭包。匿名函数是一个"内联"语句或表达式。匿名函数的优越性在于可以直接使用函数内的变量，不必申明。
-以下实例中，我们创建了函数 getSequence() ，返回另外一个函数。该函数的目的是在闭包中递增 i 变量，代码如下：
-
-```golang
-package main
-
-import "fmt"
-
-func getSequence() func() int {
-    i:=0
-    return func() int {
-        i+=1
-        return i  
-
-    }
-
-}
-
-func main(){
-    /* nextNumber 为一个函数，函数 i 为 0 */
-    nextNumber := getSequence()  
-
-    /* 调用 nextNumber 函数，i 变量自增 1 并返回 */
-    fmt. Println(nextNumber())
-    fmt. Println(nextNumber())
-    fmt. Println(nextNumber())
-
-    
-
-    /* 创建新的函数 nextNumber1，并查看结果 */
-    nextNumber1 := getSequence()  
-    fmt. Println(nextNumber1())
-    fmt. Println(nextNumber1())
-
-}
-```
-
-### (3)方法
-
-方法就是一个包含了接受者的函数
-
-Go 语言中同时有函数和方法。一个方法就是一个包含了接受者的函数，接受者可以是命名类型或者结构体类型的一个值或者是一个指针。所有给定类型的方法属于该类型的方法集。语法格式如下：
-
-```
-func (variable_name variable_data_type) function_name() [return_type]{
-    /* 函数体*/
-
-}
-```
-
-实例:
-
-```golang
-package main
-
-import (
-    "fmt"  
-)
-
-/* 定义结构体 */
-type Circle struct {
- radius float64
-
-}
-
-func main() {
-
-    var c1 Circle
-    c1.radius = 10.00
-    fmt. Println("圆的面积 = ", c1.getArea())
-
-}
-
-//该 method 属于 Circle 类型对象中的方法
-func (c Circle) getArea() float64 {
-    //c.radius 即为 Circle 类型对象中的属性
-    return 3.14 * c.radius * c.radius
-
-}
-```
-
-以上代码执行结果为：
-
-```
-圆的面积 =  314
-```
-
-### (4)init函数
-
-- 基本介绍
-
-每一个源文件都可以包含一个init函数，该函数会在main函数之前运行
-
-```golang
-package main
-
-import "fmt"
-var a = test()
-func test() int {
-    fmt.Println("全局变量定义！。。。")
-    return 90
-}
-func main()  {
-    fmt.Println("main()...")
-}
-func init()  {
-    fmt.Println("init()...")
-}
-```
-
-- 注意事项
-
-全局变量定义代码会在init之前运行
-
-### (5)匿名函数
-
-- 介绍
-
-Go支持匿名函数，就是没有名字的函数，如果我们某个函数只是希望使用一次，可以考虑使用匿名函数，匿名函数也可以实现多次调用。
-
-- 使用
-  ```golang
-  package main
-  
-  import "fmt"
-  func main()  {
-      res := func (n1, n2 int) int {
-          return n1 + n2
-      }(10, 11)
-      fmt.Println(res)
-      
-      f := func (a, b int) int {
-          return a - b
-      }
-      fmt.Println(f(10, 5))
-  }
-  
-  ```
-
-### (6)defer
-
-- 介绍
-
-再函数中，程序员经常需要创建资源（数据库连接，文件句柄、锁等），在函数执行完毕之后，及时的释放资源，Go的设计者提供了defer
-
-- 快速入门
-
-```golang
-package main
-
-import "fmt"
-func sum(num1, num2 int) int {
-    // 当函数执行到defer时候，暂时不执行，会单独建立一块defer栈
-    // 当函数执行完毕之后，再从defer栈中按照先入后出的顺序出栈并执行
-    defer fmt.Println("ok1 num1 = ", num1)
-    defer fmt.Println("ok2 num2 = ", num2)
-    res := num1 + num2
-    return res
-}
-func main()  {
-    res := sum(10, 20)
-    fmt.Println("res = ", res)
-}
-```
-
-### (7)字符串内置函数
-
-```golang
-package main
-
-import (
-    "fmt"
-    "strconv"
-    "strings"
-) 
-func main()  {
-    // 统计字符串长度，按照字节len(str)
-    // golang的统一编码为utf8，ascii的字符占用一个字节，一个汉字占用3个字节
-    str := "hello北京"
-    fmt.Println("str len=", len(str))
-
-    // 字符串遍历，同时处理中文问题 r := []rune(str)
-    r := []rune(str)
-    for i:=0; i < len(r); i++ {
-        fmt.Printf("字符：%c\n", r[i])
-    }
-
-    // 字符串转整数
-    n, err := strconv.Atoi("12a3")
-    if err != nil {
-        fmt.Println(err)
-    } else {
-        fmt.Println(n)
-    }
-
-    // 整数转字符串
-    str = strconv.Itoa(123)
-    fmt.Println("str: ", str)
-
-    // 字符串转字节
-    bytes := []byte("hello bytes")
-    fmt.Printf("bytes: %v\n", bytes)
-
-    // byte 转字符串
-    str = string([]byte{97, 98, 99})
-    fmt.Printf("str: %v\n", str)
-
-    // 10进制转2，8，16进制
-    str = strconv.FormatInt(123, 2)
-    fmt.Printf("123对应的2进制是：%v\n", str)
-    str = strconv.FormatInt(123, 16)
-    fmt.Printf("123对应的16进制是：%v\n", str)
-
-    // strings 包
-    fmt.Println(strings.Contains("seafood", "foods"))
-    fmt.Println(strings.Count("cheese", "e"))
-    fmt.Println(strings.Index("chicken", "ken"))
-    fmt.Println(strings.LastIndex("go gopher", "go"))
-    fmt.Println(strings.EqualFold("Go", "go"))
-    fmt.Println("Go" == "go")
-    fmt.Println(strings.HasPrefix("chicken", "chi"))
-    fmt.Println(strings.HasSuffix("chicken.txt", ".txt"))
-    fmt.Println(strings.Replace("oink oink oink", "k", "ky", 2))
-    fmt.Println("ba" + strings.Repeat("na", 2))
-    fmt.Println(strings.Trim(" !!! Achtung! Achtung! !!! ", "! "))
-    fmt.Println(strings.TrimSpace(" \t\n a lone gopher \n\t\r\n"))
-    fmt.Println(strings.TrimLeft(" n a lone gopher", " "))
-    fmt.Println(strings.TrimRight(" a lone gopher", " "))
-    fmt.Println(strings.ToLower("Gopher"))
-    fmt.Println(strings.ToUpper("Gopher"))
-    fmt.Printf("%q\n", strings.Split("a,b,c", ","))
-
-}
-```
-
-# Go 语言结构体
-
-Go 语言中数组可以存储同一类型的数据，但在结构体中我们可以为不同项定义不同的数据类型。
-
-结构体是由一系列具有相同类型或不同类型的数据构成的数据集合。
-
-结构体表示一项记录，比如保存图书馆的书籍记录，每本书有以下属性：
-
-- Title ：标题
-- Author ： 作者
-- Subject：学科
-- ID：书籍ID
-
-## 1. 定义结构体
-
-结构体定义需要使用 type 和 struct 语句。struct 语句定义一个新的数据类型，结构体中有一个或多个成员。type 语句设定了结构体的名称。结构体的格式如下：
-
-```
-type struct_variable_type struct {
-    member definition
-    member definition
-    ...
-    member definition
-
-}
-```
-
-一旦定义了结构体类型，它就能用于变量的声明，语法格式如下：
-
-```
-variable_name := structure_variable_type {value1, value2...valuen}
-或
-variable_name := structure_variable_type { key1: value1, key2: value2..., keyn: valuen}
-```
-
-实例:
-
-```golang
-package main
-
-import "fmt"
-
-type Books struct {
-title string
-author string
-subject string
-book_id int
-
-}
-
-func main() {
-
-    // 创建一个新的结构体
-    fmt.Println(Books{"Go 语言", "www.runoob.com", "Go 语言教程", 6495407})
-
-    // 也可以使用 key => value 格式
-    fmt.Println(Books{title: "Go 语言", author: "www.runoob.com", subject: "Go 语言教程", book_id: 6495407})
-
-    // 忽略的字段为 0 或 空
-fmt. Println(Books{title: "Go 语言", author: "www.runoob.com"})
-
-}
-```
-
-输出结果为：
-
-```
-{Go 语言 www.runoob.com Go 语言教程 6495407}
-{Go 语言 www.runoob.com Go 语言教程 6495407}
-{Go 语言 www.runoob.com  0}
-```
-
-## 2. 访问结构体成员
-
-如果要访问结构体成员，需要使用点号 `.` 操作符，格式为：
-
-```
-结构体.成员名
-```
-
-实例：
-
-```golang
-package main
-
-import "fmt"
-
-type Books struct {
-    title string
-    author string
-    subject string
-    book_id int
-
-}
-
-func main() {
-
-    var Book1 Books // 声明Book1为Books类型
-    var Book2 Books // 声明Book2为Books类型
-
-    /* Book1描述 */
-    Book1.title = "Go 语言"
-    Book1.author = "www.runoob.com"
-    Book1.subject = "Go 语言教程"
-    Book1.book_id = 6495407
-
-    
-
-    /* Book2描述 */
-    Book2.title = "Pyhton 语言"
-    Book2.author = "www.runoob.com"
-    Book2.subject = "Pyhton 语言教程"
-    Book2.book_id = 6495407
-
-    /* 打印 Book1 信息 */
-    fmt.Printf( "Book 1 title : %s\n", Book1.title)
-    fmt.Printf( "Book 1 author : %s\n", Book1.author)
-    fmt.Printf( "Book 1 subject : %s\n", Book1.subject)
-    fmt.Printf( "Book 1 book_id : %d\n", Book1.book_id)
-
-    /* 打印 Book2 信息 */
-    fmt. Printf( "Book 2 title : %s\n", Book2.title)
-    fmt. Printf( "Book 2 author : %s\n", Book2.author)
-    fmt. Printf( "Book 2 subject : %s\n", Book2.subject)
-    fmt. Printf( "Book 2 book_id : %d\n", Book2.book_id)
-
-}
-```
-
-以上实例执行运行结果为：
-
-```
-Book 1 title : Go 语言
-Book 1 author : www.runoob.com
-Book 1 subject : Go 语言教程
-Book 1 book_id : 6495407
-Book 2 title : Python 教程
-Book 2 author : www.runoob.com
-Book 2 subject : Python 语言教程
-Book 2 book_id : 6495700
-```
-
-## 3. 结构体作为函数参数
-
-你可以像其他数据类型一样将结构体类型作为参数传递给函数。并以以上实例的方式访问结构体变量：
-
-```golang
-package main
-
-import "fmt"
-
-type Books struct {
-    title string
-    author string
-    subject string
-    book_id int
-
-}
-
-func main() {
-
-    var Book1 Books // 声明Book1为Books类型
-    var Book2 Books // 声明Book2为Books类型
-
-    /* Book1描述 */
-    Book1.title = "Go 语言"
-    Book1.author = "www.runoob.com"
-    Book1.subject = "Go 语言教程"
-    Book1.book_id = 6495407
-
-    
-
-    /* Book2描述 */
-    Book2.title = "Pyhton 语言"
-    Book2.author = "www.runoob.com"
-    Book2.subject = "Pyhton 语言教程"
-    Book2.book_id = 6495407
-
-    // /* 打印 Book1 信息 */
-    // fmt.Printf( "Book 1 title : %s\n", Book1.title)
-    // fmt.Printf( "Book 1 author : %s\n", Book1.author)
-    // fmt.Printf( "Book 1 subject : %s\n", Book1.subject)
-    // fmt.Printf( "Book 1 book_id : %d\n", Book1.book_id)
-
-    // /* 打印 Book2 信息 */
-    // fmt.Printf( "Book 2 title : %s\n", Book2.title)
-    // fmt.Printf( "Book 2 author : %s\n", Book2.author)
-    // fmt.Printf( "Book 2 subject : %s\n", Book2.subject)
-    // fmt.Printf( "Book 2 book_id : %d\n", Book2.book_id)
-
-    /* 打印 Book1 信息 */
-    printBook(Book1)
-
-    /* 打印 Book2 信息 */
-    printBook(Book2)
-}  
-
-func printBook(book Books) {
-    fmt. Printf("Book title : %s\n", book.title)
-    fmt. Printf("Book author : %s\n", book.author)
-    fmt. Printf("Book subject : %s\n", book.subject)
-    fmt. Printf("Book book_id : %d\n", book.book_id)
-
-}
-```
-
-以上实例执行运行结果为:
-
-```
-Book title : Go 语言
-Book author : www.runoob.com
-Book subject : Go 语言教程
-Book book_id : 6495407
-Book title : Python 教程
-Book author : www.runoob.com
-Book subject : Python 语言教程
-Book book_id : 6495700
-```
-
-## 4. 结构体指针
-
-你可以定义指向结构体的指针类似于其他指针变量，格式如下：
-
-```
-var struct_pointer *Books
-```
-
-以上定义的指针变量可以存储结构体变量的地址。查看结构体变量地址，可以将 `&` 符号放置于结构体变量前：
-
-```
-struct_pointer = &Book1
-```
-
-使用结构体指针访问结构体成员，使用 `.` 操作符：
-
-```
-struct_pointer.title
-```
-
-实例:
-
-```golang
-package main
-
-import "fmt"
-
-type Books struct {
-    title string
-    author string
-    subject string
-    book_id int
-
-}
-
-func main() {
-
-    var book1 Books
-    var book2 Books
-
-    // book1 描述
-    book1.title = "Go 语言"
-    book1.author = "www.runoob.com"
-    book1.subject = "Go 语言教程"
-    book1.book_id = 6495407
-
-    
-
-    // book2 描述
-    book2.title = "Python 语言"
-    book2.author = "www.runoob.com"
-    book2.subject = "Python 语言教程"
-    book2.book_id = 6495000
-
-    /* 打印 Book1 信息 */
-    printBook(&book1)
-
-    /* 打印 Book2 信息 */
-    printBook(&book2)
-
-}
-
-func printBook(book *Books) {
-    fmt. Printf( "Book title : %s\n", book.title)
-    fmt. Printf( "Book author : %s\n", book.author)
-    fmt. Printf( "Book subject : %s\n", book.subject)
-    fmt. Printf( "Book book_id : %d\n", book.book_id)
-
-}
-```
-
-以上实例执行运行结果为：
-
-```
-Book title : Go 语言
-Book author : www.runoob.com
-Book subject : Go 语言教程
-Book book_id : 6495407
-Book title : Python 教程
-Book author : www.runoob.com
-Book subject : Python 语言教程
-Book book_id : 6495700
-```
-
-## 5. 结构体是作为参数的值传递
-
-```golang
-package main
-
-import "fmt"
-
-type Books struct {
-    title string
-    author string
-    subject string
-    book_id int
-
-}
-
-func changeBook(book Books) {
-    book.title = "book1_change"
-
-}
-
-func changeBook2(book *Books) {
-book.title = "book1_change"
-
-}
-
-func main() {
-
-    var book1 Books
-    book1.title = "book1"
-    book1.author = "zuozhe"
-    book1.book_id = 1
-    changeBook(book1)
-    fmt. Println(book1)
-
-    changeBook2(&book1)
-    fmt. Println(book1)
-
-}
-```
-
-总结：
-
-```
-struct 类似于 java 中的类，可以在 struct 中定义成员变量。
-要访问成员变量，可以有两种方式：
-
-    1. 通过 struct 变量. 成员 变量来访问。
-    2. 通过 struct 指针. 成员 变量来访问。
-
-不需要通过 getter, setter 来设置访问权限。
-type Rect struct{   //定义矩形类
-    x, y float64       //类型只包含属性，并没有方法
-    width, height float64
-
-}
-
-func (r *Rect) Area() float64{    //为Rect类型绑定Area的方法，*Rect为指针引用可以修改传入参数的值
-    return r.width*r.height         //方法归属于类型，不归属于具体的对象，声明该类型的对象即可调用该类型的方法
-
-}
-```
-
-## 5. 数组和切片
-
-### (1)为什么需要数组
-
-- 看一个问题
-
-一个养鸡场有6只鸡，他们的体重分别是3kg, 5kg, 1kg, 3.4kg, 2kg, 50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组
-
-- 使用传统方法解决
-  ```golang
-    package main
-  
-    import "fmt"
-  
-    func main() {
-  
-        /*
-        一个养鸡场有6只鸡，他们的体重分别是3kg，5kg，1kg，3.4kg，2kg，50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组 
-        */
-  
-        // 思路分析：定义留个变量，分别表示六只鸡的体重，然后求出和，然后求出平均值。
-        hen1 := 3.0
-        hen2 := 5.0
-        hen3 := 1.0
-        hen4 := 3.4
-        hen5 := 2.0
-        hen6 := 50.0
-  
-        totalweight := hen1 + hen2 + hen3 + hen4 + hen5 + hen6  // invalid operation: hen1 + hen2 + hen3 + hen4 (mismatched types int and float64)go
-        avgweight := totalweight / 6
-  
-        fmt. Printf("totalweight=%.2f \n", totalweight)
-        fmt. Printf("totalweight=%v avgweight=%v", totalweight, avgweight)
-  
-    }
-  ```
-
-代码说明：
-1)使用传统的方法不利于数据的管理和维护
-2)传统的方法不够灵活，因此我们引出需要学习的心的数量类型=》数组
-
-- 数组介绍
-
-数组可以存放多个同意类型数据。数组也是一种数据类型，在Go中，数组是值类型
-
-- 使用数组的方式来解决养鸡场问题
-  ```golang
-    package main
-  
-    import "fmt"
-  
-    func main() {
-  
-        /*
-        一个养鸡场有6只鸡，他们的体重分别是3kg，5kg，1kg，3.4kg，2kg，50kg。请问这六只鸡的总体重是多少？平均体重是多少？请你编一个程序。=》数组 
-        */
-  
-        // 使用数组方式来解决
-        // 1. 定义一个数组
-        var hens [6]float64
-        // 给数组的每个元素赋值
-        hens[0] = 3.0
-        hens[1] = 5.0
-        hens[2] = 1.0
-        hens[3] = 3.4
-        hens[4] = 2.0
-        hens[5] = 50.0
-  
-        // 遍历数组求出总体重
-        totalweight2 := 0.0
-        for i := 0; i < len(hens); i++ {
-            totalweight2 += hens[i]
-  
-        }
-  
-        avgweight2 := totalweight / 6
-        fmt. Printf("totalweight2=%.2f \n", totalweight2)
-        fmt. Printf("totalweight2=%v avgweight2=%v \n", totalweight2, avgweight2)
-  
-    }
-  ```
+#
